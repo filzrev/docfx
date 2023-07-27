@@ -76,7 +76,7 @@ public class XRefMapDownloader
     }
 
     /// <remarks>
-    /// Support scheme: http, https, ftp, file, embedded.
+    /// Support scheme: http, https, file.
     /// </remarks>
     protected virtual async Task<IXRefContainer> DownloadBySchemeAsync(Uri uri)
     {
@@ -86,18 +86,13 @@ public class XRefMapDownloader
             result = DownloadFromLocal(uri);
         }
         else if (uri.Scheme == Uri.UriSchemeHttp ||
-            uri.Scheme == Uri.UriSchemeHttps ||
-            uri.Scheme == Uri.UriSchemeFtp)
+            uri.Scheme == Uri.UriSchemeHttps)
         {
             result = await DownloadFromWebAsync(uri);
         }
-        else if (uri.Scheme == "embedded")
-        {
-            result = DownloadFromAssembly(uri);
-        }
         else
         {
-            throw new ArgumentException($"Unsupported scheme {uri.Scheme}, expected: http, https, ftp, file, embedded.", nameof(uri));
+            throw new ArgumentException($"Unsupported scheme {uri.Scheme}, expected: http, https, file.", nameof(uri));
         }
         if (result == null)
         {
@@ -114,6 +109,7 @@ public class XRefMapDownloader
 
     private static IXRefContainer ReadLocalFile(string filePath)
     {
+        Logger.LogVerbose($"Reading from file: {filePath}");
         if (".zip".Equals(Path.GetExtension(filePath), StringComparison.OrdinalIgnoreCase))
         {
             return XRefArchive.Open(filePath, XRefArchiveMode.Read);
@@ -125,33 +121,22 @@ public class XRefMapDownloader
 
     protected static async Task<XRefMap> DownloadFromWebAsync(Uri uri)
     {
+        Logger.LogVerbose($"Reading from web: {uri.OriginalString}");
         var baseUrl = uri.GetLeftPart(UriPartial.Path);
         baseUrl = baseUrl.Substring(0, baseUrl.LastIndexOf('/') + 1);
 
-        using var httpClient = new HttpClient(new HttpClientHandler() { CheckCertificateRevocationList = true });
+        bool.TryParse(Environment.GetEnvironmentVariable("DOCFX_NO_CHECK_CERTIFICATE_REVOCATION_LIST"), out var noCheckCertificateRevocationList);
+        using var httpClient = new HttpClient(new HttpClientHandler()
+        {
+            CheckCertificateRevocationList = !noCheckCertificateRevocationList
+        });
+
         using var stream = await httpClient.GetStreamAsync(uri);
         using var sr = new StreamReader(stream);
         var map = YamlUtility.Deserialize<XRefMap>(sr);
         map.BaseUrl = baseUrl;
         UpdateHref(map, null);
         return map;
-    }
-
-    private XRefMap DownloadFromAssembly(Uri uri)
-    {
-        var path = uri.GetComponents(UriComponents.Path, UriFormat.Unescaped);
-        var index = path.IndexOf('/');
-        if (index == -1)
-        {
-            throw new ArgumentException($"Invalid uri {uri.OriginalString}, expect: {uri.Scheme}:{{assemblyName}}/{{resourceName}}", nameof(uri));
-        }
-        var assemblyName = path.Remove(index);
-        var resourceName = assemblyName + "." + path.Substring(index + 1);
-
-        var assembly = AppDomain.CurrentDomain.Load(assemblyName);
-        using var stream = assembly.GetManifestResourceStream(resourceName);
-        using var sr = new StreamReader(stream);
-        return YamlUtility.Deserialize<XRefMap>(sr);
     }
 
     public static void UpdateHref(XRefMap map, Uri uri)

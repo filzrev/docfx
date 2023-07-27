@@ -12,6 +12,8 @@ using Docfx.Plugins;
 
 namespace Docfx;
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 internal static class DocumentBuilderWrapper
 {
     private static readonly Assembly[] s_pluginAssemblies = LoadPluginAssemblies(AppContext.BaseDirectory).ToArray();
@@ -187,9 +189,6 @@ internal static class DocumentBuilderWrapper
                     ThreadPool.SetMinThreads(parameters.MaxParallelism, cpt);
                 }
             }
-
-            parameters.MaxHttpParallelism = Math.Max(64, parameters.MaxParallelism * 2);
-            ServicePointManager.DefaultConnectionLimit = parameters.MaxHttpParallelism;
 
             if (config.MarkdownEngineProperties != null)
             {
