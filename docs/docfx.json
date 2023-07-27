@@ -15,7 +15,10 @@
   "build": {
     "content": [
       {
-        "files": [ "**/*.{md,yml}" ],
+        "files": [
+            "src/Docfx.App/*.csproj",
+            "src/Docfx.Dotnet/*.csproj"
+        ],
         "exclude": [ "_site/**", "obj/**" ]
       }
     ],
