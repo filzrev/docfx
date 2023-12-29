@@ -6,6 +6,17 @@ _appLogoUrl: https://github.com/dotnet/docfx
 ---
 
 # docfx-seed
+
+```plantuml
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+@enduml
+```
+
 ## Description
 This is a sample docfx documentation project. It contains .NET source code and markdown files.
 `docfx.json` is the configuration file for running `docfx`.

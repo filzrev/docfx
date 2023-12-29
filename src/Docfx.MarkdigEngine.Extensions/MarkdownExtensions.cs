@@ -35,6 +35,7 @@ public static class MarkdownExtensions
             .UseTripleColon(context)
             .UseNoloc()
             .UseResolveLink(context)
+            .UsePlantUml()
             .RemoveUnusedExtensions();
     }
 
@@ -167,6 +168,12 @@ public static class MarkdownExtensions
     public static MarkdownPipelineBuilder UseNoloc(this MarkdownPipelineBuilder pipeline)
     {
         pipeline.Extensions.AddIfNotAlready(new NolocExtension());
+        return pipeline;
+    }
+
+    public static MarkdownPipelineBuilder UsePlantUml(this MarkdownPipelineBuilder pipeline)
+    {
+        pipeline.Extensions.AddIfNotAlready(new PlantUmlExtension());
         return pipeline;
     }
 }
