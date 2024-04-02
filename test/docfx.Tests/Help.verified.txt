@@ -1,0 +1,284 @@
+﻿> docfx  --help
+USAGE:
+    docfx [config] [OPTIONS] [COMMAND]
+
+ARGUMENTS:
+    [config]    Path to docfx.json
+
+OPTIONS:
+    -h, --help                         Prints help information                  
+    -v, --version                      Prints version information               
+    -l, --log                          Save log as structured JSON to the       
+                                       specified file                           
+        --logLevel                     Set log level to error, warning, info,   
+                                       verbose or diagnostic                    
+        --verbose                      Set log level to verbose                 
+        --warningsAsErrors             Treats warnings as errors                
+    -o, --output                       Specify the output base directory        
+    -m, --metadata                     Specify a list of global metadata in key 
+                                       value pairs (e.g. --metadata             
+                                       _appTitle="My App" --metadata            
+                                       _disableContribution)                    
+    -x, --xref                         Specify the urls of xrefmap used by      
+                                       content files                            
+    -t, --template                     Specify the template name to apply to. If
+                                       not specified, output YAML file will not 
+                                       be transformed                           
+        --theme                        Specify which theme to use. By default   
+                                       'default' theme is offered               
+    -s, --serve                        Host the generated documentation to a    
+                                       website                                  
+    -n, --hostname                     Specify the hostname of the hosted       
+                                       website (e.g., 'localhost' or '*')       
+    -p, --port                         Specify the port of the hosted website   
+        --open-browser                 Open a web browser when the hosted       
+                                       website starts                           
+        --open-file <RELATIVE_PATH>    Open a file in a web browser when the    
+                                       hosted website starts                    
+        --debug                        Run in debug mode. With debug mode, raw  
+                                       model and view model will be exported    
+                                       automatically when it encounters error   
+                                       when applying templates. If not          
+                                       specified, it is false                   
+        --debugOutput                  The output folder for files generated for
+                                       debugging purpose when in debug mode. If 
+                                       not specified, it is ${TempPath}/docfx   
+        --exportRawModel               If set to true, data model to run        
+                                       template script will be extracted in     
+                                       .raw.model.json extension                
+        --rawModelOutputFolder         Specify the output folder for the raw    
+                                       model. If not set, the raw model will be 
+                                       generated to the same folder as the      
+                                       output documentation                     
+        --viewModelOutputFolder        Specify the output folder for the view   
+                                       model. If not set, the view model will be
+                                       generated to the same folder as the      
+                                       output documentation                     
+        --exportViewModel              If set to true, data model to apply      
+                                       template will be extracted in            
+                                       .view.model.json extension               
+        --dryRun                       If set to true, template will not be     
+                                       actually applied to the documents. This  
+                                       option is always used with               
+                                       --exportRawModel or --exportViewModel is 
+                                       set so that only raw model files or view 
+                                       model files are generated                
+        --maxParallelism               Set the max parallelism, 0 is auto       
+        --markdownEngineProperties     Set the parameters for markdown engine,  
+                                       value should be a JSON string            
+        --postProcessors               Set the order of post processors in      
+                                       plugins                                  
+        --disableGitFeatures           Disable fetching Git related information 
+                                       for articles. By default it is enabled   
+                                       and may have side effect on performance  
+                                       when the repo is large                   
+    -v, --version                      Prints version information               
+
+COMMANDS:
+    init                
+    build               
+    metadata            
+    serve               
+    pdf                 
+    template            
+    download <path>     
+    merge               
+
+> docfx init --help
+USAGE:
+    docfx init [OPTIONS]
+
+OPTIONS:
+    -h, --help       Prints help information                            
+    -v, --version    Prints version information                         
+    -y, --yes        Yes to all questions                               
+    -o, --output     Specify the output directory of the generated files
+
+> docfx build --help
+USAGE:
+    docfx build [config] [OPTIONS]
+
+ARGUMENTS:
+    [config]    Path to docfx.json
+
+OPTIONS:
+    -h, --help                         Prints help information                  
+    -v, --version                      Prints version information               
+    -l, --log                          Save log as structured JSON to the       
+                                       specified file                           
+        --logLevel                     Set log level to error, warning, info,   
+                                       verbose or diagnostic                    
+        --verbose                      Set log level to verbose                 
+        --warningsAsErrors             Treats warnings as errors                
+    -o, --output                       Specify the output base directory        
+    -m, --metadata                     Specify a list of global metadata in key 
+                                       value pairs (e.g. --metadata             
+                                       _appTitle="My App" --metadata            
+                                       _disableContribution)                    
+    -x, --xref                         Specify the urls of xrefmap used by      
+                                       content files                            
+    -t, --template                     Specify the template name to apply to. If
+                                       not specified, output YAML file will not 
+                                       be transformed                           
+        --theme                        Specify which theme to use. By default   
+                                       'default' theme is offered               
+    -s, --serve                        Host the generated documentation to a    
+                                       website                                  
+    -n, --hostname                     Specify the hostname of the hosted       
+                                       website (e.g., 'localhost' or '*')       
+    -p, --port                         Specify the port of the hosted website   
+        --open-browser                 Open a web browser when the hosted       
+                                       website starts                           
+        --open-file <RELATIVE_PATH>    Open a file in a web browser when the    
+                                       hosted website starts                    
+        --debug                        Run in debug mode. With debug mode, raw  
+                                       model and view model will be exported    
+                                       automatically when it encounters error   
+                                       when applying templates. If not          
+                                       specified, it is false                   
+        --debugOutput                  The output folder for files generated for
+                                       debugging purpose when in debug mode. If 
+                                       not specified, it is ${TempPath}/docfx   
+        --exportRawModel               If set to true, data model to run        
+                                       template script will be extracted in     
+                                       .raw.model.json extension                
+        --rawModelOutputFolder         Specify the output folder for the raw    
+                                       model. If not set, the raw model will be 
+                                       generated to the same folder as the      
+                                       output documentation                     
+        --viewModelOutputFolder        Specify the output folder for the view   
+                                       model. If not set, the view model will be
+                                       generated to the same folder as the      
+                                       output documentation                     
+        --exportViewModel              If set to true, data model to apply      
+                                       template will be extracted in            
+                                       .view.model.json extension               
+        --dryRun                       If set to true, template will not be     
+                                       actually applied to the documents. This  
+                                       option is always used with               
+                                       --exportRawModel or --exportViewModel is 
+                                       set so that only raw model files or view 
+                                       model files are generated                
+        --maxParallelism               Set the max parallelism, 0 is auto       
+        --markdownEngineProperties     Set the parameters for markdown engine,  
+                                       value should be a JSON string            
+        --postProcessors               Set the order of post processors in      
+                                       plugins                                  
+        --disableGitFeatures           Disable fetching Git related information 
+                                       for articles. By default it is enabled   
+                                       and may have side effect on performance  
+                                       when the repo is large                   
+
+> docfx metadata --help
+USAGE:
+    docfx metadata [config] [OPTIONS]
+
+ARGUMENTS:
+    [config]    Path to docfx.json
+
+OPTIONS:
+    -h, --help                    Prints help information                       
+    -v, --version                 Prints version information                    
+    -l, --log                     Save log as structured JSON to the specified  
+                                  file                                          
+        --logLevel                Set log level to error, warning, info, verbose
+                                  or diagnostic                                 
+        --verbose                 Set log level to verbose                      
+        --warningsAsErrors        Treats warnings as errors                     
+        --shouldSkipMarkup        Skip to markup the triple slash comments      
+    -o, --output                  Specify the output base directory             
+        --outputFormat            Specify the output type                       
+        --filter                  Specify the filter config file                
+        --globalNamespaceId       Specify the name to use for the global        
+                                  namespace                                     
+        --property                --property <n1>=<v1>;<n2>=<v2> An optional set
+                                  of MSBuild properties used when interpreting  
+                                  project files. These are the same properties  
+                                  that are passed to MSBuild via the            
+                                  /property:<n1>=<v1>;<n2>=<v2> command line    
+                                  argument                                      
+        --disableGitFeatures      Disable fetching Git related information for  
+                                  articles. By default it is enabled and may    
+                                  have side effect on performance when the repo 
+                                  is large                                      
+        --disableDefaultFilter    Disable the default API filter (default filter
+                                  only generate public or protected APIs)       
+        --namespaceLayout         Determines the namespace layout in table of   
+                                  contents                                      
+        --memberLayout            Determines the member page layout             
+
+> docfx serve --help
+USAGE:
+    docfx serve [directory] [OPTIONS]
+
+ARGUMENTS:
+    [directory]    Path to the directory to serve
+
+OPTIONS:
+    -h, --help                         Prints help information                  
+    -v, --version                      Prints version information               
+    -n, --hostname                     Specify the hostname of the hosted       
+                                       website                                  
+    -p, --port                         Specify the port of the hosted website   
+        --open-browser                 Open a web browser when the hosted       
+                                       website starts                           
+        --open-file <RELATIVE_PATH>    Open a file in a web browser when the    
+                                       hosted website starts                    
+
+> docfx pdf --help
+USAGE:
+    docfx pdf [config] [OPTIONS]
+
+ARGUMENTS:
+    [config]    Path to docfx.json
+
+OPTIONS:
+    -h, --help                Prints help information                           
+    -v, --version             Prints version information                        
+    -l, --log                 Save log as structured JSON to the specified file 
+        --logLevel            Set log level to error, warning, info, verbose or 
+                              diagnostic                                        
+        --verbose             Set log level to verbose                          
+        --warningsAsErrors    Treats warnings as errors                         
+    -o, --output              Specify the output base directory                 
+
+> docfx template --help
+USAGE:
+    docfx template [OPTIONS] <COMMAND>
+
+OPTIONS:
+    -h, --help    Prints help information
+
+COMMANDS:
+    list       
+    export     
+
+> docfx download --help
+USAGE:
+    docfx download <path> [OPTIONS]
+
+ARGUMENTS:
+    <path>    Path to the archive file
+
+OPTIONS:
+    -h, --help       Prints help information   
+    -v, --version    Prints version information
+    -x, --xref       Specify the url of xrefmap
+
+> docfx merge --help
+USAGE:
+    docfx merge [config] [OPTIONS]
+
+ARGUMENTS:
+    [config]    Path to docfx.json
+
+OPTIONS:
+    -h, --help                Prints help information                           
+    -v, --version             Prints version information                        
+    -l, --log                 Save log as structured JSON to the specified file 
+        --logLevel            Set log level to error, warning, info, verbose or 
+                              diagnostic                                        
+        --verbose             Set log level to verbose                          
+        --warningsAsErrors    Treats warnings as errors                         
+    -o, --output              Specify the output folder                         
+
