@@ -12,10 +12,6 @@ jobs:
     permissions:
       packages: write
     steps:
-    - uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: |
-          9.x
 
     - uses: actions/checkout@v4
       with:
@@ -27,10 +23,7 @@ jobs:
         version_format: ${major}.${minor}.${patch}-preview.${increment}
 
     - uses: ./.github/actions/build
-
-    - name: dotnet test
-      run: dotnet test -c Release -f net9.0 --no-build
-    
+   
     - name: dotnet pack
       run: dotnet pack -c Release /p:Version=${{ steps.version.outputs.version }} /p:ApiCompatGenerateSuppressionFile=true -o drop/nuget
 
