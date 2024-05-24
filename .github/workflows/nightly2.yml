@@ -8,7 +8,6 @@ env:
 
 jobs:
   publish-github-packages:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       packages: write
