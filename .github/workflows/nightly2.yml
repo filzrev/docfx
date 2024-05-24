@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCFX_PREVIEW_BUILD: true
+  DOCFX_PREVIEW_BUILD: false
 
 jobs:
   publish-github-packages:
