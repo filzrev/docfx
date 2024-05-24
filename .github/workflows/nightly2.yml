@@ -22,8 +22,12 @@ jobs:
       with:
         version_format: ${major}.${minor}.${patch}-preview.${increment}
 
-    - uses: ./.github/actions/build
+    # - uses: ./.github/actions/build
+
+    - run: dir /home/runner/work/docfx/docfx/src/Docfx.App/
    
     - name: dotnet pack
-      run: dotnet pack -c Release /p:Version=${{ steps.version.outputs.version }} /p:ApiCompatGenerateSuppressionFile=true -o drop/nuget
+      run: |
+        cd src/Docfx.App/
+        dotnet pack -c Release /p:Version=${{ steps.version.outputs.version }} /p:ApiCompatGenerateSuppressionFile=true -o drop/nuget
 
