@@ -22,15 +22,14 @@ jobs:
       with:
         version_format: ${major}.${minor}.${patch}-preview.${increment}
 
-    # - uses: ./.github/actions/build
+    - uses: ./.github/actions/build
    
     - name: dotnet pack
       run: |
-        cd src/Docfx.App/
         dotnet pack -c Release /p:Version=${{ steps.version.outputs.version }} /p:ApiCompatGenerateSuppressionFile=true -o drop/nuget
 
     - uses: actions/upload-artifact@v4
       with:
         name: nupkg
-        path: /home/runner/work/docfx/docfx/src/Docfx.App/drop/nuget/*
+        path: /home/runner/work/docfx/docfx/drop/nuget/*
 
