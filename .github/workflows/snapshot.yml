@@ -36,6 +36,11 @@ jobs:
       env:
         BUILD_SERVER: false # Need to accept file changes automatically.
 
+    # Show diff file names
+    - name: Show diff file names
+      run: |
+        git diff --name-only
+
     # Commit updated snapshot contents
     - uses: stefanzweifel/git-auto-commit-action@v5
       id: auto-commit-action
