@@ -82,7 +82,8 @@
       "_appName": "Seed",
       "_enableSearch": true,
       "pdf": true,
-      "pdfTocPage": true
+      "pdfTocPage": true,
+      "_urlRewriteBase": "http://localhost:8080"
     },
     "output": "_site",
     "exportViewModel": true,
@@ -91,7 +92,10 @@
       "alerts": {
         "TODO": "alert alert-secondary"
       }
-    }
+    },
+    "postProcessors": [ 
+      "UrlRewritePostProcessor" 
+    ]
   },
   "rules": {
     "InvalidCref": "info"
