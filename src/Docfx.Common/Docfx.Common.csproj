@@ -1,6 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <PackageReference Include="Spectre.Console" />
+    <PackageReference Include="JsonSchema.Net" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="../../schemas/docfx.schema.json" Link="schemas/docfx.schema.json" />
+    <EmbeddedResource Include="../../schemas/toc.schema.json" Link="schemas/toc.schema.json" />
+    <EmbeddedResource Include="../../schemas/filterconfig.schema.json" Link="schemas/filterconfig.schema.json" />
+    <EmbeddedResource Include="../../schemas/xrefmap.schema.json" Link="schemas/xrefmap.schema.json" />
   </ItemGroup>
 
   <ItemGroup>

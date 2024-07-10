@@ -63,22 +63,32 @@ public static class TocHelper
         var fileType = Utility.GetTocFileType(file);
         try
         {
-            if (fileType == TocFileType.Markdown)
+            TocItemViewModel tocViewModel;
+            switch (fileType)
             {
-                return new()
-                {
-                    Items = MarkdownTocReader.LoadToc(EnvironmentContext.FileAbstractLayer.ReadAllText(file), file)
-                };
+                case TocFileType.Markdown:
+                    tocViewModel = new TocItemViewModel
+                    {
+                        Items = MarkdownTocReader.LoadToc(EnvironmentContext.FileAbstractLayer.ReadAllText(file), file)
+                    };
+
+                    break;
+                case TocFileType.Yaml:
+                    tocViewModel = _deserializer.Deserialize(file) switch
+                    {
+                        List<TocItemViewModel> vm => new() { Items = vm },
+                        TocItemViewModel root => root,
+                        _ => throw new NotSupportedException($"{file} is not a valid TOC file."),
+                    };
+                    break;
+                default:
+                    throw new NotSupportedException($"{file} is not a valid TOC file, supported TOC files should be either \"{Constants.TableOfContents.MarkdownTocFileName}\" or \"{Constants.TableOfContents.YamlTocFileName}\".");
             }
-            else if (fileType == TocFileType.Yaml)
-            {
-                return _deserializer.Deserialize(file) switch
-                {
-                    List<TocItemViewModel> vm => new() { Items = vm },
-                    TocItemViewModel root => root,
-                    _ => throw new NotSupportedException($"{file} is not a valid TOC file."),
-                };
-            }
+
+            // Validate Toc with JsonSchema
+            JsonUtility.Validate<TocItemViewModel>(tocViewModel, fileNameHint: file);
+
+            return tocViewModel;
         }
         catch (Exception e)
         {
@@ -86,7 +96,5 @@ public static class TocHelper
             Logger.LogError(message, code: ErrorCodes.Toc.InvalidTocFile);
             throw new DocumentException(message, e);
         }
-
-        throw new NotSupportedException($"{file} is not a valid TOC file, supported TOC files should be either \"{Constants.TableOfContents.MarkdownTocFileName}\" or \"{Constants.TableOfContents.YamlTocFileName}\".");
     }
 }

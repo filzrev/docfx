@@ -1866,6 +1866,9 @@ namespace Docfx.Common
         public static void Serialize(System.IO.TextWriter writer, object graph, Newtonsoft.Json.Formatting formatting = 0, Newtonsoft.Json.JsonSerializer serializer = null) { }
         public static void Serialize(string path, object graph, Newtonsoft.Json.Formatting formatting = 0, Newtonsoft.Json.JsonSerializer serializer = null) { }
         public static string ToJsonString(this object graph, Newtonsoft.Json.Formatting formatting = 0, Newtonsoft.Json.JsonSerializer serializer = null) { }
+        public static void Validate<T>(string json, string fileNameHint = "") { }
+        public static void Validate<T>(T item, string fileNameHint = "")
+            where T : new() { }
     }
     public enum LogLevel
     {

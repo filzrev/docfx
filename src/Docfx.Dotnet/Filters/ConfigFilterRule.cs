@@ -60,6 +60,12 @@ internal class ConfigFilterRule
         {
             throw new InvalidDataException($"Unable to deserialize filter config {configFile}.");
         }
+
+        // Validate with JsonSchema
+        var serializer = new SerializerBuilder().JsonCompatible().Build();
+        var json = serializer.Serialize(rule);
+        JsonUtility.Validate<ConfigFilterRule>(json, configFile);
+
         return rule;
     }
 

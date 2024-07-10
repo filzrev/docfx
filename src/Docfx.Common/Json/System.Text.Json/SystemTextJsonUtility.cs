@@ -19,9 +19,18 @@ internal static class SystemTextJsonUtility
     public static readonly JsonSerializerOptions DefaultSerializerOptions;
 
     /// <summary>
-    ///  Default JsonSerializerOptions options with indent setting.
+    /// Default JsonSerializerOptions options with indent setting.
     /// </summary>
     public static readonly JsonSerializerOptions IndentedSerializerOptions;
+
+    /// <summary>
+    /// Default JsonDocumentOptions.
+    /// </summary>
+    public static readonly JsonDocumentOptions DefaultDocumentOptions = new()
+    {
+        AllowTrailingCommas = true,                 // Default: false
+        CommentHandling = JsonCommentHandling.Skip, // Default: Disallow
+    };
 
     static SystemTextJsonUtility()
     {

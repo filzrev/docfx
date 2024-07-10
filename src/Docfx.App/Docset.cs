@@ -3,6 +3,7 @@
 
 using Docfx.Common;
 using Docfx.Pdf;
+using Docfx.Plugins;
 
 namespace Docfx;
 
@@ -69,10 +70,14 @@ public static class Docset
 
         configFile = Path.GetFullPath(configFile);
 
-        if (!File.Exists(configFile))
+        if (!EnvironmentContext.FileAbstractLayer.Exists(configFile))
             throw new FileNotFoundException($"Cannot find config file {configFile}");
 
-        var config = JsonUtility.Deserialize<DocfxConfig>(configFile);
+        var json = EnvironmentContext.FileAbstractLayer.ReadAllText(configFile);
+
+        var config = JsonUtility.Deserialize<DocfxConfig>(new StringReader(json));
+
+        JsonUtility.Validate<DocfxConfig>(json, configFile);
 
         Logger.Rules = config.rules;
 

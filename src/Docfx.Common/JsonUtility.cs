@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using Docfx.Plugins;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -65,5 +66,41 @@ public static class JsonUtility
     public static T FromJsonString<T>(this string json, JsonSerializer serializer = null)
     {
         return Deserialize<T>(new StringReader(json), serializer);
+    }
+
+    /// <summary>
+    /// Validate object with JsonSchema that specified by generic type argument.
+    /// </summary>
+    public static void Validate<T>(T item, string fileNameHint = "")
+        where T : new()
+    {
+        Debug.Assert(typeof(T).Name != "ConfigFilterRule"); // Currently filterconfig related class can't serialize with JsonUtility.have JSON attributes. Use YamlDotNet for JSON serialization instead.
+
+        var json = JsonUtility.Serialize(item);
+        if (!JsonSchemaUtility.Validate<T>(json, fileNameHint, out var errors))
+        {
+            ReportValidationErrors(errors, fileNameHint);
+        }
+    }
+
+    /// <summary>
+    /// Validate JSON with JsonSchema.
+    /// </summary>
+    public static void Validate<T>(string json, string fileNameHint = "")
+    {
+        if (!JsonSchemaUtility.Validate<T>(json, fileNameHint, out var errors))
+        {
+            ReportValidationErrors(errors, fileNameHint);
+        }
+    }
+
+    private static void ReportValidationErrors(JsonSchemaUtility.ValidationError[] errors, string fileNameHint)
+    {
+        foreach (var error in errors)
+        {
+            // Report schema validation error as warning.
+            // Because Currently a lot of docfx user using older config settings.
+            Logger.LogWarning(error.ToString(), file: fileNameHint);
+        }
     }
 }

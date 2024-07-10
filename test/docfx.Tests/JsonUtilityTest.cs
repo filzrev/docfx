@@ -1,25 +1,33 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Text.Json;
+using Docfx.Build.Engine;
 using Docfx.Common;
 using Docfx.DataContracts.Common;
+using Docfx.Dotnet;
 using Docfx.Tests.Common;
 using FluentAssertions;
-using Json.Schema;
 using Xunit.Abstractions;
 using YamlDotNet.Serialization;
 
 namespace Docfx.Tests;
 
 [Collection("docfx STA")]
-public class JsonSchemaTest : TestBase
+public class JsonUtilityTest : IDisposable
 {
     private readonly ITestOutputHelper output;
+    private readonly TestLoggerListener logListener = new();
 
-    public JsonSchemaTest(ITestOutputHelper output)
+    public JsonUtilityTest(ITestOutputHelper output)
     {
         this.output = output;
+        Logger.UnregisterAllListeners();
+        Logger.RegisterListener(logListener);
+    }
+
+    public void Dispose()
+    {
+        Logger.UnregisterAllListeners();
     }
 
     [Theory]
@@ -35,28 +43,13 @@ public class JsonSchemaTest : TestBase
     public void JsonSchemaTest_Docfx_Json(string path)
     {
         // Arrange
-        var jsonElement = LoadAsJsonElement(path);
+        var json = LoadAsJsonText(path);
 
         // Act
-        var result = JsonSchemaUtility.ValidateJsonSchema(jsonElement, Constants.JsonSchemas.Docfx);
+        JsonUtility.Validate<DocfxConfig>(json, fileNameHint: path);
 
         // Assert
-        result.IsValid.Should().BeTrue();
-    }
-
-    [Theory]
-    [InlineData("test/docfx.Tests/Assets/docfx.json_invalid_format/docfx.json")]
-    [InlineData("test/docfx.Tests/Assets/docfx.json_invalid_key/docfx.json")]
-    public void JsonSchemaTest_Docfx_Json_Invalid(string path)
-    {
-        // Arrange
-        var jsonElement = LoadAsJsonElement(path);
-
-        // Act
-        var result = JsonSchemaUtility.ValidateJsonSchema(jsonElement, Constants.JsonSchemas.Docfx);
-
-        // Assert
-        result.IsValid.Should().BeFalse();
+        logListener.Items.Should().BeEmpty();
     }
 
     [Theory]
@@ -67,13 +60,13 @@ public class JsonSchemaTest : TestBase
     public void JsonSchemaTest_FilterConfig(string path)
     {
         // Arrange
-        var jsonElement = LoadAsJsonElement(path);
+        var json = LoadAsJsonText(path);
 
         // Act
-        var result = JsonSchemaUtility.ValidateJsonSchema(jsonElement, Constants.JsonSchemas.FilterConfig);
+        JsonUtility.Validate<ConfigFilterRule>(json, fileNameHint: path);
 
         // Assert
-        result.IsValid.Should().BeTrue();
+        logListener.Items.Should().BeEmpty();
     }
 
     [Theory]
@@ -90,13 +83,13 @@ public class JsonSchemaTest : TestBase
     public void JsonSchemaTest_Toc_Json(string path)
     {
         // Arrange
-        var jsonElement = LoadAsJsonElement(path);
+        var json = LoadAsJsonText(path);
 
         // Act
-        var result = JsonSchemaUtility.ValidateJsonSchema(jsonElement, Constants.JsonSchemas.Toc);
+        JsonUtility.Validate<TocItemViewModel>(json, fileNameHint: path);
 
         // Assert
-        result.IsValid.Should().BeTrue();
+        logListener.Items.Should().BeEmpty();
     }
 
     [Theory]
@@ -105,13 +98,13 @@ public class JsonSchemaTest : TestBase
     public void JsonSchemaTest_Toc_Yaml(string path)
     {
         // Arrange
-        var jsonElement = LoadAsJsonElement(path);
+        var json = LoadAsJsonText(path);
 
         // Act
-        var result = JsonSchemaUtility.ValidateJsonSchema(jsonElement, Constants.JsonSchemas.Toc);
+        JsonUtility.Validate<TocItemViewModel>(json, fileNameHint: path);
 
         // Assert
-        result.IsValid.Should().BeTrue();
+        logListener.Items.Should().BeEmpty();
     }
 
     [Theory]
@@ -119,13 +112,13 @@ public class JsonSchemaTest : TestBase
     public void JsonSchemaTest_XrefMap_Json(string path)
     {
         // Arrange
-        var jsonElement = LoadAsJsonElement(path);
+        var json = LoadAsJsonText(path);
 
         // Act
-        var result = JsonSchemaUtility.ValidateJsonSchema(jsonElement, Constants.JsonSchemas.XrefMap);
+        JsonUtility.Validate<XRefMap>(json, fileNameHint: path);
 
         // Assert
-        result.IsValid.Should().BeTrue();
+        logListener.Items.Should().BeEmpty();
     }
 
     [Theory]
@@ -136,19 +129,50 @@ public class JsonSchemaTest : TestBase
     public void JsonSchemaTest_XrefMap_Yaml(string path)
     {
         // Arrange
-        var jsonElement = LoadAsJsonElement(path);
+        var json = LoadAsJsonText(path);
 
         // Act
-        var result = JsonSchemaUtility.ValidateJsonSchema(jsonElement, Constants.JsonSchemas.XrefMap);
+        JsonUtility.Validate<XRefMap>(json, fileNameHint: path);
 
         // Assert
-        result.IsValid.Should().BeTrue();
+        logListener.Items.Should().BeEmpty();
+    }
+
+
+    [Theory]
+    [InlineData("test/docfx.Tests/Assets/docfx.json_invalid_format/docfx.json")]
+    public void JsonSchemaTest_Docfx_Json_InvalidFormat(string path)
+    {
+        // Arrange
+        var json = LoadAsJsonText(path);
+
+        // Act
+        JsonUtility.Validate<DocfxConfig>(json, fileNameHint: path);
+
+        // Assert
+        logListener.Items.Should().HaveCount(1);
+        logListener.Items[0].Message.Should().Be("[/metadata] ViolateSchema: type: Value is \"object\" but should be \"array\"");
+    }
+
+    [Theory]
+    [InlineData("test/docfx.Tests/Assets/docfx.json_invalid_key/docfx.json")]
+    public void JsonSchemaTest_Docfx_Json_InvalidType(string path)
+    {
+        // Arrange
+        var json = LoadAsJsonText(path);
+
+        // Act
+        JsonUtility.Validate<DocfxConfig>(json, fileNameHint: path);
+
+        // Assert
+        logListener.Items.Should().HaveCount(1);
+        logListener.Items[0].Message.Should().Be("[/invalid] ViolateSchema: There is no corresponding schema definition");
     }
 
     /// <summary>
     /// Load file content as JsonElement.
     /// </summary>
-    private static JsonElement LoadAsJsonElement(string path)
+    private static string LoadAsJsonText(string path)
     {
         var solutionDir = PathHelper.GetSolutionFolder();
 
@@ -160,17 +184,16 @@ public class JsonSchemaTest : TestBase
         switch (Path.GetExtension(filePath))
         {
             case ".json":
-                var doc = JsonDocument.Parse(File.OpenRead(filePath), JsonSchemaUtility.DefaultJsonDocumentOptions);
-                return doc.RootElement;
+                return File.ReadAllText(filePath);
             case ".yml":
+                // Need to serialize to JSON with YamlDotNet.
                 var yaml = File.ReadAllText(filePath);
                 var yamlObject = YamlUtility.Deserialize<object>(new StringReader(yaml));
 
                 var serializer = new SerializerBuilder()
                                    .JsonCompatible()
                                    .Build();
-                var json = serializer.Serialize(yamlObject);
-                return JsonSerializer.Deserialize<JsonElement>(json);
+                return serializer.Serialize(yamlObject);
 
             default:
                 throw new NotSupportedException(path);
