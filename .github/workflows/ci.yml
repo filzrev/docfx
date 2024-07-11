@@ -82,7 +82,7 @@ jobs:
 
         foreach($trxFile in $trxFiles)
         {
-          [xml]$trx = Get-Content %trxFile -Raw
+          [xml]$trx = Get-Content $trxFile -Raw
           if($trx.TestRun.ResultSummary.outcome -eq 'Failed')
           {
             $failedTests += $trx.TestRun.Results.UnitTestResult | where { $_.outcome -eq 'Failed' } | select testName
