@@ -91,10 +91,11 @@ jobs:
 
         if($failedTests.Length -gt 0)
         {
-          "## Failed Tests" >> $GITHUB_STEP_SUMMARY
+          "## Failed Tests" >> $env:GITHUB_STEP_SUMMARY
+
           foreach($failedTest in $failedTests)
           {
-            '- {0}' -f $failedTest >> $GITHUB_STEP_SUMMARY
+            '- {0}' -f $failedTest >> $env:GITHUB_STEP_SUMMARY
           }
         }
 
