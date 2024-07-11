@@ -85,17 +85,20 @@ jobs:
           [xml]$trx = Get-Content $trxFile -Raw
           if($trx.TestRun.ResultSummary.outcome -eq 'Failed')
           {
-            $failedTests += $trx.TestRun.Results.UnitTestResult | where { $_.outcome -eq 'Failed' } | select testName
+            $failedTests += $trx.TestRun.Results.UnitTestResult | where { $_.outcome -eq 'Failed' }
           }
         }
 
         if($failedTests.Length -gt 0)
         {
-          "## Failed Tests" >> $env:GITHUB_STEP_SUMMARY
+          Write-Output "## Failed Tests" >> $env:GITHUB_STEP_SUMMARY
+
+          Write-Output "| TestName | Message | StackTrace |" >> $env:GITHUB_STEP_SUMMARY
+          Write-Output "| -------- | ------- | ---------- |" >> $env:GITHUB_STEP_SUMMARY
 
           foreach($failedTest in $failedTests)
           {
-            '- {0}' -f $failedTest >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "| ${failedTest.testName} |  ${failedTest.Output.ErrorInfo.Message} | ${failedTest.Output.ErrorInfo.StackTrace} |" >> $env:GITHUB_STEP_SUMMARY
           }
         }
 
