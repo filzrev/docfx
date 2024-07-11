@@ -92,13 +92,12 @@ jobs:
         if($failedTests.Length -gt 0)
         {
           Write-Output "## Failed Tests" >> $env:GITHUB_STEP_SUMMARY
-
-          Write-Output "| TestName | Message | StackTrace |" >> $env:GITHUB_STEP_SUMMARY
-          Write-Output "| -------- | ------- | ---------- |" >> $env:GITHUB_STEP_SUMMARY
-
           foreach($failedTest in $failedTests)
           {
-            Write-Output "| ${failedTest.testName} |  ${failedTest.Output.ErrorInfo.Message} | ${failedTest.Output.ErrorInfo.StackTrace} |" >> $env:GITHUB_STEP_SUMMARY
+            Write-Output ""                                       >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "### ${failedTest.testName}"             >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "${failedTest.Output.ErrorInfo.Message}" >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "<details><summary>StackTrace</summary><pre>${failedTest.Output.ErrorInfo.StackTrace}</pre></details>" >> $env:GITHUB_STEP_SUMMARY
           }
         }
 
