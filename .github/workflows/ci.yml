@@ -91,7 +91,11 @@ jobs:
 
         if($failedTests.Length -gt 0)
         {
-          ConvertTo-Markdown $failedTests -AsVT100EncodedString >> $GITHUB_STEP_SUMMARY
+          "## Failed Tests" >> $GITHUB_STEP_SUMMARY
+          foreach($failedTest in $failedTests)
+          {
+            '- {0}' -f $failedTest >> $GITHUB_STEP_SUMMARY
+          }
         }
 
   publish-docs:
