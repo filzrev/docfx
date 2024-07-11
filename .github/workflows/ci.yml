@@ -94,10 +94,10 @@ jobs:
           Write-Output "## Failed Tests" >> $env:GITHUB_STEP_SUMMARY
           foreach($failedTest in $failedTests)
           {
-            Write-Output ""                                       >> $env:GITHUB_STEP_SUMMARY
-            Write-Output "### ${failedTest.testName}"             >> $env:GITHUB_STEP_SUMMARY
-            Write-Output "${failedTest.Output.ErrorInfo.Message}" >> $env:GITHUB_STEP_SUMMARY
-            Write-Output "<details><summary>StackTrace</summary><pre>${failedTest.Output.ErrorInfo.StackTrace}</pre></details>" >> $env:GITHUB_STEP_SUMMARY
+            Write-Output ""                                        >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "### $($failedTest.testName)"             >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "$($failedTest.Output.ErrorInfo.Message)" >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "<details><summary>StackTrace</summary><pre>$($failedTest.Output.ErrorInfo.StackTrace)</pre></details>" >> $env:GITHUB_STEP_SUMMARY
           }
         }
 
