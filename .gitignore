@@ -10,6 +10,7 @@ _site_pdf
 docs/api
 samples/**/api
 src/Docfx.App/templates
+test/**/TestResults
 
 *.user
 *.log
@@ -24,3 +25,5 @@ launchSettings.json
 *.nuget.targets
 *.code-workspace
 *.binlog
+
+
