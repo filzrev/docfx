@@ -91,13 +91,17 @@ jobs:
 
         if($failedTests.Length -gt 0)
         {
-          Write-Output "## Failed Tests" >> $env:GITHUB_STEP_SUMMARY
+          Write-Output "## Failed Tests ($trxFile.Name)" >> $env:GITHUB_STEP_SUMMARY
           foreach($failedTest in $failedTests)
           {
-            Write-Output ""                                        >> $env:GITHUB_STEP_SUMMARY
-            Write-Output "### :x: $($failedTest.testName)"         >> $env:GITHUB_STEP_SUMMARY
-            Write-Output "$($failedTest.Output.ErrorInfo.Message)" >> $env:GITHUB_STEP_SUMMARY
-            Write-Output "<details><summary>StackTrace</summary><pre>$($failedTest.Output.ErrorInfo.StackTrace)</pre></details>" >> $env:GITHUB_STEP_SUMMARY
+            Write-Output ""                                 >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "### :x: $($failedTest.testName)"  >> $env:GITHUB_STEP_SUMMARY
+            Write-Output "<details><summary>StackTrace</summary><pre>" `
+                       + "$($failedTest.Output.ErrorInfo.Message)"     `
+                       + "`n"                                          ` 
+                       + "$($failedTest.Output.ErrorInfo.StackTrace)"  `
+                       + "</pre></details>"                            `
+                       >> $env:GITHUB_STEP_SUMMARY
           }
         }
 
