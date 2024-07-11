@@ -18,8 +18,7 @@
     <None Include="TestData\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <VSTestLogger>console%3Bverbosity=Dagag</VSTestLogger>
+  <PropertyGroup Condition="'$(ContinuousIntegrationBuild)' == 'true'">
     <VSTestLogger>$(VSTestLogger);trx%3BLogFileName=TestResults-$(TargetFramework)-$(MSBuildProjectName).trx</VSTestLogger>
     <VSTestLogger>$(VSTestLogger);html%3BLogFileName=TestResults-$(TargetFramework)-$(MSBuildProjectName).html</VSTestLogger>
   </PropertyGroup>
