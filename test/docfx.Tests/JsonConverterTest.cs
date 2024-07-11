@@ -15,7 +15,37 @@ public class JsonConverterTest
     [Trait("Related", "docfx")]
     public void TestJObjectDictionaryToObjectDictionaryConverterSerializeAndDeserialize()
     {
-         Assert.Fail("TestJObjectDictionaryToObjectDictionaryConverterSerializeAndDeserialize");
+        string jsonString = "{" +
+            "\"globalMetadata\":{" +
+                "\"layout\":\"Conceptual\"," +
+                "\"breadcrumb_path\":\"/enterprise-mobility/toc.json\"," +
+                "\"product_feedback_displaytext\":\"IntuneFeedback\"," +
+                "\"product_feedback_url\":\"https://microsoftintune.uservoice.com/\"," +
+                "\"contributors_to_exclude\":" +
+                    "[\"herohua\",\"fenxu\"]," +
+                "\"searchScope\":[\"Intune\"]," +
+                "\"_op_documentIdPathDepotMapping\":{" +
+                    "\"./\":{" +
+                        "\"depot_name\":\"Azure.EndUser\"," +
+                        "\"folder_relative_path_in_docset\":\".\"" +
+                    "}" +
+                "}" +
+            "}," +
+            "\"disableGitFeatures\":false" +
+        "}";
+
+        BuildJsonConfig buildOptions = JsonConvert.DeserializeObject<BuildJsonConfig>(jsonString);
+
+        Assert.Equal(7, buildOptions.GlobalMetadata.Count);
+
+        JsonSerializerSettings settings = new()
+        {
+            NullValueHandling = NullValueHandling.Ignore,
+            Formatting = Formatting.None,
+            ContractResolver = new SkipEmptyOrNullContractResolver()
+        };
+
+        Assert.Equal(jsonString, JsonConvert.SerializeObject(buildOptions, settings), ignoreLineEndingDifferences: true);
     }
 
     [Fact]
@@ -52,7 +82,7 @@ public class JsonConverterTest
         var input = "{\"files\":[\"file1\"],\"src\":\"folder1\"}";
         using var sr = new StringReader(input);
         var result = JsonUtility.Deserialize<FileMappingItem>(sr);
-        Assert.Equal("folder1", result.Src);
+        Assert.Equal("folder", result.Src);
     }
 
     [Fact]
@@ -66,7 +96,7 @@ public class JsonConverterTest
         };
 
         var result = JsonUtility.Serialize(fileMappingItem);
-        Assert.Equal("{\"files\":[\"file1\"],\"src\":\"folder1\"}", result);
+        Assert.Equal("{\"files\":[\"file1\"],\"src\":\"folder\"}", result);
     }
 }
 
