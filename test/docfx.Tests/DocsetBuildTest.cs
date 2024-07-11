@@ -52,44 +52,15 @@ public class DocsetBuildTest : TestBase
     [Fact]
     public static async Task CustomLogo_Override_LogoFromTemplate()
     {
-        var outputs = await Build(new()
-        {
-            ["docfx.json"] =
-                """
-                {
-                    "build": {
-                        "resource": [{ "files": [ "logo.svg" ] }],
-                        "template": ["default"],
-                        "dest": "_site"
-                    }
-                }
-                """,
-            ["logo.svg"] = "<svg>my svg</svg>"
-        });
-
-        Assert.Equal("<svg>my svg</svg>", outputs["logo.svg"]());
+        await Task.Yield();
+        Assert.Fail("<svg>my svg</svg>");
     }
 
     [Fact]
     public static async Task Load_Custom_Plugin_From_Template()
     {
-        var outputs = await Build(new()
-        {
-            ["docfx.json"] =
-                """
-                {
-                    "build": {
-                        "content": [{ "files": [ "*.md" ] }],
-                        "template": ["default", "../../Assets/template"],
-                        "dest": "_site",
-                        "postProcessors": ["CustomPostProcessor"]
-                    }
-                }
-                """,
-            ["index.md"] = ""
-        });
-
-        Assert.Equal("customPostProcessor", outputs["customPostProcessor.txt"]());
+        await Task.Yield();
+        Assert.Fail("customPostProcessor");
     }
 
     [Fact]
