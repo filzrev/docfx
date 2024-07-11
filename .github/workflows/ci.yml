@@ -61,18 +61,18 @@ jobs:
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: logs-${{ matrix.os }
+        name: logs-${{ matrix.os }}
         path: |
           msbuild.binlog
           test/**/TestResults/*.trx
           test/**/TestResults/*.html
-  
+
     - uses: actions/upload-artifact@v4
       if: ${{ failure() && matrix.os == 'ubuntu-latest' }}
       with:
         name: dump
         path: /tmp/coredump*
-      
+
     - name: Report failed test names
       if: ${{ failure() && (steps.test-net80.outcome == 'failure' || steps.test-net60.outcome == 'failure') }}
       run: |
@@ -87,7 +87,7 @@ jobs:
             $failedTests += $trx.TestRun.Results.UnitTestResult | where { $_.outcome -eq 'Failed' } | select testName
           }
         }
-          
+
         if($failedTests.Length -gt 0)
         {
           ConvertTo-Markdown $failedTests -AsVT100EncodedString >> $GITHUB_STEP_SUMMARY
