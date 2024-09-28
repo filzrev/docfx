@@ -152,7 +152,7 @@ public class SamplesTest : IDisposable
         Assert.Equal(0, Exec("dotnet", "run --no-build --project build", workingDirectory: samplePath));
 #else
         Process.Start("dotnet", $"build -c Release \"{samplePath}/build\"").WaitForExit();
-        Exec("dotnet", "run --no-build -c Release --project build", workingDirectory: samplePath);
+        Assert.Equal(0, Exec("dotnet", "run --no-build -c Release --project build", workingDirectory: samplePath));
 #endif
 
         return VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: true);
