@@ -5,7 +5,9 @@ using System.Collections.Immutable;
 using System.Text.Json;
 using Docfx.Common;
 using Docfx.Plugins;
+using Docfx.YamlSerialization.NodeDeserializers;
 using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NodeDeserializers;
 
 namespace Docfx.Build.ApiPage;
 
@@ -35,7 +37,9 @@ class ApiPageDocumentProcessor(IMarkdownService markdownService) : IDocumentProc
 
     public FileModel Load(FileAndType file, ImmutableDictionary<string, object> metadata)
     {
-        var deserializer = new DeserializerBuilder().WithAttemptingUnquotedStringTypeDeserialization().Build();
+        var deserializer = new DeserializerBuilder()
+            .WithNodeDeserializer(inner => new ScalarNodeDeserializerWrapper(inner), s => s.InsteadOf<ScalarNodeDeserializer>())
+            .WithAttemptingUnquotedStringTypeDeserialization().Build();
         var yml = EnvironmentContext.FileAbstractLayer.ReadAllText(file.File);
         var json = JsonSerializer.Serialize(deserializer.Deserialize<object>(yml));
         var data = JsonSerializer.Deserialize<ApiPage>(json, ApiPage.JsonSerializerOptions);
