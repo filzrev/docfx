@@ -1,4 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="Assets\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
@@ -9,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="PublicApiGenerator" />
-    <PackageReference Include="Verify.Xunit" />
+    <PackageReference Include="Verify.XunitV3" />
   </ItemGroup>
 
   <ItemGroup>
