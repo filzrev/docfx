@@ -21,5 +21,19 @@ runs:
     shell: bash
     working-directory: templates
 
-  - run: dotnet build -c Release --warnAsError --maxcpucount --binaryLogger
+  - run: >
+      dotnet build -c Release --warnAsError --maxcpucount
+      --binaryLogger
+      --fileLoggerParameters:ErrorsOnly;Encoding=UTF-8
     shell: bash
+
+  - name: Output build errros to job summary
+    shell: pwsh
+    if: ${{ failure() }}
+    run: |
+      if(Test-Path msbuild.log) {
+        $content = Get-Content msbuild.log -Raw
+        Write-Output '## Build Errors' >> $env:GITHUB_STEP_SUMMARY
+        Write-Output $content          >> $env:GITHUB_STEP_SUMMARY
+      }
+

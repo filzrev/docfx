@@ -15,7 +15,7 @@ public static class CommandLineTest
 
     [Fact]
     public static void PrintsHelp()
-    {
+    {aaa
         Assert.Equal(0, Program.Main(["-h"]));
         Assert.Equal(0, Program.Main(["--help"]));
         Assert.Equal(0, Program.Main(["build", "--help"]));
