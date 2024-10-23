@@ -5074,7 +5074,7 @@
     },
     {
       "Number": 64,
-      "Text": "64 / 80Class CatException<T>Namespace: CatLibraryAssembly: CatLibrary.dllType ParametersTInheritanceobject\uF1C5 ← Exception\uF1C5 ← CatException<T>ImplementsISerializable\uF1C5Inherited MembersException.GetBaseException()\uF1C5, Exception.GetObjectData(SerializationInfo,StreamingContext)\uF1C5, Exception.GetType()\uF1C5, Exception.ToString()\uF1C5, Exception.Data\uF1C5,Exception.HelpLink\uF1C5, Exception.HResult\uF1C5, Exception.InnerException\uF1C5, Exception.Message\uF1C5, Exception.Source\uF1C5, Exception.StackTrace\uF1C5, Exception.TargetSite\uF1C5,Exception.SerializeObjectState\uF1C5, object.Equals(object?)\uF1C5, object.Equals(object?, object?)\uF1C5,object.GetHashCode()\uF1C5, object.GetType()\uF1C5, object.MemberwiseClone()\uF1C5,object.ReferenceEquals(object?, object?)\uF1C5, object.ToString()\uF1C5public class CatException<T> : Exception, ISerializable",
+      "Text": "64 / 80Class CatException<T>Namespace: CatLibraryAssembly: CatLibrary.dllType ParametersTInheritanceobject\uF1C5 ← Exception\uF1C5 ← CatException<T>ImplementsISerializable\uF1C5Inherited MembersException.GetBaseException()\uF1C5, Exception.GetType()\uF1C5, Exception.ToString()\uF1C5,Exception.Data\uF1C5, Exception.HelpLink\uF1C5, Exception.HResult\uF1C5, Exception.InnerException\uF1C5,Exception.Message\uF1C5, Exception.Source\uF1C5, Exception.StackTrace\uF1C5, Exception.TargetSite\uF1C5,Exception.SerializeObjectState\uF1C5, object.Equals(object?)\uF1C5, object.Equals(object?, object?)\uF1C5,object.GetHashCode()\uF1C5, object.GetType()\uF1C5, object.MemberwiseClone()\uF1C5,object.ReferenceEquals(object?, object?)\uF1C5, object.ToString()\uF1C5public class CatException<T> : Exception, ISerializable",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -5113,18 +5113,6 @@
           "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception"
         },
         {
-          "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata"
-        },
-        {
-          "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata"
-        },
-        {
-          "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata"
-        },
-        {
-          "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata"
-        },
-        {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.gettype"
         },
         {
@@ -5177,9 +5165,6 @@
         },
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.innerexception"
-        },
-        {
-          "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.message"
         },
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.exception.message"
