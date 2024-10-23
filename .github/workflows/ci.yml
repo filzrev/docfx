@@ -10,7 +10,6 @@ env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   TESTINGPLATFORM_TELEMETRY_OPTOUT: true
-  NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
   NUGET_XMLDOC_MODE : skip
   MSBUILDLOGALLENVIRONMENTVARIABLES: true # Include all environment variables to binlog
 
@@ -31,6 +30,9 @@ jobs:
     - uses: ./.github/actions/build
 
     - run: dotnet nuget locals all --list
+
+    - run: Write-Host $env:Temp
+      shell: pwsh
 
     - run: npm run lint
       shell: bash
