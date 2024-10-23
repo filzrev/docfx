@@ -23,7 +23,7 @@ runs:
 
 
   - run: dotnet restore
-
+    shell: bash
 
   - run: dotnet build -c Release --warnAsError --maxcpucount --binaryLogger --no-restore
     shell: bash
