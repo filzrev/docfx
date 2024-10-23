@@ -6,6 +6,14 @@ on:
     branches: [ main, feature/*, hotfix/* ]
   workflow_dispatch:
 
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  TESTINGPLATFORM_TELEMETRY_OPTOUT: true
+  NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+  NUGET_XMLDOC_MODE : skip
+  MSBUILDLOGALLENVIRONMENTVARIABLES: true # Include all environment variables to binlog
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -20,7 +28,11 @@ jobs:
         repository: ${{ github.event.pull_request.head.repo.full_name }}
         lfs: true
 
+    - run: dotnet restore
+
     - uses: ./.github/actions/build
+
+    - run: dotnet nuget locals all --list
 
     - run: npm run lint
       shell: bash
