@@ -28,8 +28,6 @@ jobs:
         repository: ${{ github.event.pull_request.head.repo.full_name }}
         lfs: true
 
-    - run: dotnet restore
-
     - uses: ./.github/actions/build
 
     - run: dotnet nuget locals all --list

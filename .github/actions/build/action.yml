@@ -21,5 +21,9 @@ runs:
     shell: bash
     working-directory: templates
 
-  - run: dotnet build -c Release --warnAsError --maxcpucount --binaryLogger
+
+  - run: dotnet restore
+
+
+  - run: dotnet build -c Release --warnAsError --maxcpucount --binaryLogger --no-restore
     shell: bash
