@@ -6,6 +6,10 @@ on:
     branches: [ main, feature/*, hotfix/* ]
   workflow_dispatch:
 
+env:
+  NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+  NUGET_XMLDOC_MODE : skip
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
