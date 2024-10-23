@@ -20,8 +20,6 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
-    env:
-     Temp: ${{ runner.temp }}
     steps:
     - uses: actions/checkout@v4
       with:
@@ -30,6 +28,9 @@ jobs:
         lfs: true
 
     - run: Write-Host $env:Temp
+      shell: pwsh
+
+    - run: Write-Host ${{ runner.temp }}
       shell: pwsh
 
     - uses: ./.github/actions/build
