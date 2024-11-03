@@ -393,12 +393,13 @@ partial class DotnetApiCatalog
 
                 void Derived()
                 {
-                    var items = (
-                        from s in allSymbols
-                        where s.symbol.Kind is SymbolKind.NamedType && SymbolEqualityComparer.Default.Equals(((INamedTypeSymbol)s.symbol).BaseType, symbol)
-                        select s.symbol).ToList();
 
-                    if (items.Count is 0)
+                    var items = allSymbols.Select(x => x.symbol)
+                                          .OfType<ITypeSymbol>()
+                                          .Where(x => x.IsDerivedFrom(symbol, isDirectOnly: true))
+                                          .ToArray();
+
+                    if (items.Length == 0)
                         return;
 
                     Heading(4, "Derived");

@@ -241,3 +241,19 @@ public class Dog
         Age = age;
     }
 }
+
+/// <summary>
+/// Inherit from generic class.
+/// </summary>
+public class Issue10268
+{
+    public abstract class GenericBaseClass<T>
+    {
+        public string DummyPropery { get; }
+    }
+
+    public class GenericDerivedClass<T> : GenericBaseClass<T>
+    {
+        public string DummyPropery2 { get; set; }
+    }
+}
