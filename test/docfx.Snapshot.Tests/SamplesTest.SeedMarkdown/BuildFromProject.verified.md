@@ -16,7 +16,15 @@
 
 Class representing a dog.
 
+ [Issue10268.GenericBaseClass<T\>](BuildFromProject.Issue10268.GenericBaseClass\-1.md)
+
+ [Issue10268.GenericDerivedClass<T\>](BuildFromProject.Issue10268.GenericDerivedClass\-1.md)
+
  [Inheritdoc](BuildFromProject.Inheritdoc.md)
+
+ [Issue10268](BuildFromProject.Issue10268.md)
+
+Inherit from generic class.
 
  [Inheritdoc.Issue6366](BuildFromProject.Inheritdoc.Issue6366.md)
 

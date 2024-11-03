@@ -22,7 +22,7 @@
               "value": "<xref uid=\"BuildFromProject.Issue8540\" displayProperty=\"name\"/>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "namespace",
           "platform": null,
@@ -91,7 +91,7 @@
               "value": "<xref uid=\"BuildFromProject.Class1\" text=\"Class1\"/>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -153,7 +153,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Class1.html\">Class1</a>.<a class=\"xref\" href=\"BuildFromProject.Class1.Issue8665.html\">Issue8665</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -216,7 +216,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Class1.html\">Class1</a>.<a class=\"xref\" href=\"BuildFromProject.Class1.Issue8696Attribute.html\">Issue8696Attribute</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -278,7 +278,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Class1.html\">Class1</a>.<a class=\"xref\" href=\"BuildFromProject.Class1.Issue8948.html\">Issue8948</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -340,7 +340,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Class1.html\">Class1</a>.<a class=\"xref\" href=\"BuildFromProject.Class1.Test-1.html\">Test</a>(Of T)"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -402,7 +402,7 @@
               "value": "<xref uid=\"BuildFromProject.Dog\" text=\"Dog\"/>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "<p sourcefile=\"obj/api/BuildFromProject.Dog.yml\" sourcestartlinenumber=\"1\">Class representing a dog.</p>\n",
           "type": "class",
           "platform": null,
@@ -464,7 +464,7 @@
               "value": "<xref uid=\"BuildFromProject.Inheritdoc\" text=\"Inheritdoc\"/>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -526,7 +526,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.html\">Inheritdoc</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue6366.html\">Issue6366</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -588,7 +588,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.html\">Inheritdoc</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue6366.html\">Issue6366</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue6366.Class1-1.html\">Class1</a>(Of T)"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -650,7 +650,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.html\">Inheritdoc</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue6366.html\">Issue6366</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue6366.Class2.html\">Class2</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -712,7 +712,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.html\">Inheritdoc</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue7035.html\">Issue7035</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -774,7 +774,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.html\">Inheritdoc</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue7484.html\">Issue7484</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "<p sourcefile=\"obj/api/BuildFromProject.Inheritdoc.Issue7484.yml\" sourcestartlinenumber=\"1\">This is a test class to have something for DocFX to document.</p>\n",
           "type": "class",
           "platform": null,
@@ -836,7 +836,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.html\">Inheritdoc</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue8101.html\">Issue8101</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "class",
           "platform": null,
@@ -851,6 +851,192 @@
           "example": "",
           "seealso": [],
           "id": "BuildFromProject_Inheritdoc_Issue8101",
+          "hideTitleType": false,
+          "hideSubtitle": false
+        },
+        {
+          "uid": "BuildFromProject.Issue10268",
+          "isExtensionMethod": false,
+          "href": "BuildFromProject.Issue10268.html",
+          "name": [
+            {
+              "lang": "csharp",
+              "value": "Issue10268"
+            },
+            {
+              "lang": "vb",
+              "value": "Issue10268"
+            }
+          ],
+          "nameWithType": [
+            {
+              "lang": "csharp",
+              "value": "Issue10268"
+            },
+            {
+              "lang": "vb",
+              "value": "Issue10268"
+            }
+          ],
+          "fullName": [
+            {
+              "lang": "csharp",
+              "value": "BuildFromProject.Issue10268"
+            },
+            {
+              "lang": "vb",
+              "value": "BuildFromProject.Issue10268"
+            }
+          ],
+          "specName": [
+            {
+              "lang": "csharp",
+              "value": "<xref uid=\"BuildFromProject.Issue10268\" text=\"Issue10268\"/>"
+            },
+            {
+              "lang": "vb",
+              "value": "<xref uid=\"BuildFromProject.Issue10268\" text=\"Issue10268\"/>"
+            }
+          ],
+          "level": 0,
+          "summary": "<p sourcefile=\"obj/api/BuildFromProject.Issue10268.yml\" sourcestartlinenumber=\"1\">Inherit from generic class.</p>\n",
+          "type": "class",
+          "platform": null,
+          "isEii": false,
+          "docurl": "",
+          "sourceurl": "",
+          "description": "",
+          "remarks": "",
+          "conceptual": "",
+          "syntax": "",
+          "implements": "",
+          "example": "",
+          "seealso": [],
+          "id": "BuildFromProject_Issue10268",
+          "hideTitleType": false,
+          "hideSubtitle": false
+        },
+        {
+          "uid": "BuildFromProject.Issue10268.GenericBaseClass`1",
+          "isExtensionMethod": false,
+          "href": "BuildFromProject.Issue10268.html",
+          "name": [
+            {
+              "lang": "csharp",
+              "value": "Issue10268.GenericBaseClass<T>"
+            },
+            {
+              "lang": "vb",
+              "value": "Issue10268.GenericBaseClass(Of T)"
+            }
+          ],
+          "nameWithType": [
+            {
+              "lang": "csharp",
+              "value": "Issue10268.GenericBaseClass<T>"
+            },
+            {
+              "lang": "vb",
+              "value": "Issue10268.GenericBaseClass(Of T)"
+            }
+          ],
+          "fullName": [
+            {
+              "lang": "csharp",
+              "value": "BuildFromProject.Issue10268.GenericBaseClass<T>"
+            },
+            {
+              "lang": "vb",
+              "value": "BuildFromProject.Issue10268.GenericBaseClass(Of T)"
+            }
+          ],
+          "specName": [
+            {
+              "lang": "csharp",
+              "value": "<a class=\"xref\" href=\"BuildFromProject.Issue10268.html\">Issue10268</a>.<a class=\"xref\" href=\"BuildFromProject.Issue10268.GenericBaseClass-1.html\">GenericBaseClass</a>&lt;T&gt;"
+            },
+            {
+              "lang": "vb",
+              "value": "<a class=\"xref\" href=\"BuildFromProject.Issue10268.html\">Issue10268</a>.<a class=\"xref\" href=\"BuildFromProject.Issue10268.GenericBaseClass-1.html\">GenericBaseClass</a>(Of T)"
+            }
+          ],
+          "level": 0,
+          "summary": "",
+          "type": "class",
+          "platform": null,
+          "isEii": false,
+          "docurl": "",
+          "sourceurl": "",
+          "description": "",
+          "remarks": "",
+          "conceptual": "",
+          "syntax": "",
+          "implements": "",
+          "example": "",
+          "seealso": [],
+          "id": "BuildFromProject_Issue10268_GenericBaseClass_1",
+          "hideTitleType": false,
+          "hideSubtitle": false
+        },
+        {
+          "uid": "BuildFromProject.Issue10268.GenericDerivedClass`1",
+          "isExtensionMethod": false,
+          "href": "BuildFromProject.Issue10268.html",
+          "name": [
+            {
+              "lang": "csharp",
+              "value": "Issue10268.GenericDerivedClass<T>"
+            },
+            {
+              "lang": "vb",
+              "value": "Issue10268.GenericDerivedClass(Of T)"
+            }
+          ],
+          "nameWithType": [
+            {
+              "lang": "csharp",
+              "value": "Issue10268.GenericDerivedClass<T>"
+            },
+            {
+              "lang": "vb",
+              "value": "Issue10268.GenericDerivedClass(Of T)"
+            }
+          ],
+          "fullName": [
+            {
+              "lang": "csharp",
+              "value": "BuildFromProject.Issue10268.GenericDerivedClass<T>"
+            },
+            {
+              "lang": "vb",
+              "value": "BuildFromProject.Issue10268.GenericDerivedClass(Of T)"
+            }
+          ],
+          "specName": [
+            {
+              "lang": "csharp",
+              "value": "<a class=\"xref\" href=\"BuildFromProject.Issue10268.html\">Issue10268</a>.<a class=\"xref\" href=\"BuildFromProject.Issue10268.GenericDerivedClass-1.html\">GenericDerivedClass</a>&lt;T&gt;"
+            },
+            {
+              "lang": "vb",
+              "value": "<a class=\"xref\" href=\"BuildFromProject.Issue10268.html\">Issue10268</a>.<a class=\"xref\" href=\"BuildFromProject.Issue10268.GenericDerivedClass-1.html\">GenericDerivedClass</a>(Of T)"
+            }
+          ],
+          "level": 0,
+          "summary": "",
+          "type": "class",
+          "platform": null,
+          "isEii": false,
+          "docurl": "",
+          "sourceurl": "",
+          "description": "",
+          "remarks": "",
+          "conceptual": "",
+          "syntax": "",
+          "implements": "",
+          "example": "",
+          "seealso": [],
+          "id": "BuildFromProject_Issue10268_GenericDerivedClass_1",
           "hideTitleType": false,
           "hideSubtitle": false
         },
@@ -898,7 +1084,7 @@
               "value": "<xref uid=\"BuildFromProject.Issue8725\" text=\"Issue8725\"/>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "<p sourcefile=\"obj/api/BuildFromProject.Issue8725.yml\" sourcestartlinenumber=\"1\">A nice class</p>\n",
           "type": "class",
           "platform": null,
@@ -967,7 +1153,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.html\">Inheritdoc</a>.<a class=\"xref\" href=\"BuildFromProject.Inheritdoc.Issue8129.html\">Issue8129</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "struct",
           "platform": null,
@@ -1037,7 +1223,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Class1.html\">Class1</a>.<a class=\"xref\" href=\"BuildFromProject.Class1.IIssue8948.html\">IIssue8948</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "interface",
           "platform": null,
@@ -1100,7 +1286,7 @@
               "value": "<xref uid=\"BuildFromProject.IInheritdoc\" text=\"IInheritdoc\"/>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "interface",
           "platform": null,
@@ -1170,7 +1356,7 @@
               "value": "<a class=\"xref\" href=\"BuildFromProject.Class1.html\">Class1</a>.<a class=\"xref\" href=\"BuildFromProject.Class1.Issue9260.html\">Issue9260</a>"
             }
           ],
-          "level": 0.0,
+          "level": 0,
           "summary": "",
           "type": "enum",
           "platform": null,
@@ -1229,7 +1415,7 @@
   "assemblies": [
     "BuildFromProject"
   ],
-  "level": 0.0,
+  "level": 0,
   "_appName": "Seed",
   "_appTitle": "docfx seed website",
   "_enableSearch": true,

@@ -252,6 +252,27 @@
               "type": "Struct"
             },
             {
+              "name": "Issue10268",
+              "href": "../api/BuildFromProject.Issue10268.html",
+              "topicHref": "../api/BuildFromProject.Issue10268.html",
+              "topicUid": "BuildFromProject.Issue10268",
+              "type": "Class"
+            },
+            {
+              "name": "Issue10268.GenericBaseClass<T>",
+              "href": "../api/BuildFromProject.Issue10268.GenericBaseClass-1.html",
+              "topicHref": "../api/BuildFromProject.Issue10268.GenericBaseClass-1.html",
+              "topicUid": "BuildFromProject.Issue10268.GenericBaseClass`1",
+              "type": "Class"
+            },
+            {
+              "name": "Issue10268.GenericDerivedClass<T>",
+              "href": "../api/BuildFromProject.Issue10268.GenericDerivedClass-1.html",
+              "topicHref": "../api/BuildFromProject.Issue10268.GenericDerivedClass-1.html",
+              "topicUid": "BuildFromProject.Issue10268.GenericDerivedClass`1",
+              "type": "Class"
+            },
+            {
               "name": "Issue8725",
               "href": "../api/BuildFromProject.Issue8725.html",
               "topicHref": "../api/BuildFromProject.Issue8725.html",

@@ -16,6 +16,10 @@ public abstract class Inheritdoc.Issue6366.Class1<T>
 [object](https://learn.microsoft.com/dotnet/api/system.object) ← 
 [Inheritdoc.Issue6366.Class1<T\>](BuildFromProject.Inheritdoc.Issue6366.Class1\-1.md)
 
+#### Derived
+
+[Inheritdoc.Issue6366.Class2](BuildFromProject.Inheritdoc.Issue6366.Class2.md)
+
 #### Inherited Members
 
 [object.Equals\(object?\)](https://learn.microsoft.com/dotnet/api/system.object.equals\#system\-object\-equals\(system\-object\)), 

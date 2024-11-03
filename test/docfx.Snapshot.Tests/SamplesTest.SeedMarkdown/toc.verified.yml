@@ -59,6 +59,12 @@
     href: BuildFromProject.Inheritdoc.Issue7484.md
   - name: Inheritdoc.Issue8101
     href: BuildFromProject.Inheritdoc.Issue8101.md
+  - name: Issue10268
+    href: BuildFromProject.Issue10268.md
+  - name: Issue10268.GenericBaseClass<T>
+    href: BuildFromProject.Issue10268.GenericBaseClass-1.md
+  - name: Issue10268.GenericDerivedClass<T>
+    href: BuildFromProject.Issue10268.GenericDerivedClass-1.md
   - name: Issue8725
     href: BuildFromProject.Issue8725.md
   - name: Structs

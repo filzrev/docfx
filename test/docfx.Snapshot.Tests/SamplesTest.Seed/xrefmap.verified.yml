@@ -752,6 +752,64 @@ references:
   fullName.vb: BuildFromProject.Inheritdoc.Issue8129.New
   nameWithType: Inheritdoc.Issue8129.Issue8129
   nameWithType.vb: Inheritdoc.Issue8129.New
+- uid: BuildFromProject.Issue10268
+  name: Issue10268
+  href: api/BuildFromProject.Issue10268.html
+  commentId: T:BuildFromProject.Issue10268
+  fullName: BuildFromProject.Issue10268
+  nameWithType: Issue10268
+- uid: BuildFromProject.Issue10268.GenericBaseClass`1
+  name: Issue10268.GenericBaseClass<T>
+  href: api/BuildFromProject.Issue10268.GenericBaseClass-1.html
+  commentId: T:BuildFromProject.Issue10268.GenericBaseClass`1
+  name.vb: Issue10268.GenericBaseClass(Of T)
+  fullName: BuildFromProject.Issue10268.GenericBaseClass<T>
+  fullName.vb: BuildFromProject.Issue10268.GenericBaseClass(Of T)
+  nameWithType: Issue10268.GenericBaseClass<T>
+  nameWithType.vb: Issue10268.GenericBaseClass(Of T)
+- uid: BuildFromProject.Issue10268.GenericBaseClass`1.DummyPropery
+  name: DummyPropery
+  href: api/BuildFromProject.Issue10268.GenericBaseClass-1.html#BuildFromProject_Issue10268_GenericBaseClass_1_DummyPropery
+  commentId: P:BuildFromProject.Issue10268.GenericBaseClass`1.DummyPropery
+  fullName: BuildFromProject.Issue10268.GenericBaseClass<T>.DummyPropery
+  fullName.vb: BuildFromProject.Issue10268.GenericBaseClass(Of T).DummyPropery
+  nameWithType: Issue10268.GenericBaseClass<T>.DummyPropery
+  nameWithType.vb: Issue10268.GenericBaseClass(Of T).DummyPropery
+- uid: BuildFromProject.Issue10268.GenericBaseClass`1.DummyPropery*
+  name: DummyPropery
+  href: api/BuildFromProject.Issue10268.GenericBaseClass-1.html#BuildFromProject_Issue10268_GenericBaseClass_1_DummyPropery_
+  commentId: Overload:BuildFromProject.Issue10268.GenericBaseClass`1.DummyPropery
+  isSpec: "True"
+  fullName: BuildFromProject.Issue10268.GenericBaseClass<T>.DummyPropery
+  fullName.vb: BuildFromProject.Issue10268.GenericBaseClass(Of T).DummyPropery
+  nameWithType: Issue10268.GenericBaseClass<T>.DummyPropery
+  nameWithType.vb: Issue10268.GenericBaseClass(Of T).DummyPropery
+- uid: BuildFromProject.Issue10268.GenericDerivedClass`1
+  name: Issue10268.GenericDerivedClass<T>
+  href: api/BuildFromProject.Issue10268.GenericDerivedClass-1.html
+  commentId: T:BuildFromProject.Issue10268.GenericDerivedClass`1
+  name.vb: Issue10268.GenericDerivedClass(Of T)
+  fullName: BuildFromProject.Issue10268.GenericDerivedClass<T>
+  fullName.vb: BuildFromProject.Issue10268.GenericDerivedClass(Of T)
+  nameWithType: Issue10268.GenericDerivedClass<T>
+  nameWithType.vb: Issue10268.GenericDerivedClass(Of T)
+- uid: BuildFromProject.Issue10268.GenericDerivedClass`1.DummyPropery2
+  name: DummyPropery2
+  href: api/BuildFromProject.Issue10268.GenericDerivedClass-1.html#BuildFromProject_Issue10268_GenericDerivedClass_1_DummyPropery2
+  commentId: P:BuildFromProject.Issue10268.GenericDerivedClass`1.DummyPropery2
+  fullName: BuildFromProject.Issue10268.GenericDerivedClass<T>.DummyPropery2
+  fullName.vb: BuildFromProject.Issue10268.GenericDerivedClass(Of T).DummyPropery2
+  nameWithType: Issue10268.GenericDerivedClass<T>.DummyPropery2
+  nameWithType.vb: Issue10268.GenericDerivedClass(Of T).DummyPropery2
+- uid: BuildFromProject.Issue10268.GenericDerivedClass`1.DummyPropery2*
+  name: DummyPropery2
+  href: api/BuildFromProject.Issue10268.GenericDerivedClass-1.html#BuildFromProject_Issue10268_GenericDerivedClass_1_DummyPropery2_
+  commentId: Overload:BuildFromProject.Issue10268.GenericDerivedClass`1.DummyPropery2
+  isSpec: "True"
+  fullName: BuildFromProject.Issue10268.GenericDerivedClass<T>.DummyPropery2
+  fullName.vb: BuildFromProject.Issue10268.GenericDerivedClass(Of T).DummyPropery2
+  nameWithType: Issue10268.GenericDerivedClass<T>.DummyPropery2
+  nameWithType.vb: Issue10268.GenericDerivedClass(Of T).DummyPropery2
 - uid: BuildFromProject.Issue8540
   name: BuildFromProject.Issue8540
   href: api/BuildFromProject.Issue8540.html

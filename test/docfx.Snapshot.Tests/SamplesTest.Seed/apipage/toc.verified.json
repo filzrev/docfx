@@ -149,6 +149,21 @@
           "topicHref": "BuildFromProject.Inheritdoc.Issue8101.html"
         },
         {
+          "name": "Issue10268",
+          "href": "BuildFromProject.Issue10268.html",
+          "topicHref": "BuildFromProject.Issue10268.html"
+        },
+        {
+          "name": "Issue10268.GenericBaseClass<T>",
+          "href": "BuildFromProject.Issue10268.GenericBaseClass-1.html",
+          "topicHref": "BuildFromProject.Issue10268.GenericBaseClass-1.html"
+        },
+        {
+          "name": "Issue10268.GenericDerivedClass<T>",
+          "href": "BuildFromProject.Issue10268.GenericDerivedClass-1.html",
+          "topicHref": "BuildFromProject.Issue10268.GenericDerivedClass-1.html"
+        },
+        {
           "name": "Issue8725",
           "href": "BuildFromProject.Issue8725.html",
           "topicHref": "BuildFromProject.Issue8725.html"

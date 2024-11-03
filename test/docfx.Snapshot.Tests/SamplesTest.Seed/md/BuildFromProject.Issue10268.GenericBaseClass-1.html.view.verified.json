@@ -1,0 +1,42 @@
+﻿{
+  "conceptual": "\n<p sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"3\">Namespace: <a href=\"~/obj/md/BuildFromProject.md\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"3\">BuildFromProject</a><br>\nAssembly: BuildFromProject.dll</p>\n<pre><code class=\"lang-csharp\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"6\">public abstract class Issue10268.GenericBaseClass&lt;T&gt;\n</code></pre>\n<h4 id=\"type-parameters\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"10\">Type Parameters</h4>\n<p sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"12\"><code sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"12\">T</code></p>\n<h4 id=\"inheritance\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"14\">Inheritance</h4>\n<p sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"16\"><a href=\"https://learn.microsoft.com/dotnet/api/system.object\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"16\">object</a> ←\n<a href=\"~/obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"17\">Issue10268.GenericBaseClass&lt;T&gt;</a></p>\n<h4 id=\"derived\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"19\">Derived</h4>\n<p sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"21\"><a href=\"~/obj/md/BuildFromProject.Issue10268.GenericDerivedClass-1.md\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"21\">Issue10268.GenericDerivedClass&lt;T&gt;</a></p>\n<h4 id=\"inherited-members\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"23\">Inherited Members</h4>\n<p sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"25\"><a href=\"https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"25\">object.Equals(object?)</a>,\n<a href=\"https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"26\">object.Equals(object?, object?)</a>,\n<a href=\"https://learn.microsoft.com/dotnet/api/system.object.gethashcode\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"27\">object.GetHashCode()</a>,\n<a href=\"https://learn.microsoft.com/dotnet/api/system.object.gettype\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"28\">object.GetType()</a>,\n<a href=\"https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"29\">object.MemberwiseClone()</a>,\n<a href=\"https://learn.microsoft.com/dotnet/api/system.object.referenceequals\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"30\">object.ReferenceEquals(object?, object?)</a>,\n<a href=\"https://learn.microsoft.com/dotnet/api/system.object.tostring\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"31\">object.ToString()</a></p>\n<h2 id=\"properties\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"33\">Properties</h2>\n<h3 id=\"BuildFromProject_Issue10268_GenericBaseClass_1_DummyPropery\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"35\"> DummyPropery</h3>\n<pre><code class=\"lang-csharp\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"37\">public string DummyPropery { get; }\n</code></pre>\n<h4 id=\"property-value\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"41\">Property Value</h4>\n<p sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"43\"><a href=\"https://learn.microsoft.com/dotnet/api/system.string\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"43\">string</a></p>\n",
+  "type": "Conceptual",
+  "source": {
+    "remote": {
+      "path": "samples/seed/obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md",
+      "branch": "main",
+      "repo": "https://github.com/dotnet/docfx"
+    },
+    "startLine": 0,
+    "endLine": 0
+  },
+  "path": "obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md",
+  "documentation": {
+    "remote": {
+      "path": "samples/seed/obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md",
+      "branch": "main",
+      "repo": "https://github.com/dotnet/docfx"
+    },
+    "startLine": 0,
+    "endLine": 0
+  },
+  "_appName": "Seed",
+  "_appTitle": "docfx seed website",
+  "_enableSearch": true,
+  "pdf": true,
+  "pdfTocPage": true,
+  "rawTitle": "<h1 id=\"BuildFromProject_Issue10268_GenericBaseClass_1\" sourcefile=\"obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md\" sourcestartlinenumber=\"1\"> Class Issue10268.GenericBaseClass&lt;T&gt;</h1>",
+  "title": " Class Issue10268.GenericBaseClass<T>",
+  "wordCount": 39,
+  "_key": "obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
+  "_path": "md/BuildFromProject.Issue10268.GenericBaseClass-1.html",
+  "_rel": "../",
+  "_tocKey": "~/obj/md/toc.yml",
+  "_tocPath": "md/toc.html",
+  "_tocRel": "toc.html",
+  "_disableToc": false,
+  "docurl": "https://github.com/dotnet/docfx/blob/main/samples/seed/obj/md/BuildFromProject.Issue10268.GenericBaseClass-1.md/#L1"
+}
