@@ -6,7 +6,7 @@
       "tocHref": "api/toc.html",
       "topicHref": "api/MyExample.html",
       "topicUid": "MyExample",
-      "level": 2,
+      "level": 2.0,
       "items": [],
       "leaf": true
     }
@@ -97,7 +97,7 @@
   "topicHref": null,
   "tocHref": null,
   "name": null,
-  "level": 1,
+  "level": 1.0,
   "leaf": false,
   "title": "Table of Content",
   "_disableToc": true

@@ -1,12 +1,12 @@
 ﻿{
-  "order": 100,
+  "order": 100.0,
   "items": [
     {
       "name": "Pet Store API",
       "href": "petstore.html",
       "topicHref": "petstore.html",
       "tocHref": null,
-      "level": 2,
+      "level": 2.0,
       "items": [],
       "leaf": true
     },
@@ -15,7 +15,7 @@
       "href": "contacts.html",
       "topicHref": "contacts.html",
       "tocHref": null,
-      "level": 2,
+      "level": 2.0,
       "items": [],
       "leaf": true
     }
@@ -37,7 +37,7 @@
   "topicHref": null,
   "tocHref": null,
   "name": null,
-  "level": 1,
+  "level": 1.0,
   "leaf": false,
   "title": "Table of Content",
   "_disableToc": true
