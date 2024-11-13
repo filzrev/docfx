@@ -13,7 +13,7 @@
     // Run `docfx build` command.
     "docfx build": {
       "commandName": "Project",
-      "commandLineArgs": "build ../../samples/seed/docfx.json --serve",
+      "commandLineArgs": "build C:/temp/test2/docfx.json --serve",
       "workingDirectory": ".",
       "environmentVariables": {
       }
@@ -21,7 +21,7 @@
     // Run `docfx metadata` command.
     "docfx metadata": {
       "commandName": "Project",
-      "commandLineArgs": "metadata ../../samples/seed/docfx.json",
+      "commandLineArgs": "metadata C:/temp/test2/docfx.json",
       "workingDirectory": ".",
       "environmentVariables": {
       }
