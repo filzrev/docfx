@@ -14,15 +14,19 @@ public sealed class ExtensibleObjectNodeDeserializer : INodeDeserializer
     private readonly IObjectFactory _objectFactory;
     private readonly ITypeInspector _typeDescriptor;
     private readonly bool _ignoreUnmatched;
+    private readonly bool _caseInsensitivePropertyMatching;
+    private readonly INamingConvention _enumNamingConvention;
 
-    public ExtensibleObjectNodeDeserializer(IObjectFactory objectFactory, ITypeInspector typeDescriptor, bool ignoreUnmatched)
+    public ExtensibleObjectNodeDeserializer(IObjectFactory objectFactory, ITypeInspector typeDescriptor, INamingConvention enumNamingConvention, bool ignoreUnmatched, bool caseInsensitivePropertyMatching)
     {
         _objectFactory = objectFactory;
         _typeDescriptor = typeDescriptor;
         _ignoreUnmatched = ignoreUnmatched;
+        _caseInsensitivePropertyMatching = caseInsensitivePropertyMatching;
+        _enumNamingConvention = enumNamingConvention;
     }
 
-    bool INodeDeserializer.Deserialize(IParser reader, Type expectedType, Func<IParser, Type, object?> nestedObjectDeserializer, out object? value)
+    bool INodeDeserializer.Deserialize(IParser reader, Type expectedType, Func<IParser, Type, object?> nestedObjectDeserializer, out object? value, ObjectDeserializer rootDeserializer)
     {
         if (!reader.TryConsume<MappingStart>(out _))
         {
@@ -34,7 +38,7 @@ public sealed class ExtensibleObjectNodeDeserializer : INodeDeserializer
         while (!reader.Accept<MappingEnd>(out _))
         {
             var propertyName = reader.Consume<Scalar>();
-            var property = _typeDescriptor.GetProperty(expectedType, value, propertyName.Value, _ignoreUnmatched);
+            var property = _typeDescriptor.GetProperty(expectedType, value, propertyName.Value, _ignoreUnmatched, _caseInsensitivePropertyMatching);
             if (property == null)
             {
                 reader.SkipThisAndNestedEvents();
@@ -44,7 +48,7 @@ public sealed class ExtensibleObjectNodeDeserializer : INodeDeserializer
             var propertyValue = nestedObjectDeserializer(reader, property.Type);
             if (propertyValue is not IValuePromise propertyValuePromise)
             {
-                var convertedValue = TypeConverter.ChangeType(propertyValue, property.Type, NullNamingConvention.Instance);
+                var convertedValue = TypeConverter.ChangeType(propertyValue, property.Type, _enumNamingConvention, _typeDescriptor);
                 property.Write(value, convertedValue);
             }
             else
@@ -52,7 +56,7 @@ public sealed class ExtensibleObjectNodeDeserializer : INodeDeserializer
                 var valueRef = value;
                 propertyValuePromise.ValueAvailable += v =>
                 {
-                    var convertedValue = TypeConverter.ChangeType(v, property.Type, NullNamingConvention.Instance);
+                    var convertedValue = TypeConverter.ChangeType(v, property.Type, _enumNamingConvention, _typeDescriptor);
                     property.Write(valueRef, convertedValue);
                 };
             }

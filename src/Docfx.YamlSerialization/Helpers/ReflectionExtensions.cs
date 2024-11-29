@@ -14,9 +14,16 @@ internal static class ReflectionExtensions
     /// <returns>
     ///     <c>true</c> if the type has a default constructor; otherwise, <c>false</c>.
     /// </returns>
-    public static bool HasDefaultConstructor(this Type type)
+    public static bool HasDefaultConstructor(this Type type, bool allowPrivateConstructors)
     {
-        return type.IsValueType || type.GetConstructor(BindingFlags.Public | BindingFlags.Instance, null, Type.EmptyTypes, null) != null;
+        var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
+
+        if (allowPrivateConstructors)
+        {
+            bindingFlags |= BindingFlags.NonPublic;
+        }
+
+        return type.IsValueType || type.GetConstructor(bindingFlags, null, Type.EmptyTypes, null) != null;
     }
 
     public static IEnumerable<PropertyInfo> GetPublicProperties(this Type type)
