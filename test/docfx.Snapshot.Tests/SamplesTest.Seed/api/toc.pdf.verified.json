@@ -1682,7 +1682,7 @@
     },
     {
       "Number": 17,
-      "Text": "17 / 84\nInline <angle brackets>.\nlink\uF1C5\nExamples\nRemarks\nfor (var i = 0; i > 10; i++) // & \" '\nvar range = new Range<int> { Min = 0, Max = 10 };\nvar range = new Range<int> { Min = 0, Max = 10 };\nIssue4017()\npublic void Issue4017()\npublic void HookMessageDeleted(BaseSocketClient client)\n{   \nclient.MessageDeleted += HandleMessageDelete;\n}\npublic Task HandleMessageDelete(Cacheable<IMessage, ulong> cachedMessage,\nISocketMessageChannel channel)\n{   \n// check if the message exists in cache; if not, we cannot report what\nwas removed\nif (!cachedMessage.HasValue) return;\nvar message = cachedMessage.Value;\nConsole.WriteLine($\"A message ({message.Id}) from {message.Author} was removed\nfrom the channel {channel.Name} ({channel.Id}):\"\n+ Environment.NewLine\n+ message.Content);\nreturn Task.CompletedTask;\n}\nvoid Update()\n{",
+      "Text": "17 / 84\nInline <angle brackets>.\nlink\uF1C5\nExamples\nRemarks\nfor (var i = 0; i > 10; i++) // & \" '\nvar range = new Range<int> { Min = 0, Max = 10 };\nvar range = new Range<int> { Min = 0, Max = 10 };\nIssue4017()\npublic void Issue4017()\npublic void HookMessageDeleted(BaseSocketClient client)\n{   \nclient.MessageDeleted += HandleMessageDelete;\n}\npublic Task HandleMessageDelete(Cacheable<IMessage, ulong> cachedMessage,\nISocketMessageChannel channel)\n{   \n// check if the message exists in cache; if not, we cannot report what was removed\nif (!cachedMessage.HasValue) return;\nvar message = cachedMessage.Value;\nConsole.WriteLine($\"A message ({message.Id}) from {message.Author} was removed from the channel\n{channel.Name} ({channel.Id}):\"\n+ Environment.NewLine\n+ message.Content);\nreturn Task.CompletedTask;\n}\nvoid Update()\n{   \nmyClass.Execute();\n}",
       "Links": [
         {
           "Uri": "https://www.github.com/"
@@ -1697,12 +1697,12 @@
     },
     {
       "Number": 18,
-      "Text": "18 / 84\nRemarks\n@\"\\\\?\\\" @\"\\\\?\\\"\nRemarks\nThere's really no reason to not believe that this class can test things.\nTerm Description\nA Term A Description\nBee Term Bee Description\nType Parameters\nT   \nmyClass.Execute();\n}\nIssue4392()\npublic void Issue4392()\nIssue7484()\npublic void Issue7484()\nIssue8764<T>()\npublic void Issue8764<T>() where T : unmanaged",
+      "Text": "18 / 84\nRemarks\n@\"\\\\?\\\" @\"\\\\?\\\"\nRemarks\nThere's really no reason to not believe that this class can test things.\nTerm Description\nA Term A Description\nBee Term Bee Description\nType Parameters\nT\nTest\nIssue4392()\npublic void Issue4392()\nIssue7484()\npublic void Issue7484()\nIssue8764<T>()\npublic void Issue8764<T>() where T : unmanaged\nIssue896()\npublic void Issue896()",
       "Links": []
     },
     {
       "Number": 19,
-      "Text": "19 / 84\nTest\nSee Also\nClass1.Test<T>, Class1\nCalculates the determinant of a 3-dimensional matrix:\nReturns the smallest value:\nReturns\ndouble\uF1C5\nThis method should do something...\nRemarks\nThis is remarks.\nIssue896()\npublic void Issue896()\nIssue9216()\npublic static double Issue9216()\nXmlCommentIncludeTag()\npublic void XmlCommentIncludeTag()",
+      "Text": "19 / 84\nSee Also\nClass1.Test<T>, Class1\nCalculates the determinant of a 3-dimensional matrix:\nReturns the smallest value:\nReturns\ndouble\uF1C5\nThis method should do something...\nRemarks\nThis is remarks.\nIssue9216()\npublic static double Issue9216()\nXmlCommentIncludeTag()\npublic void XmlCommentIncludeTag()",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.double"
@@ -2359,7 +2359,7 @@
     },
     {
       "Number": 25,
-      "Text": "25 / 84\nobject.Equals(object, object)\uF1C5 , object.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 ,\nobject.ReferenceEquals(object, object)\uF1C5 , object.ToString()\uF1C5\nConstructors\nParameters\ndescription string\uF1C5\nboundsMin int\uF1C5\nboundsMax int\uF1C5\nvalidGameModes string\uF1C5 []\nhasMultipleSelections bool\uF1C5\nenumType Type\uF1C5\nIssue8696Attribute(string?, int, int, string[]?, bool, Type?)\n[Class1.Issue8696(\"Changes the name of the server in the server list\", 0, 0, null,\nfalse, null)]\npublic Issue8696Attribute(string? description = null, int boundsMin = 0, int\nboundsMax = 0, string[]? validGameModes = null, bool hasMultipleSelections = false,\nType? enumType = null)",
+      "Text": "25 / 84\nobject.Equals(object, object)\uF1C5 , object.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 ,\nobject.ReferenceEquals(object, object)\uF1C5 , object.ToString()\uF1C5\nConstructors\nParameters\ndescription string\uF1C5\nboundsMin int\uF1C5\nboundsMax int\uF1C5\nvalidGameModes string\uF1C5 []\nhasMultipleSelections bool\uF1C5\nenumType Type\uF1C5\nIssue8696Attribute(string?, int, int, string[]?, bool, Type?)\n[Class1.Issue8696(\"Changes the name of the server in the server list\", 0, 0, null, false, null)]\npublic Issue8696Attribute(string? description = null, int boundsMin = 0, int boundsMax = 0, string[]?\nvalidGameModes = null, bool hasMultipleSelections = false, Type? enumType = null)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)"
@@ -3740,7 +3740,7 @@
     },
     {
       "Number": 41,
-      "Text": "41 / 84\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5 Inheritdoc.Issue8101\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 ,\nobject.ToString()\uF1C5\nMethods\nCreate a new tween.\nParameters\nfrom int\uF1C5\nThe starting value.\nto int\uF1C5\nThe end value.\nduration float\uF1C5\nTotal tween duration in seconds.\nonChange Action\uF1C5 <int\uF1C5 >\nClass Inheritdoc.Issue8101\npublic class Inheritdoc.Issue8101\n\uF12C\nTween(int, int, float, Action<int>)\npublic static object Tween(int from, int to, float duration, Action<int> onChange)",
+      "Text": "41 / 84\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5 Inheritdoc.Issue8101\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 ,\nobject.ToString()\uF1C5\nMethods\nCreate a new tween.\nParameters\nfrom int\uF1C5\nThe starting value.\nto int\uF1C5\nThe end value.\nduration float\uF1C5\nTotal tween duration in seconds.\nonChange Action\uF1C5 <int\uF1C5 >\nA callback that will be invoked every time the tween value changes.\nClass Inheritdoc.Issue8101\npublic class Inheritdoc.Issue8101\n\uF12C\nTween(int, int, float, Action<int>)\npublic static object Tween(int from, int to, float duration, Action<int> onChange)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -3890,7 +3890,7 @@
     },
     {
       "Number": 42,
-      "Text": "42 / 84\nA callback that will be invoked every time the tween value changes.\nReturns\nobject\uF1C5\nThe newly created tween instance.\nCreate a new tween.\nParameters\nfrom float\uF1C5\nThe starting value.\nto float\uF1C5\nThe end value.\nduration float\uF1C5\nTotal tween duration in seconds.\nonChange Action\uF1C5 <float\uF1C5 >\nA callback that will be invoked every time the tween value changes.\nReturns\nobject\uF1C5\nThe newly created tween instance.\nTween(float, float, float, Action<float>)\npublic static object Tween(float from, float to, float duration,\nAction<float> onChange)",
+      "Text": "42 / 84\nReturns\nobject\uF1C5\nThe newly created tween instance.\nCreate a new tween.\nParameters\nfrom float\uF1C5\nThe starting value.\nto float\uF1C5\nThe end value.\nduration float\uF1C5\nTotal tween duration in seconds.\nonChange Action\uF1C5 <float\uF1C5 >\nA callback that will be invoked every time the tween value changes.\nReturns\nobject\uF1C5\nThe newly created tween instance.\nTween(float, float, float, Action<float>)\npublic static object Tween(float from, float to, float duration, Action<float> onChange)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -5208,7 +5208,7 @@
             "PageNumber": 59,
             "Coordinates": {
               "Left": 0,
-              "Top": 263.25
+              "Top": 264.75
             }
           }
         },
@@ -5217,7 +5217,7 @@
             "PageNumber": 59,
             "Coordinates": {
               "Left": 0,
-              "Top": 263.25
+              "Top": 264.75
             }
           }
         },
@@ -5226,7 +5226,7 @@
             "PageNumber": 59,
             "Coordinates": {
               "Left": 0,
-              "Top": 263.25
+              "Top": 264.75
             }
           }
         },
@@ -5235,7 +5235,7 @@
             "PageNumber": 59,
             "Coordinates": {
               "Left": 0,
-              "Top": 263.25
+              "Top": 264.75
             }
           }
         }
@@ -6044,7 +6044,7 @@
     },
     {
       "Number": 62,
-      "Text": "62 / 84\nobject.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 , object.GetType()\uF1C5 ,\nobject.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 , object.ToString()\uF1C5\nExtension Methods\nICatExtension.Play(ICat, ContainersRefType.ColorType) , ICatExtension.Sleep(ICat, long)\nExamples\nHere's example of how to create an instance of this class. As T is limited with class and K is\nlimited with struct.\nAs you see, here we bring in pointer so we need to add unsafe keyword.\nRemarks\nTHIS is remarks overridden in MARKDWON file\nConstructors\nDefault constructor.\nIt's a complex constructor. The parameter will have some attributes.\nParameters\nvar a = new Cat(object, int)();\nint catNumber = new int();\nunsafe\n{   \na.GetFeetLength(catNumber);\n}\nCat()\npublic Cat()\nCat(string, out int, string, bool)\npublic Cat(string nickName, out int age, string realName, bool isHealthy)",
+      "Text": "62 / 84\nobject.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 , object.GetType()\uF1C5 ,\nobject.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 , object.ToString()\uF1C5\nExtension Methods\nICatExtension.Play(ICat, ContainersRefType.ColorType) , ICatExtension.Sleep(ICat, long)\nExamples\nHere's example of how to create an instance of this class. As T is limited with class and K is limited\nwith struct.\nAs you see, here we bring in pointer so we need to add unsafe keyword.\nRemarks\nTHIS is remarks overridden in MARKDWON file\nConstructors\nDefault constructor.\nIt's a complex constructor. The parameter will have some attributes.\nParameters\nvar a = new Cat(object, int)();\nint catNumber = new int();\nunsafe\n{   \na.GetFeetLength(catNumber);\n}\nCat()\npublic Cat()\nCat(string, out int, string, bool)\npublic Cat(string nickName, out int age, string realName, bool isHealthy)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)"
@@ -6794,7 +6794,7 @@
             "PageNumber": 72,
             "Coordinates": {
               "Left": 0,
-              "Top": 117.75
+              "Top": 119.25
             }
           }
         },
@@ -6803,7 +6803,7 @@
             "PageNumber": 72,
             "Coordinates": {
               "Left": 0,
-              "Top": 117.75
+              "Top": 119.25
             }
           }
         },
@@ -6848,7 +6848,7 @@
             "PageNumber": 73,
             "Coordinates": {
               "Left": 0,
-              "Top": 241.5
+              "Top": 243
             }
           }
         },
@@ -7156,7 +7156,7 @@
     },
     {
       "Number": 78,
-      "Text": "78 / 84\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nGeneric delegate with many constrains.\nParameters\nk K\nType K.\nt T\nType T.\nl L\nType L.\nType Parameters\nK\nGeneric K.\nT\nGeneric T.\nL\nGeneric L.\nDelegate MRefDelegate<K, T, L>\npublic delegate void MRefDelegate<K, T, L>(K k, T t, L l) where K : class,\nIComparable where T : struct where L : Tom, IEnumerable<long>",
+      "Text": "78 / 84\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nGeneric delegate with many constrains.\nParameters\nk K\nType K.\nt T\nType T.\nl L\nType L.\nType Parameters\nK\nGeneric K.\nT\nGeneric T.\nL\nGeneric L.\nDelegate MRefDelegate<K, T, L>\npublic delegate void MRefDelegate<K, T, L>(K k, T t, L l) where K : class, IComparable where T : struct\nwhere L : Tom, IEnumerable<long>",
       "Links": [
         {
           "Goto": {
