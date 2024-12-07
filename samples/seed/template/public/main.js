@@ -20,5 +20,8 @@ export default {
   configureHljs (hljs) {
     hljs.registerLanguage('bicep', bicep);
   },
+  mermaid: {
+    fontFamily: 'Noto Sans'
+  }
 }
 
