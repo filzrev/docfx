@@ -225,7 +225,7 @@ public class SamplesTest : IDisposable
         sb.Replace("ﬁ", "fi");
 
         // Additional text replacement
-        sb.Replace(@"\uF1C5 ", @"\uF1C5"); // On Windows
+        sb.Replace(@"\uF1C5 ", @"\uF1C5"); // "Box arrow up-right" of Bootstrap Icons.
 
         // Replace newline char to space.
         sb.Replace("\r\n", " ");
