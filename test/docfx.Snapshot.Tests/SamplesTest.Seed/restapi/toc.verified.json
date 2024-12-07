@@ -13,5 +13,6 @@
     }
   ],
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true
 }

@@ -3,6 +3,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "description": "Enumeration ColorType",
   "title": "Enum ContainersRefType.ColorType",

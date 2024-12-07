@@ -3,6 +3,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "description": "Here's main class of this Demo.\nYou can see mostly type of article within this class and you for more detail, please see the remarks.\n\nthis class is a template class. It has two Generic parameter. they are: T and K.\nThe extension method of this class can refer to  class",
   "title": "Class Cat<T, K>",

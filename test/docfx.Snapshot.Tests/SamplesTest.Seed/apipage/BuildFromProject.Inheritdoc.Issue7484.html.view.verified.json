@@ -3,6 +3,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "description": "This is a test class to have something for DocFX to document.",
   "title": "Class Inheritdoc.Issue7484",

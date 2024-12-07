@@ -24,6 +24,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "_key": "restapi/toc.md",
   "_navKey": "~/toc.yml",

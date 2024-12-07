@@ -570,6 +570,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "_key": "obj/api/CatLibrary.Complex-2.yml",
   "_navKey": "~/toc.yml",

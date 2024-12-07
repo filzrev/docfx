@@ -402,5 +402,6 @@
   ],
   "memberLayout": "SamePage",
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true
 }

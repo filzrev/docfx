@@ -3,6 +3,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "description": "This is basic interface of all animal.",
   "title": "Interface IAnimal",

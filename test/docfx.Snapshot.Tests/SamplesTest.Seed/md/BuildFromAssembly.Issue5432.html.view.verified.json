@@ -24,6 +24,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "rawTitle": "<h1 id=\"BuildFromAssembly_Issue5432\" sourcefile=\"obj/md/BuildFromAssembly.Issue5432.md\" sourcestartlinenumber=\"1\"> Struct Issue5432</h1>",
   "title": " Struct Issue5432",

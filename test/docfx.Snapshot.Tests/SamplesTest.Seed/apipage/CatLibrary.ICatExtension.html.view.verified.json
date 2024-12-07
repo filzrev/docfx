@@ -3,6 +3,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "description": "It's the class that contains ICat interface's extension method.\nThis class must be public and static.Also it shouldn't be a geneic class",
   "title": "Class ICatExtension",

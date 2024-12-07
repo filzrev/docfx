@@ -24,6 +24,7 @@
   "_appTitle": "docfx seed website",
   "_enableSearch": true,
   "pdf": true,
+  "pdfFooterTemplate": "",
   "pdfTocPage": true,
   "rawTitle": "<h1 id=\"BuildFromProject_Issue8725\" sourcefile=\"obj/md/BuildFromProject.Issue8725.md\" sourcestartlinenumber=\"1\"> Class Issue8725</h1>",
   "title": " Class Issue8725",
