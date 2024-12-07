@@ -1380,7 +1380,7 @@
     },
     {
       "Number": 17,
-      "Text": "17 / 80\nIssue4017()\nExamples\nRemarks\nIssue4392()\nRemarks\n@\"\\\\?\\\" @\"\\\\?\\\"\nIssue7484()\nvar range = new Range<int> { Min = 0, Max = 10 };\npublic void Issue4017()\npublic void HookMessageDeleted(BaseSocketClient client)\n{   \nclient.MessageDeleted += HandleMessageDelete;\n}\npublic Task HandleMessageDelete(Cacheable<IMessage, ulong> cachedMessage,\nISocketMessageChannel channel)\n{   \n// check if the message exists in cache; if not, we cannot report what was removed\nif (!cachedMessage.HasValue) return;\nvar message = cachedMessage.Value;\nConsole.WriteLine($\"A message ({message.Id}) from {message.Author} was removed from the channel\n{channel.Name} ({channel.Id}):\"\n+ Environment.NewLine\n+ message.Content);\nreturn Task.CompletedTask;\n}\nvoid Update()\n{   \nmyClass.Execute();\n}\npublic void Issue4392()",
+      "Text": "17 / 80\nIssue4017()\nExamples\nRemarks\nIssue4392()\nRemarks\n@\"\\\\?\\\" @\"\\\\?\\\"\nIssue7484()\nvar range = new Range<int> { Min = 0, Max = 10 };\npublic void Issue4017()\npublic void HookMessageDeleted(BaseSocketClient client)\n{   \nclient.MessageDeleted += HandleMessageDelete;\n}\npublic Task HandleMessageDelete(Cacheable<IMessage, ulong> cachedMessage,\nISocketMessageChannel channel)\n{   \n// check if the message exists in cache; if not, we cannot report what was removed\nif (!cachedMessage.HasValue) return;\nvar message = cachedMessage.Value;\nConsole.WriteLine($\"A message ({message.Id}) from {message.Author} was removed from\nthe channel {channel.Name} ({channel.Id}):\"\n+ Environment.NewLine\n+ message.Content);\nreturn Task.CompletedTask;\n}\nvoid Update()\n{   \nmyClass.Execute();\n}\npublic void Issue4392()",
       "Links": []
     },
     {
@@ -2063,7 +2063,7 @@
     },
     {
       "Number": 23,
-      "Text": "23 / 80\nConstructors\nIssue8696Attribute(string?, int, int, string[]?, bool, Type?)\nParameters\ndescription string\uF1C5 ?\nboundsMin int\uF1C5\nboundsMax int\uF1C5\nvalidGameModes string\uF1C5 []?\nhasMultipleSelections bool\uF1C5\nenumType Type\uF1C5 ?\n[Class1.Issue8696(\"Changes the name of the server in the server list\", 0, 0, null, false, null)]\npublic Issue8696Attribute(string? description = null, int boundsMin = 0, int boundsMax = 0, string[]?\nvalidGameModes = null, bool hasMultipleSelections = false, Type? enumType = null)",
+      "Text": "23 / 80\nConstructors\nIssue8696Attribute(string?, int, int, string[]?, bool, Type?)\nParameters\ndescription string\uF1C5 ?\nboundsMin int\uF1C5\nboundsMax int\uF1C5\nvalidGameModes string\uF1C5 []?\nhasMultipleSelections bool\uF1C5\nenumType Type\uF1C5 ?\n[Class1.Issue8696(\"Changes the name of the server in the server list\", 0, 0, null,\nfalse, null)]\npublic Issue8696Attribute(string? description = null, int boundsMin = 0, int boundsMax =\n0, string[]? validGameModes = null, bool hasMultipleSelections = false, Type? enumType\n= null)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.string"
@@ -4769,7 +4769,7 @@
     },
     {
       "Number": 58,
-      "Text": "58 / 80\nHere's example of how to create an instance of this class. As T is limited with class and K is limited\nwith struct.\nAs you see, here we bring in pointer so we need to add unsafe keyword.\nRemarks\nHere's all the content you can see in this class.\nConstructors\nCat()\nDefault constructor.\nCat(T)\nConstructor with one generic parameter.\nParameters\nownType T\nThis parameter type defined by class.\nCat(string, out int, string, bool)\nIt's a complex constructor. The parameter will have some attributes.\nParameters\nvar a = new Cat(object, int)();\nint catNumber = new int();\nunsafe\n{   \na.GetFeetLength(catNumber);\n}\npublic Cat()\npublic Cat(T ownType)\npublic Cat(string nickName, out int age, string realName, bool isHealthy)",
+      "Text": "58 / 80\nHere's example of how to create an instance of this class. As T is limited with class and K is\nlimited with struct.\nAs you see, here we bring in pointer so we need to add unsafe keyword.\nRemarks\nHere's all the content you can see in this class.\nConstructors\nCat()\nDefault constructor.\nCat(T)\nConstructor with one generic parameter.\nParameters\nownType T\nThis parameter type defined by class.\nCat(string, out int, string, bool)\nIt's a complex constructor. The parameter will have some attributes.\nParameters\nvar a = new Cat(object, int)();\nint catNumber = new int();\nunsafe\n{   \na.GetFeetLength(catNumber);\n}\npublic Cat()\npublic Cat(T ownType)\npublic Cat(string nickName, out int age, string realName, bool isHealthy)",
       "Links": []
     },
     {
@@ -6034,7 +6034,7 @@
     },
     {
       "Number": 75,
-      "Text": "75 / 80\nDelegate MRefDelegate<K, T, L>\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nGeneric delegate with many constrains.\nParameters\nk K\nType K.\nt T\nType T.\nl L\nType L.\nType Parameters\nK\nGeneric K.\nT\nGeneric T.\nL\nGeneric L.\npublic delegate void MRefDelegate<K, T, L>(K k, T t, L l) where K : class, IComparable where T : struct\nwhere L : Tom, IEnumerable<long>",
+      "Text": "75 / 80\nDelegate MRefDelegate<K, T, L>\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nGeneric delegate with many constrains.\nParameters\nk K\nType K.\nt T\nType T.\nl L\nType L.\nType Parameters\nK\nGeneric K.\nT\nGeneric T.\nL\nGeneric L.\npublic delegate void MRefDelegate<K, T, L>(K k, T t, L l) where K : class, IComparable\nwhere T : struct where L : Tom, IEnumerable<long>",
       "Links": [
         {
           "Goto": {

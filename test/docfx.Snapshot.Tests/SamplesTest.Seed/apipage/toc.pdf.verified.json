@@ -1376,7 +1376,7 @@
     },
     {
       "Number": 17,
-      "Text": "17 / 88\nRemarks\nInline <angle brackets>.\nlink\uF1C5\nExamples\npublic void Issue2723()\nNOTE\nThis is a <note>. & \" '\n\uF431\nfor (var i = 0; i > 10; i++) // & \" '\nvar range = new Range<int> { Min = 0, Max = 10 };\nvar range = new Range<int> { Min = 0, Max = 10 };\nIssue4017()\npublic void Issue4017()\npublic void HookMessageDeleted(BaseSocketClient client)\n{   \nclient.MessageDeleted += HandleMessageDelete;\n}\npublic Task HandleMessageDelete(Cacheable<IMessage, ulong> cachedMessage,\nISocketMessageChannel channel)\n{   \n// check if the message exists in cache; if not, we cannot report what was removed\nif (!cachedMessage.HasValue) return;\nvar message = cachedMessage.Value;\nConsole.WriteLine($\"A message ({message.Id}) from {message.Author} was removed from the channel\n{channel.Name} ({channel.Id}):\"\n+ Environment.NewLine\n+ message.Content);",
+      "Text": "17 / 88\nRemarks\nInline <angle brackets>.\nlink\uF1C5\nExamples\npublic void Issue2723()\nNOTE\nThis is a <note>. & \" '\n\uF431\nfor (var i = 0; i > 10; i++) // & \" '\nvar range = new Range<int> { Min = 0, Max = 10 };\nvar range = new Range<int> { Min = 0, Max = 10 };\nIssue4017()\npublic void Issue4017()\npublic void HookMessageDeleted(BaseSocketClient client)\n{   \nclient.MessageDeleted += HandleMessageDelete;\n}\npublic Task HandleMessageDelete(Cacheable<IMessage, ulong> cachedMessage,\nISocketMessageChannel channel)\n{   \n// check if the message exists in cache; if not, we cannot report what was removed\nif (!cachedMessage.HasValue) return;\nvar message = cachedMessage.Value;\nConsole.WriteLine($\"A message ({message.Id}) from {message.Author} was removed from\nthe channel {channel.Name} ({channel.Id}):\"\n+ Environment.NewLine\n+ message.Content);",
       "Links": [
         {
           "Uri": "https://www.github.com/"
@@ -1926,7 +1926,7 @@
     },
     {
       "Number": 25,
-      "Text": "25 / 88\nAttribute.IsDefaultAttribute()\uF1C5 , Attribute.IsDefined(Assembly, Type)\uF1C5 ,\nAttribute.IsDefined(Assembly, Type, bool)\uF1C5 , Attribute.IsDefined(MemberInfo, Type)\uF1C5 ,\nAttribute.IsDefined(MemberInfo, Type, bool)\uF1C5 , Attribute.IsDefined(Module, Type)\uF1C5 ,\nAttribute.IsDefined(Module, Type, bool)\uF1C5 , Attribute.IsDefined(ParameterInfo, Type)\uF1C5 ,\nAttribute.IsDefined(ParameterInfo, Type, bool)\uF1C5 , Attribute.Match(object?)\uF1C5 , Attribute.TypeId\uF1C5 ,\nobject.Equals(object?)\uF1C5 , object.Equals(object?, object?)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object?, object?)\uF1C5 ,\nobject.ToString()\uF1C5\nConstructors\nParameters\ndescription string\uF1C5 ?\nboundsMin int\uF1C5\nboundsMax int\uF1C5\nvalidGameModes string\uF1C5 []?\nhasMultipleSelections bool\uF1C5\nenumType Type\uF1C5 ?\nIssue8696Attribute(string?, int, int, string[]?, bool, Type?)\n[Class1.Issue8696(\"Changes the name of the server in the server list\", 0, 0, null, false, null)]\npublic Issue8696Attribute(string? description = null, int boundsMin = 0, int boundsMax = 0, string[]?\nvalidGameModes = null, bool hasMultipleSelections = false, Type? enumType = null)",
+      "Text": "25 / 88\nAttribute.IsDefaultAttribute()\uF1C5 , Attribute.IsDefined(Assembly, Type)\uF1C5 ,\nAttribute.IsDefined(Assembly, Type, bool)\uF1C5 , Attribute.IsDefined(MemberInfo, Type)\uF1C5 ,\nAttribute.IsDefined(MemberInfo, Type, bool)\uF1C5 , Attribute.IsDefined(Module, Type)\uF1C5 ,\nAttribute.IsDefined(Module, Type, bool)\uF1C5 , Attribute.IsDefined(ParameterInfo, Type)\uF1C5 ,\nAttribute.IsDefined(ParameterInfo, Type, bool)\uF1C5 , Attribute.Match(object?)\uF1C5 , Attribute.TypeId\uF1C5 ,\nobject.Equals(object?)\uF1C5 , object.Equals(object?, object?)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object?, object?)\uF1C5 ,\nobject.ToString()\uF1C5\nConstructors\nParameters\ndescription string\uF1C5 ?\nboundsMin int\uF1C5\nboundsMax int\uF1C5\nvalidGameModes string\uF1C5 []?\nhasMultipleSelections bool\uF1C5\nenumType Type\uF1C5 ?\nIssue8696Attribute(string?, int, int, string[]?, bool, Type?)\n[Class1.Issue8696(\"Changes the name of the server in the server list\", 0, 0, null,\nfalse, null)]\npublic Issue8696Attribute(string? description = null, int boundsMin = 0, int boundsMax =\n0, string[]? validGameModes = null, bool hasMultipleSelections = false, Type? enumType\n= null)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.attribute.isdefaultattribute"
@@ -4835,7 +4835,7 @@
     },
     {
       "Number": 65,
-      "Text": "65 / 88\nExtension Methods\nICatExtension.Play(ICat, ContainersRefType.ColorType) , ICatExtension.Sleep(ICat, long)\nExamples\nHere's example of how to create an instance of this class. As T is limited with class and K is limited\nwith struct.\nAs you see, here we bring in pointer so we need to add unsafe keyword.\nRemarks\nHere's all the content you can see in this class.\nConstructors\nDefault constructor.\nConstructor with one generic parameter.\nvar a = new Cat(object, int)();\nint catNumber = new int();\nunsafe\n{   \na.GetFeetLength(catNumber);\n}\nCat()\npublic Cat()\nCat(T)\npublic Cat(T ownType)",
+      "Text": "65 / 88\nExtension Methods\nICatExtension.Play(ICat, ContainersRefType.ColorType) , ICatExtension.Sleep(ICat, long)\nExamples\nHere's example of how to create an instance of this class. As T is limited with class and K is\nlimited with struct.\nAs you see, here we bring in pointer so we need to add unsafe keyword.\nRemarks\nHere's all the content you can see in this class.\nConstructors\nDefault constructor.\nConstructor with one generic parameter.\nvar a = new Cat(object, int)();\nint catNumber = new int();\nunsafe\n{   \na.GetFeetLength(catNumber);\n}\nCat()\npublic Cat()\nCat(T)\npublic Cat(T ownType)",
       "Links": [
         {
           "Goto": {
@@ -6125,7 +6125,7 @@
     },
     {
       "Number": 83,
-      "Text": "83 / 88\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nGeneric delegate with many constrains.\nParameters\nk K\nType K.\nt T\nType T.\nl L\nType L.\nType Parameters\nK\nGeneric K.\nT\nGeneric T.\nL\nGeneric L.\nDelegate MRefDelegate<K, T, L>\npublic delegate void MRefDelegate<K, T, L>(K k, T t, L l) where K : class, IComparable where T : struct\nwhere L : Tom, IEnumerable<long>",
+      "Text": "83 / 88\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nGeneric delegate with many constrains.\nParameters\nk K\nType K.\nt T\nType T.\nl L\nType L.\nType Parameters\nK\nGeneric K.\nT\nGeneric T.\nL\nGeneric L.\nDelegate MRefDelegate<K, T, L>\npublic delegate void MRefDelegate<K, T, L>(K k, T t, L l) where K : class, IComparable\nwhere T : struct where L : Tom, IEnumerable<long>",
       "Links": [
         {
           "Goto": {
