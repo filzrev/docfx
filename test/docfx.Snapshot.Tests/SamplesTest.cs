@@ -224,8 +224,12 @@ public class SamplesTest : IDisposable
         sb.Replace("ﬂ", "fl");
         sb.Replace("ﬁ", "fi");
 
-        // Normalize newline char.
-        sb.Replace("\r\n", "\n");
+        // Additional text replacement
+        sb.Replace(@"\uF1C5 ", @"\uF1C5"); // On Windows
+
+        // Replace newline char to space.
+        sb.Replace("\r\n", " ");
+        sb.Replace("\n", " ");
 
         return sb.ToString();
     }
