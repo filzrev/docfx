@@ -83,7 +83,8 @@
       "_appName": "Seed",
       "_enableSearch": true,
       "pdf": true,
-      "pdfTocPage": true
+      "pdfTocPage": true,
+      "pdfFooterTemplate": ""
     },
     "output": "_site",
     "exportViewModel": true,
