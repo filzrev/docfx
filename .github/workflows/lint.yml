@@ -1,0 +1,54 @@
+name: lint
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Lint
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            9.x
+
+      - name: Run `dotnet restore` command
+        run: |
+          dotnet restore
+
+      - name: Run `dotnet format` command
+        run: | 
+          dotnet format whitespace --no-restore --verify-no-changes
+          dotnet format style      --no-restore --verify-no-changes
+          dotnet format analyzers  --no-restore --verify-no-changes
+
+      - name: Report failures
+        if: ${{ failure() }}
+        shell: pwsh
+        run: |
+          $content = '
+          ## Summary
+          Diffs are detected when running `dotnet format` commands.
+          Run following commands. And commit changes.
+
+          ```
+          dotnet format whitespace
+          dotnet format style
+          dotnet format analyzers
+          ```
+          '
+
+          Write-Output $content >> $env:GITHUB_STEP_SUMMARY
+          exit 1
