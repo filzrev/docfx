@@ -1,0 +1,48 @@
+name: lint
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+jobs:
+  build:
+    name: Lint
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    permissions:
+      contents: read
+      packages: read
+      statuses: write # Required to report GitHub Actions status checks
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run `dotnet restore` command
+        run: |
+          dotnet restore
+
+      - name: Run `dotnet format` command
+        run: | 
+          dotnet format whitespace --no-restore --verify-no-changes --verbosity diagnostic
+          dotnet format style      --no-restore --verify-no-changes --verbosity diagnostic
+          dotnet format analyzers  --no-restore --verify-no-changes --verbosity diagnostic
+
+      - name: Report `dotnet format` command failure
+        if: failure()
+        shell: pwsh
+        run: |
+          $dotnetSdkVersion = dotnet --version
+          $content = "
+          ## Faild to run `dotnet format --verify-no-changes`  
+          Changes are detected on executin `dotnet format` command.
+          Run following command with dotnet SDK ${dotnetSdkVersion} and commit changes.
+            - `dotnet format whitespace`
+            - `dotnet format style`
+            - `dotnet format analyzers`"
+
+          Write-Output $content >> $env:GITHUB_STEP_SUMMARY
+          exit 1
