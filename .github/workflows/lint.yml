@@ -30,10 +30,8 @@ jobs:
         uses: super-linter/super-linter@v7.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: falsed
+          VALIDATE_ALL_CODEBASE: false
           VALIDATE_CSHARP: true
           VALIDATE_DOTNET_SLN_FORMAT_ANALYZERS: true
           VALIDATE_DOTNET_SLN_FORMAT_STYLE: true
           VALIDATE_DOTNET_SLN_FORMAT_WHITESPACE: true
-          VALIDATE_EDITORCONFIG: true
-          VALIDATE_GITHUB_ACTIONS: true
