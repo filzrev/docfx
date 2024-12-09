@@ -31,20 +31,8 @@ jobs:
           dotnet restore
           dotnet format --no-restore --verify-no-changes
 
-      - name: Add comment to Pull Request
+      - name: Add sticky comment to PR
         if: ${{ failure() && github.event_name == 'pull_request' }}
-        shell: pwsh
-        run: |
-          $content = '
-          ## Failed to run the `lint.yml` workflow
-          Run `dotnet format` command on local environment.
-          And commit changes as separated commit.
-          '
-          gh pr comment ${{ github.event.number }} --body "$content" --edit-last || gh pr comment ${{ github.event.number }} --body "$content"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Add comment to PR
         uses: marocchino/sticky-pull-request-comment@331f8f5b4215f0445d3c07b4967662a32a2d3e31 # v2.9.0
         with:
           header: Failed to run 'dotnet format --verify-no-changes' command
