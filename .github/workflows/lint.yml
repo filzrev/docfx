@@ -56,7 +56,10 @@ jobs:
 
       - name: Add comment to Pull Request
         if: ${{ failure() && github.event_name == 'pull_request' }}
+        shell: pwsh
         run: |
-          gh pr comment ${{ github.event.number }} --body-file "$GITHUB_STEP_SUMMARY" --edit-last || gh pr comment ${{ github.event.number }} --body-file "$GITHUB_STEP_SUMMARY"
+          Write-Host $env:GITHUB_STEP_SUMMARY
+          $content = Get-Content $env:GITHUB_STEP_SUMMARY -Raw
+          gh pr comment ${{ github.event.number }} --body $content --edit-last || gh pr comment ${{ github.event.number }} --body $content
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
