@@ -58,6 +58,7 @@ jobs:
         run: |
           Write-Host $env:GITHUB_STEP_SUMMARY
           $content = Get-Content $env:GITHUB_STEP_SUMMARY -Raw
-          gh pr comment ${{ github.event.number }} --body $content --edit-last || gh pr comment ${{ github.event.number }} --body $content
+          Write-Host $content
+          gh pr comment ${{ github.event.number }} --body "$content" --edit-last || gh pr comment ${{ github.event.number }} --body "$content"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
