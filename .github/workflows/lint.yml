@@ -54,6 +54,6 @@ jobs:
       - name: Add comment to PR
         if: ${{ failure() && github.event_name == 'pull_request' }}
         run: |
-          gh pr comment ${{ github.ref_name }} --body "$GITHUB_STEP_SUMMARY" --edit-last || gh pr comment ${{ github.ref_name }} --body "$GITHUB_STEP_SUMMARY"
+          gh pr comment ${{ github.event.number }} --body "$GITHUB_STEP_SUMMARY" --edit-last || gh pr comment ${{ github.event.number }} --body "$GITHUB_STEP_SUMMARY"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
