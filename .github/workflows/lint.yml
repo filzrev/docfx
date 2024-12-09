@@ -47,10 +47,11 @@ jobs:
       - name: Add comment to PR
         uses: marocchino/sticky-pull-request-comment@331f8f5b4215f0445d3c07b4967662a32a2d3e31 # v2.9.0
         with:
-          header: `dotnet format`
+          header: Failed to run 'dotnet format --verify-no-changes' command
           skip_unchanged: true
           recreate: true
           message: |
-            ## Failed to run `dotnet format --verify-no-changes` command
-            Run `dotnet format` command on local environment.
-            And commit changes as separated commit.
+            Please perform follow steps.
+            1. Run `dotnet format` command on local environment.
+            2. Commit changes as separated commit.
+            3. Push changes to PullRequest source branch.
