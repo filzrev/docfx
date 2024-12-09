@@ -37,28 +37,17 @@ jobs:
           dotnet format style      --no-restore --verify-no-changes
           dotnet format analyzers  --no-restore --verify-no-changes
 
-      - name: Report failures
-        if: ${{ failure() }}
-        shell: pwsh
-        run: |
-          $content = '
-          ## Failed to run `dotnet format --verify-no-changes`
-          Diffs are detected when running `dotnet format` commands on CI.
-          Run the following commands on the local environment and commit changes as separated commit.
-
-          - `dotnet format whitespace`
-          - `dotnet format style`
-          - `dotnet format analyzers`
-          '
-          Write-Output $content >> $env:GITHUB_STEP_SUMMARY
-
       - name: Add comment to Pull Request
         if: ${{ failure() && github.event_name == 'pull_request' }}
         shell: pwsh
         run: |
-          Write-Host $env:GITHUB_STEP_SUMMARY
-          $content = Get-Content $env:GITHUB_STEP_SUMMARY -Raw
-          Write-Host $content
+          $content = '
+          ## Diffs are detected
+          Run the following commands on the local environment. And commit changes as separated commit.
+           - `dotnet format whitespace`
+           - `dotnet format style`
+           - `dotnet format analyzers`
+          '
           gh pr comment ${{ github.event.number }} --body "$content" --edit-last || gh pr comment ${{ github.event.number }} --body "$content"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
