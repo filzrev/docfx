@@ -46,11 +46,9 @@ jobs:
           Diffs are detected when running `dotnet format` commands on CI.
           Run the following commands on the local environment and commit changes as separated commit.
 
-          ```
-          dotnet format whitespace
-          dotnet format style
-          dotnet format analyzers
-          ```
+          - `dotnet format whitespace`
+          - `dotnet format style`
+          - `dotnet format analyzers`
           '
           Write-Output $content >> $env:GITHUB_STEP_SUMMARY
 
