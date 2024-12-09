@@ -54,7 +54,7 @@ jobs:
           '
           Write-Output $content >> $env:GITHUB_STEP_SUMMARY
 
-      - name: Add comment to PR
+      - name: Add comment to Pull Request
         if: ${{ failure() && github.event_name == 'pull_request' }}
         run: |
           gh pr comment ${{ github.event.number }} --body-file "$GITHUB_STEP_SUMMARY" --edit-last || gh pr comment ${{ github.event.number }} --body-file "$GITHUB_STEP_SUMMARY"
