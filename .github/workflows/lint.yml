@@ -39,7 +39,8 @@ jobs:
           skip_unchanged: true
           recreate: true
           message: |
-            Please perform follow steps.
-            1. Run `dotnet format` command on local environment.
-            2. Commit changes as separated commit.
-            3. Push changes to PullRequest source branch.
+            ## Failed to run the `lint.yml` workflow
+            To fix workflow error. Please follow the steps below.
+             1. Run `dotnet format` command on local environment.
+             2. Commit changes as separated commit.
+             3. Push changes to PullRequest source branch.
