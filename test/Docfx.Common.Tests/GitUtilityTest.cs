@@ -7,7 +7,7 @@ using Xunit;
 namespace Docfx.Common.Tests;
 
 [Collection("docfx STA")]
-public class GitUtilityTest : IDisposable
+public sealed class GitUtilityTest : IDisposable
 {
     private readonly string _originalBranchName;
     private const string EnvName = "DOCFX_SOURCE_BRANCH_NAME";

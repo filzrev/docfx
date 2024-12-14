@@ -15,7 +15,7 @@ using Xunit;
 namespace Docfx.Build.TableOfContents.Tests;
 
 [Collection("docfx STA")]
-public class TocDocumentProcessorTest : TestBase
+public sealed class TocDocumentProcessorTest : TestBase
 {
     private readonly string _outputFolder;
     private readonly string _inputFolder;

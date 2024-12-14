@@ -7,7 +7,7 @@ using Xunit;
 namespace Docfx.Common.Tests;
 
 [Collection("docfx STA")]
-public class GitUtilityWithSourceRepositoryUrlTest : IDisposable
+public sealed class GitUtilityWithSourceRepositoryUrlTest : IDisposable
 {
     private readonly string _originalBranchName;
     private readonly string _originalSourceRepoUrl;

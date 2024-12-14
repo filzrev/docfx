@@ -9,7 +9,7 @@ using Xunit;
 namespace Docfx.Build.Engine.Tests;
 
 [Collection("docfx STA")]
-public class RemoveDebugInfoTest : TestBase
+public sealed class RemoveDebugInfoTest : TestBase
 {
     private readonly string _outputFolder;
 

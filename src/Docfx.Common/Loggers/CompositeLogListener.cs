@@ -115,5 +115,6 @@ public class CompositeLogListener : ILoggerListener
                 listener.Flush();
             }
         }
+        GC.SuppressFinalize(this);
     }
 }

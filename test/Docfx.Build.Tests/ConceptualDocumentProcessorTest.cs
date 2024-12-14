@@ -15,7 +15,7 @@ using Xunit;
 namespace Docfx.Build.ManagedReference.Tests;
 
 [Collection("docfx STA")]
-public class ConceptualDocumentProcessorTest : TestBase
+public sealed class ConceptualDocumentProcessorTest : TestBase
 {
     private readonly string _outputFolder;
     private readonly string _templateFolder;

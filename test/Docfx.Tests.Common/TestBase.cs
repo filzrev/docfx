@@ -131,5 +131,6 @@ public class TestBase : IClassFixture<TestBase>, IDisposable
         catch
         {
         }
+        GC.SuppressFinalize(this);
     }
 }

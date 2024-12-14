@@ -30,6 +30,7 @@ public abstract class DisposableDocumentProcessor : IDocumentProcessor, IDisposa
                 (buildStep as IDisposable)?.Dispose();
             }
         }
+        GC.SuppressFinalize(this);
     }
 
     // TODO: implement update href in each plugin

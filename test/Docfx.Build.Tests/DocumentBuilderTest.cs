@@ -15,7 +15,7 @@ using Xunit;
 namespace Docfx.Build.Engine.Tests;
 
 [Collection("docfx STA")]
-public class DocumentBuilderTest : TestBase
+public sealed class DocumentBuilderTest : TestBase
 {
     private const string RawModelFileExtension = ".raw.json";
 

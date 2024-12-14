@@ -19,7 +19,7 @@ namespace Docfx.Tests;
 
 [Collection("docfx STA")]
 [Trait("Stage", "Snapshot")]
-public class SamplesTest : IDisposable
+public sealed class SamplesTest : IDisposable
 {
     private static readonly string s_samplesDir = Path.GetFullPath("../../../../../samples");
 

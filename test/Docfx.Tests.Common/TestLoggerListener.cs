@@ -5,7 +5,7 @@ using Docfx.Common;
 
 namespace Docfx.Tests.Common;
 
-public class TestLoggerListener : ILoggerListener
+public sealed class TestLoggerListener : ILoggerListener
 {
     public List<ILogItem> Items { get; } = new();
 

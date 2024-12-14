@@ -11,7 +11,7 @@ using DocumentType = Docfx.DataContracts.Common.Constants.DocumentType;
 namespace Docfx.Build.Engine.Tests;
 
 [Collection("docfx STA")]
-public class SitemapGeneratorTests : TestBase
+public sealed class SitemapGeneratorTests : TestBase
 {
     private readonly ITestOutputHelper _output;
 

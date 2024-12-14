@@ -10,7 +10,7 @@ using Xunit;
 namespace Docfx.Build.Engine.Tests;
 
 [Collection("docfx STA")]
-public class ValidateBookmarkTest : TestBase
+public sealed class ValidateBookmarkTest : TestBase
 {
     private readonly string _outputFolder;
     private readonly TestLoggerListener _listener = new();

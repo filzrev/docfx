@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace Docfx.Build.Engine;
 
-public class DocumentBuilder : IDisposable
+public sealed class DocumentBuilder : IDisposable
 {
     [ImportMany]
     internal IEnumerable<IDocumentProcessor> Processors { get; set; }
