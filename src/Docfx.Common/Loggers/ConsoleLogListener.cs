@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using System.Text;
 using Docfx.Plugins;
 using Spectre.Console;
@@ -25,6 +26,7 @@ public sealed class ConsoleLogListener : ILoggerListener
             LogLevel.Suggestion => ConsoleColor.Blue,
             LogLevel.Warning => ConsoleColor.Yellow,
             LogLevel.Error => ConsoleColor.Red,
+            _ => throw new UnreachableException(), // Diagnostic log is not output to console.
         };
 
         var message = new StringBuilder();

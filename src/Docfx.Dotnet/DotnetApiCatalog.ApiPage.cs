@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Docfx.Build.ApiPage;
 using Docfx.Common;
@@ -117,6 +118,7 @@ partial class DotnetApiCatalog
                     4 => (Heading)new H4 { h4 = title, id = id },
                     5 => (Heading)new H5 { h5 = title, id = id },
                     6 => (Heading)new H6 { h6 = title, id = id },
+                    _ => throw new UnreachableException(),
                 });
             }
 
@@ -138,6 +140,7 @@ partial class DotnetApiCatalog
                     2 => (Api)new Api2 { api2 = title, id = id, src = src, deprecated = deprecated, preview = preview, metadata = new() { ["uid"] = uid, ["commentId"] = commentId } },
                     3 => (Api)new Api3 { api3 = title, id = id, src = src, deprecated = deprecated, preview = preview, metadata = new() { ["uid"] = uid, ["commentId"] = commentId } },
                     4 => (Api)new Api4 { api4 = title, id = id, src = src, deprecated = deprecated, preview = preview, metadata = new() { ["uid"] = uid, ["commentId"] = commentId } },
+                    _ => throw new UnreachableException(),
                 });
             }
 

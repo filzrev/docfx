@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using System.Net;
 using OneOf;
 using static Docfx.Build.HtmlTemplate;
@@ -25,6 +26,7 @@ static class ApiPageHtmlTemplate
             Inheritance inheritance => Inheritance(inheritance),
             Code code => Code(code),
             Parameters parameters => Parameters(parameters),
+            _ => throw new UnreachableException(),
         };
 
         HtmlTemplate Markdown(Markdown markdown) => UnsafeHtml(markup(markdown.markdown));
@@ -37,6 +39,7 @@ static class ApiPageHtmlTemplate
             H4 h4 => Html($"<h4 class='section' id='{h4.id}'>{h4.h4}</h4>"),
             H5 h5 => Html($"<h5 class='section' id='{h5.id}'>{h5.h5}</h5>"),
             H6 h6 => Html($"<h6 class='section' id='{h6.id}'>{h6.h6}</h6>"),
+            _ => throw new UnreachableException(),
         };
 
         HtmlTemplate Api(Api api)
@@ -52,6 +55,7 @@ static class ApiPageHtmlTemplate
                 Api2 a2 => (2, a2.api2),
                 Api3 a3 => (3, a3.api3),
                 Api4 a4 => (4, a4.api4),
+                _ => throw new UnreachableException(),
             };
 
             var deprecated = Badge(value.deprecated, "Deprecated", "text-bg-danger", ".4em");
@@ -146,6 +150,7 @@ static class ApiPageHtmlTemplate
             null => default,
             Span span => Span(span),
             Span[] spans => Html($"{spans.Select(Span)}"),
+            _ => throw new UnreachableException(),
         };
 
         HtmlTemplate Span(Span span) => span.Value switch
@@ -153,6 +158,7 @@ static class ApiPageHtmlTemplate
             string str => Html($"{str}"),
             LinkSpan link when string.IsNullOrEmpty(link.url) => Html($"{link.text}"),
             LinkSpan link => Html($"<a href='{link.url}'>{link.text}</a>"),
+            _ => throw new UnreachableException(),
         };
     }
 }

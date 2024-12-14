@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Reflection;
 
 namespace Docfx.Common.EntityMergers;
@@ -119,7 +120,8 @@ public class ReflectionEntityMerger : IMerger
                     {
                         MergePlacement.After => $"{s}{o}",
                         MergePlacement.Before => $"{o}{s}",
-                        MergePlacement.Replace => o.ToString()
+                        MergePlacement.Replace => o.ToString(),
+                        _ => throw new UnreachableException(),
                     };
 
                     prop.Prop.SetValue(source, s);

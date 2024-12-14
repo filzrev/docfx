@@ -100,6 +100,7 @@ public sealed class SamplesTest : IDisposable
             {
                 GoToAction g => new { Goto = g.Destination },
                 UriAction u => new { u.Uri },
+                _ => throw new UnreachableException(),
             };
 
             object ToBookmarks(IEnumerable<BookmarkNode> nodes)
@@ -108,6 +109,7 @@ public sealed class SamplesTest : IDisposable
                 {
                     DocumentBookmarkNode d => (object)new { node.Title, Children = ToBookmarks(node.Children), d.Destination },
                     UriBookmarkNode d => new { node.Title, Children = ToBookmarks(node.Children), d.Uri },
+                    _ => throw new UnreachableException(),
                 }).ToArray();
             }
         }
