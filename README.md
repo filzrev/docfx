@@ -1,4 +1,4 @@
-# Build your docs with docfx4
+# Build your docs with docfx3
 
 [![NuGet](https://img.shields.io/nuget/v/docfx)](https://www.nuget.org/packages/docfx)
 [![ci](https://github.com/dotnet/docfx/actions/workflows/ci.yml/badge.svg)](https://github.com/dotnet/docfx/actions/workflows/ci.yml)
