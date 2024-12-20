@@ -53,11 +53,6 @@
     <VSTestLogger>$(VSTestLogger);html%3BLogFileName=TestResults-$(MSBuildProjectName)-$(TargetFramework)-$(RUNNER_OS).html</VSTestLogger>
   </PropertyGroup>
 
-  <!-- Add [assembly:CaptureConsole] attribute to assemblies -->
-  <ItemGroup>
-    <AssemblyAttribute Include="Xunit.CaptureConsole" />
-  </ItemGroup>
-
   <ItemGroup>
     <None Include="TestData\**" CopyToOutputDirectory="PreserveNewest" />
     <None Include="$(MSBuildThisFileDirectory)xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
