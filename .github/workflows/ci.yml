@@ -39,6 +39,10 @@ jobs:
       shell: bash
       working-directory: templates
 
+    - name: Install Chromium Headless Shell
+      run: |
+        pwsh -File src\docfx\bin\Debug\net8.0\playwright.ps1 install chromium --only-shell
+
     - run: dotnet test -c Release -f net8.0 --no-build --collect:"XPlat Code Coverage" --consoleLoggerParameters:"Summary;Verbosity=Minimal" -- --seed ${{ env.seed }}
       id: test-net80
 
