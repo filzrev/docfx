@@ -25,7 +25,7 @@
     <TestingPlatformCaptureOutput>false</TestingPlatformCaptureOutput>
 
     <!-- Use `Microsoft.Testing.Platform` entrypoint. -->
-    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+    <UseMicrosoftTestingPlatformRunner>false</UseMicrosoftTestingPlatformRunner>
 
     <!-- Change TestResults output directory. And enable detailed log outputs -->
     <TestingPlatformCommandLineArguments>$(TestingPlatformCommandLineArguments) --results-directory "$(MSBuildThisFileDirectory)TestResults"</TestingPlatformCommandLineArguments>
