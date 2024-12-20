@@ -15,7 +15,8 @@
   <!-- Configure `Microsoft.Testing.Platform` mode behaviors (https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-platform-integration-dotnet-test)-->
   <PropertyGroup>
     <!-- Enable `Microsoft.Testing.Platform` mode for `dotnet test` -->
-    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <TestingPlatformDotnetTestSupport>false</TestingPlatformDotnetTestSupport>
+    <UseVSTest>true</UseVSTest>
 
     <!-- Show failure per test -->
     <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
