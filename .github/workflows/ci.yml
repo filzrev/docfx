@@ -39,9 +39,10 @@ jobs:
       shell: bash
       working-directory: templates
 
-    - name: Install Chromium Headless Shell
+    - name: Install Chromium Headless Shell by runnign docfx commands
       run: |
-        pwsh -File src/docfx/bin/Release/net8.0/playwright.ps1 install chromium --only-shell
+        dotnet run --project src/docfx -c Release --no-build --framework net8.0 --no-launch-profile -- build docs/docfx.json
+        dotnet run --project src/docfx -c Release --no-build --framework net8.0 --no-launch-profile -- pdf   docs/docfx.json
 
     - run: dotnet test -c Release -f net8.0 --no-build --collect:"XPlat Code Coverage" --consoleLoggerParameters:"Summary;Verbosity=Minimal" -- --seed ${{ env.seed }}
       id: test-net80
