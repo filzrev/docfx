@@ -44,7 +44,7 @@ jobs:
         dotnet run --project src/docfx -c Release --no-build --framework net8.0 --no-launch-profile -- build docs/docfx.json
         dotnet run --project src/docfx -c Release --no-build --framework net8.0 --no-launch-profile -- pdf   docs/docfx.json
 
-    - run: dotnet test -c Release -f net8.0 --no-build --collect:"XPlat Code Coverage" --consoleLoggerParameters:"Summary;Verbosity=Minimal" -- --seed ${{ env.seed }}
+    - run: dotnet test -c Release -f net8.0 --no-build --collect:"XPlat Code Coverage" --consoleLoggerParameters:"Summary;Verbosity=Minimal" -- --seed ${{ env.seed }} --no-ansi --no-progress
       id: test-net80
 
     - run: dotnet test -c Release -f net9.0 --no-build --collect:"XPlat Code Coverage" --consoleLoggerParameters:"Summary;Verbosity=Minimal" -- --seed ${{ env.seed }}
