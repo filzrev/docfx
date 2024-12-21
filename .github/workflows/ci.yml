@@ -14,6 +14,7 @@ on:
 
 env:
   seed: ${{ inputs.seed || github.run_number }}
+  NO_COLOR: true
 
 jobs:
   test:
