@@ -44,7 +44,8 @@ jobs:
       shell: pwsh
       working-directory: src/docfx/bin/Release/net8.0
       run: |
-        $env:PLAYWRIGHT_NODEJS_PATH = [IO.Path]::GetDirectoryName((Get-Command node).Definition) 
+        $env:PLAYWRIGHT_DRIVER_PATH = (Resolve-Path .playwright).Path
+        $env:PLAYWRIGHT_NODEJS_PATH = [IO.Path]::GetDirectoryName((Get-Command node).Path)
         pwsh -File playwright.ps1 install chromium --only-shell
 
     - run: dotnet test -c Release -f net8.0 --no-build -- --seed ${{ env.seed }} --no-ansi --no-progress -v detailed
