@@ -139,7 +139,7 @@ public class SamplesTest : IDisposable
     ////}
 
     [SamplesFact]
-    //[UseCustomBranchName("main")]
+    [UseCustomBranchName("main")]
     public async Task Extensions()
     {
         TestContext.Current.TestOutputHelper.WriteLine("::: 0." + DateTime.Now.ToString("HH:mm:ss.fff"));
