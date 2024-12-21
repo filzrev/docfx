@@ -40,7 +40,12 @@ jobs:
       shell: bash
       working-directory: templates
 
-    - run: dotnet run -c Release --no-build -f net8.0 --project src/docfx -- docs/docfx.json
+    - name: Install Chromium Headless Shell
+      shell: pwsh
+      working-directory: src/docfx/bin/Release/net8.0
+      run: |
+        $env:PLAYWRIGHT_NODEJS_PATH = (Get-Command node).Path
+        ./playwright.ps1 install chromium --only-shell
 
     - run: dotnet test -c Release -f net8.0 --no-build --consoleLoggerParameters:"Summary;Verbosity=Minimal" -- --seed ${{ env.seed }} --no-ansi --no-progress
       id: test-net80
