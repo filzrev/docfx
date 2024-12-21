@@ -48,7 +48,7 @@ public class SamplesTest : IDisposable
     }
 
     [SamplesFact]
-    // [UseCustomBranchName("main")]
+    [UseCustomBranchName("main")]
     public async Task Seed()
     {
         var samplePath = $"{s_samplesDir}/seed";
@@ -66,7 +66,7 @@ public class SamplesTest : IDisposable
             Assert.Equal(0, Exec(docfxPath, $"{samplePath}/docfx.json"));
         }
 
-        Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
+        // Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
 
         //  await VerifyDirectory($"{samplePath}/_site", IncludeFile, fileScrubber: ScrubFile).AutoVerify(includeBuildServer: false);
         await Task.Yield();
@@ -113,7 +113,7 @@ public class SamplesTest : IDisposable
     }
 
     [SamplesFact]
-    // [UseCustomBranchName("main")]
+    [UseCustomBranchName("main")]
     public async Task SeedMarkdown()
     {
         var samplePath = $"{s_samplesDir}/seed";
@@ -127,7 +127,7 @@ public class SamplesTest : IDisposable
     }
 
     [SamplesFact]
-    // [UseCustomBranchName("main")]
+    [UseCustomBranchName("main")]
     public async Task CSharp()
     {
         var samplePath = $"{s_samplesDir}/csharp";
@@ -140,7 +140,7 @@ public class SamplesTest : IDisposable
     }
 
     [SamplesFact]
-    //[UseCustomBranchName("main")]
+    [UseCustomBranchName("main")]
     public Task Extensions()
     {
         var samplePath = $"{s_samplesDir}/extensions";
