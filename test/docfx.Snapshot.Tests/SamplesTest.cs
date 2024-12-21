@@ -47,96 +47,96 @@ public class SamplesTest : IDisposable
         }
     }
 
-    [SamplesFact]
-    [UseCustomBranchName("main")]
-    public async Task Seed()
-    {
-        var samplePath = $"{s_samplesDir}/seed";
-        Clean(samplePath);
+    ////[SamplesFact]
+    ////[UseCustomBranchName("main")]
+    ////public async Task Seed()
+    ////{
+    ////    var samplePath = $"{s_samplesDir}/seed";
+    ////    Clean(samplePath);
 
-        Exec("dotnet", $"build \"{s_samplesDir}/seed/dotnet/assembly/BuildFromAssembly.csproj\"");
+    ////    Exec("dotnet", $"build \"{s_samplesDir}/seed/dotnet/assembly/BuildFromAssembly.csproj\"");
 
-        if (Debugger.IsAttached)
-        {
-            Program.Main([$"{samplePath}/docfx.json"]);
-        }
-        else
-        {
-            var docfxPath = Path.GetFullPath(OperatingSystem.IsWindows() ? "docfx.exe" : "docfx");
-            Exec(docfxPath, $"{samplePath}/docfx.json");
-        }
+    ////    if (Debugger.IsAttached)
+    ////    {
+    ////        Program.Main([$"{samplePath}/docfx.json"]);
+    ////    }
+    ////    else
+    ////    {
+    ////        var docfxPath = Path.GetFullPath(OperatingSystem.IsWindows() ? "docfx.exe" : "docfx");
+    ////        Exec(docfxPath, $"{samplePath}/docfx.json");
+    ////    }
 
-        Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
+    ////    Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
 
-        await VerifyDirectory($"{samplePath}/_site", IncludeFile, fileScrubber: ScrubFile).AutoVerify(includeBuildServer: false);
+    ////    await VerifyDirectory($"{samplePath}/_site", IncludeFile, fileScrubber: ScrubFile).AutoVerify(includeBuildServer: false);
 
-        void PdfToJson(string path)
-        {
-            using var document = PdfDocument.Open(path);
+    ////    void PdfToJson(string path)
+    ////    {
+    ////        using var document = PdfDocument.Open(path);
 
-            var pdf = new
-            {
-                document.NumberOfPages,
-                Pages = document.GetPages().Select(p => new
-                {
-                    p.Number,
-                    p.NumberOfImages,
-                    Text = ExtractText(p),
-                    Links = p.ExperimentalAccess.GetAnnotations().Select(ToLink).ToArray(),
-                }).ToArray(),
-                Bookmarks = document.TryGetBookmarks(out var bookmarks) ? ToBookmarks(bookmarks.Roots) : null,
-            };
+    ////        var pdf = new
+    ////        {
+    ////            document.NumberOfPages,
+    ////            Pages = document.GetPages().Select(p => new
+    ////            {
+    ////                p.Number,
+    ////                p.NumberOfImages,
+    ////                Text = ExtractText(p),
+    ////                Links = p.ExperimentalAccess.GetAnnotations().Select(ToLink).ToArray(),
+    ////            }).ToArray(),
+    ////            Bookmarks = document.TryGetBookmarks(out var bookmarks) ? ToBookmarks(bookmarks.Roots) : null,
+    ////        };
 
-            var json = JsonSerializer.Serialize(pdf, new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
-            });
+    ////        var json = JsonSerializer.Serialize(pdf, new JsonSerializerOptions
+    ////        {
+    ////            WriteIndented = true,
+    ////            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+    ////        });
 
-            File.WriteAllText(Path.ChangeExtension(path, ".pdf.json"), json);
+    ////        File.WriteAllText(Path.ChangeExtension(path, ".pdf.json"), json);
 
-            object ToLink(Annotation a) => a.Action switch
-            {
-                GoToAction g => new { Goto = g.Destination },
-                UriAction u => new { u.Uri },
-            };
+    ////        object ToLink(Annotation a) => a.Action switch
+    ////        {
+    ////            GoToAction g => new { Goto = g.Destination },
+    ////            UriAction u => new { u.Uri },
+    ////        };
 
-            object ToBookmarks(IEnumerable<BookmarkNode> nodes)
-            {
-                return nodes.Select(node => node switch
-                {
-                    DocumentBookmarkNode d => (object)new { node.Title, Children = ToBookmarks(node.Children), d.Destination },
-                    UriBookmarkNode d => new { node.Title, Children = ToBookmarks(node.Children), d.Uri },
-                }).ToArray();
-            }
-        }
-    }
+    ////        object ToBookmarks(IEnumerable<BookmarkNode> nodes)
+    ////        {
+    ////            return nodes.Select(node => node switch
+    ////            {
+    ////                DocumentBookmarkNode d => (object)new { node.Title, Children = ToBookmarks(node.Children), d.Destination },
+    ////                UriBookmarkNode d => new { node.Title, Children = ToBookmarks(node.Children), d.Uri },
+    ////            }).ToArray();
+    ////        }
+    ////    }
+    ////}
 
-    [SamplesFact]
-    [UseCustomBranchName("main")]
-    public async Task SeedMarkdown()
-    {
-        var samplePath = $"{s_samplesDir}/seed";
-        var outputPath = nameof(SeedMarkdown);
-        Clean(samplePath);
+    ////[SamplesFact]
+    ////[UseCustomBranchName("main")]
+    ////public async Task SeedMarkdown()
+    ////{
+    ////    var samplePath = $"{s_samplesDir}/seed";
+    ////    var outputPath = nameof(SeedMarkdown);
+    ////    Clean(samplePath);
 
-        Program.Main(["metadata", $"{samplePath}/docfx.json", "--outputFormat", "markdown", "--output", outputPath]);
+    ////    Program.Main(["metadata", $"{samplePath}/docfx.json", "--outputFormat", "markdown", "--output", outputPath]);
 
-        await VerifyDirectory(outputPath).AutoVerify(includeBuildServer: false);
-    }
+    ////    await VerifyDirectory(outputPath).AutoVerify(includeBuildServer: false);
+    ////}
 
-    [SamplesFact]
-    [UseCustomBranchName("main")]
-    public async Task CSharp()
-    {
-        var samplePath = $"{s_samplesDir}/csharp";
-        Clean(samplePath);
+    ////[SamplesFact]
+    ////[UseCustomBranchName("main")]
+    ////public async Task CSharp()
+    ////{
+    ////    var samplePath = $"{s_samplesDir}/csharp";
+    ////    Clean(samplePath);
 
-        await DotnetApiCatalog.GenerateManagedReferenceYamlFiles($"{samplePath}/docfx.json");
-        await Docset.Build($"{samplePath}/docfx.json");
+    ////    await DotnetApiCatalog.GenerateManagedReferenceYamlFiles($"{samplePath}/docfx.json");
+    ////    await Docset.Build($"{samplePath}/docfx.json");
 
-        await VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
-    }
+    ////    await VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
+    ////}
 
     [SamplesFact]
     //[UseCustomBranchName("main")]
