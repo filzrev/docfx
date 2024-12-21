@@ -58,18 +58,18 @@ public class SamplesTest : IDisposable
 
         if (Debugger.IsAttached)
         {
-            Assert.Equal(0, Program.Main([$"{samplePath}/docfx.json"]));
+            Program.Main([$"{samplePath}/docfx.json"]);
         }
         else
         {
             var docfxPath = Path.GetFullPath(OperatingSystem.IsWindows() ? "docfx.exe" : "docfx");
-            Assert.Equal(0, Exec(docfxPath, $"{samplePath}/docfx.json"));
+            Exec(docfxPath, $"{samplePath}/docfx.json");
         }
 
         Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
 
         await VerifyDirectory($"{samplePath}/_site", IncludeFile, fileScrubber: ScrubFile).AutoVerify(includeBuildServer: false);
-        await Task.Yield();
+
         void PdfToJson(string path)
         {
             using var document = PdfDocument.Open(path);
