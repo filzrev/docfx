@@ -142,17 +142,18 @@ public class SamplesTest : IDisposable
     //[UseCustomBranchName("main")]
     public async Task Extensions()
     {
+        TestContext.Current.TestOutputHelper.WriteLine("::: 0." + DateTime.Now.ToString("HH:mm:ss.fff"));
         var samplePath = $"{s_samplesDir}/extensions";
         Clean(samplePath);
 
-        Console.WriteLine("::: 1." + DateTime.Now.ToString("HH:mm:ss.fff"));
-        Exec("dotnet", $"build -c Release \"{samplePath}/build\"");
-        Console.WriteLine("::: 2." + DateTime.Now.ToString("HH:mm:ss.fff"));
+        TestContext.Current.TestOutputHelper.WriteLine("::: 1." + DateTime.Now.ToString("HH:mm:ss.fff"));
+        Exec("dotnet", $"build -c Release \"{samplePath}/build\""); // Run dotnet build samples/build
+        TestContext.Current.TestOutputHelper.WriteLine("::: 2." + DateTime.Now.ToString("HH:mm:ss.fff"));
         Exec("dotnet", "run --no-build -c Release --project build", workingDirectory: samplePath);
-        Console.WriteLine("::: 3." + DateTime.Now.ToString("HH:mm:ss.fff"));
+        TestContext.Current.TestOutputHelper.WriteLine("::: 3." + DateTime.Now.ToString("HH:mm:ss.fff"));
 
         var tasl = VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
-        Console.WriteLine("::: 4." + DateTime.Now.ToString("HH:mm:ss.fff"));
+        TestContext.Current.TestOutputHelper.WriteLine("::: 4." + DateTime.Now.ToString("HH:mm:ss.fff"));
 
         await tasl;
         Console.WriteLine("::: 5." + DateTime.Now.ToString("HH:mm:ss.fff"));
