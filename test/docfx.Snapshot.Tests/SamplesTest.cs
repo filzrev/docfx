@@ -146,13 +146,9 @@ public class SamplesTest : IDisposable
         var samplePath = $"{s_samplesDir}/extensions";
         Clean(samplePath);
 
-#if DEBUG
-        Exec("dotnet", $"build \"{samplePath}/build\"");
-        Assert.Equal(0, Exec("dotnet", "run --no-build --project build", workingDirectory: samplePath));
-#else
-        Exec("dotnet", $"build -c Release \"{samplePath}/build\"");
+        Exec("dotnet", $"build -c Release \"{samplePath}/build\" --verbose");
         Assert.Equal(0, Exec("dotnet", "run --no-build -c Release --project build", workingDirectory: samplePath));
-#endif
+
         return Task.CompletedTask;
         // return VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
     }
