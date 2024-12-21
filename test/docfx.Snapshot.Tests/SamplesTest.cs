@@ -122,6 +122,7 @@ public class SamplesTest : IDisposable
 
         Program.Main(["metadata", $"{samplePath}/docfx.json", "--outputFormat", "markdown", "--output", outputPath]);
 
+        await Task.Yield();
         // await VerifyDirectory(outputPath).AutoVerify(includeBuildServer: false);
     }
 
