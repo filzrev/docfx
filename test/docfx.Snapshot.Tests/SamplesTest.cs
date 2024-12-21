@@ -112,48 +112,48 @@ public class SamplesTest : IDisposable
     ////    }
     ////}
 
-    ////[SamplesFact]
-    ////[UseCustomBranchName("main")]
-    ////public async Task SeedMarkdown()
-    ////{
-    ////    var samplePath = $"{s_samplesDir}/seed";
-    ////    var outputPath = nameof(SeedMarkdown);
-    ////    Clean(samplePath);
+    [SamplesFact]
+    [UseCustomBranchName("main")]
+    public async Task SeedMarkdown()
+    {
+        var samplePath = $"{s_samplesDir}/seed";
+        var outputPath = nameof(SeedMarkdown);
+        Clean(samplePath);
 
-    ////    Program.Main(["metadata", $"{samplePath}/docfx.json", "--outputFormat", "markdown", "--output", outputPath]);
+        Program.Main(["metadata", $"{samplePath}/docfx.json", "--outputFormat", "markdown", "--output", outputPath]);
 
-    ////    await VerifyDirectory(outputPath).AutoVerify(includeBuildServer: false);
-    ////}
+        await VerifyDirectory(outputPath).AutoVerify(includeBuildServer: false);
+    }
 
-    ////[SamplesFact]
-    ////[UseCustomBranchName("main")]
-    ////public async Task CSharp()
-    ////{
-    ////    var samplePath = $"{s_samplesDir}/csharp";
-    ////    Clean(samplePath);
+    [SamplesFact]
+    [UseCustomBranchName("main")]
+    public async Task CSharp()
+    {
+        var samplePath = $"{s_samplesDir}/csharp";
+        Clean(samplePath);
 
-    ////    await DotnetApiCatalog.GenerateManagedReferenceYamlFiles($"{samplePath}/docfx.json");
-    ////    await Docset.Build($"{samplePath}/docfx.json");
+        await DotnetApiCatalog.GenerateManagedReferenceYamlFiles($"{samplePath}/docfx.json");
+        await Docset.Build($"{samplePath}/docfx.json");
 
-    ////    await VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
-    ////}
+        await VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
+    }
 
     [SamplesFact]
     [UseCustomBranchName("main")]
     public async Task Extensions()
     {
-        TestContext.Current.TestOutputHelper.WriteLine("::: 0." + DateTime.Now.ToString("HH:mm:ss.fff"));
+        TestContext.Current.TestOutputHelper.WriteLine("::: 0. " + DateTime.Now.ToString("HH:mm:ss.fff"));
         var samplePath = $"{s_samplesDir}/extensions";
         Clean(samplePath);
 
-        TestContext.Current.TestOutputHelper.WriteLine("::: 1." + DateTime.Now.ToString("HH:mm:ss.fff"));
+        TestContext.Current.TestOutputHelper.WriteLine("::: 1. " + DateTime.Now.ToString("HH:mm:ss.fff"));
         Exec("dotnet", $"build -c Release \"{samplePath}/build\""); // Run dotnet build samples/build
-        TestContext.Current.TestOutputHelper.WriteLine("::: 2." + DateTime.Now.ToString("HH:mm:ss.fff"));
+        TestContext.Current.TestOutputHelper.WriteLine("::: 2. " + DateTime.Now.ToString("HH:mm:ss.fff"));
         Exec("dotnet", "run --no-build -c Release --project build", workingDirectory: samplePath);
         TestContext.Current.TestOutputHelper.WriteLine("::: 3." + DateTime.Now.ToString("HH:mm:ss.fff"));
 
         var tasl = VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
-        TestContext.Current.TestOutputHelper.WriteLine("::: 4." + DateTime.Now.ToString("HH:mm:ss.fff"));
+        TestContext.Current.TestOutputHelper.WriteLine("::: 4. " + DateTime.Now.ToString("HH:mm:ss.fff"));
 
         await tasl;
         Console.WriteLine("::: 5." + DateTime.Now.ToString("HH:mm:ss.fff"));
