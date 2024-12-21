@@ -20,8 +20,7 @@
   <!-- Configure `Microsoft.Testing.Platform` mode behaviors (https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-platform-integration-dotnet-test)-->
   <PropertyGroup>
     <!-- Enable `Microsoft.Testing.Platform` mode for `dotnet test` -->
-    <TestingPlatformDotnetTestSupport>false</TestingPlatformDotnetTestSupport>
-    <UseVSTest>true</UseVSTest>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
 
     <!-- Show failure per test -->
     <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
@@ -30,7 +29,7 @@
     <TestingPlatformCaptureOutput>false</TestingPlatformCaptureOutput>
 
     <!-- Use `Microsoft.Testing.Platform` entrypoint. -->
-    <UseMicrosoftTestingPlatformRunner>false</UseMicrosoftTestingPlatformRunner>
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
 
     <!-- Change TestResults output directory. And enable detailed log outputs -->
     <TestingPlatformCommandLineArguments>$(TestingPlatformCommandLineArguments) --results-directory "$(MSBuildThisFileDirectory)TestResults"</TestingPlatformCommandLineArguments>
