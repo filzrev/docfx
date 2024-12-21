@@ -139,7 +139,7 @@ public class SamplesTest : IDisposable
     ////}
 
     [SamplesFact]
-    [UseCustomBranchName("main")]
+    //[UseCustomBranchName("main")]
     public async Task Extensions()
     {
         var samplePath = $"{s_samplesDir}/extensions";
