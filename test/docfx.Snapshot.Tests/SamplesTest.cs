@@ -147,7 +147,7 @@ public class SamplesTest : IDisposable
         Clean(samplePath);
 
         TestContext.Current.TestOutputHelper.WriteLine("::: 1. " + DateTime.Now.ToString("HH:mm:ss.fff"));
-        Exec("dotnet", $"build -c Release \"{samplePath}/build\" -bl:{samplePath}/../../test.binlog"); // Run dotnet build samples/build
+        Exec("dotnet", $"build -c Release \"{samplePath}/build\" -bl:{samplePath}/../../test.binlog -nodereuse:false"); // Run dotnet build samples/build
         TestContext.Current.TestOutputHelper.WriteLine("::: 2. " + DateTime.Now.ToString("HH:mm:ss.fff"));
         Exec("dotnet", "run --no-build -c Release --project build", workingDirectory: samplePath);
         TestContext.Current.TestOutputHelper.WriteLine("::: 3." + DateTime.Now.ToString("HH:mm:ss.fff"));
