@@ -42,7 +42,7 @@ jobs:
 
     - run: dotnet run -c Release --no-build -f net8.0 --project src/docfx -- docs/docfx.json
 
-    - run: dotnet test -c Release -f net8.0 --no-build --consoleLoggerParameters:"Summary;Verbosity=Minimal" -- --seed ${{ env.seed }} --no-ansi --no-progress -v detailed
+    - run: dotnet test -c Release -f net8.0 --no-build --consoleLoggerParameters:"Summary;Verbosity=Minimal" -- --seed ${{ env.seed }} --no-ansi --no-progress
       id: test-net80
 
     - uses: codecov/codecov-action@v5
