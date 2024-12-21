@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <!-- Add [assembly:CaptureConsole] attribute to assemblies -->
-  <ItemGroup>
+  <!--<ItemGroup>
     <AssemblyAttribute Include="Xunit.CaptureConsole" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <!-- .NET 9 or later run tests per TargetFramework in parallel by default.
         It is necessary to disable this feature because there are tests that need to be executed sequentially that are marked with `[Collection("docfx STA")]`. -->
