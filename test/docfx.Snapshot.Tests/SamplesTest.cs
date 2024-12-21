@@ -66,9 +66,9 @@ public class SamplesTest : IDisposable
             Assert.Equal(0, Exec(docfxPath, $"{samplePath}/docfx.json"));
         }
 
-        // Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
+        Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
 
-        //  await VerifyDirectory($"{samplePath}/_site", IncludeFile, fileScrubber: ScrubFile).AutoVerify(includeBuildServer: false);
+        // await VerifyDirectory($"{samplePath}/_site", IncludeFile, fileScrubber: ScrubFile).AutoVerify(includeBuildServer: false);
         await Task.Yield();
         void PdfToJson(string path)
         {
