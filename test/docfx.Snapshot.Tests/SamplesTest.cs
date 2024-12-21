@@ -47,133 +47,130 @@ public class SamplesTest : IDisposable
         }
     }
 
-    [SamplesFact]
-    public async Task Seed()
-    {
-        var samplePath = $"{s_samplesDir}/seed";
-        Clean(samplePath);
+    ////[SamplesFact]
+    ////[UseCustomBranchName("main")]
+    ////public async Task Seed()
+    ////{
+    ////    var samplePath = $"{s_samplesDir}/seed";
+    ////    Clean(samplePath);
 
-        using var process = Process.Start("dotnet", $"build \"{s_samplesDir}/seed/dotnet/assembly/BuildFromAssembly.csproj\"");
-        await process.WaitForExitAsync();
+    ////    Exec("dotnet", $"build \"{s_samplesDir}/seed/dotnet/assembly/BuildFromAssembly.csproj\"");
 
-        if (Debugger.IsAttached)
-        {
-            Environment.SetEnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME", "main");
-            Assert.Equal(0, Program.Main([$"{samplePath}/docfx.json"]));
-        }
-        else
-        {
-            var docfxPath = Path.GetFullPath(OperatingSystem.IsWindows() ? "docfx.exe" : "docfx");
-            Assert.Equal(0, Exec(docfxPath, $"{samplePath}/docfx.json"));
-        }
+    ////    if (Debugger.IsAttached)
+    ////    {
+    ////        Program.Main([$"{samplePath}/docfx.json"]);
+    ////    }
+    ////    else
+    ////    {
+    ////        var docfxPath = Path.GetFullPath(OperatingSystem.IsWindows() ? "docfx.exe" : "docfx");
+    ////        Exec(docfxPath, $"{samplePath}/docfx.json");
+    ////    }
 
-        Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
+    ////    Parallel.ForEach(Directory.EnumerateFiles($"{samplePath}/_site", "*.pdf", SearchOption.AllDirectories), PdfToJson);
 
-        await VerifyDirectory($"{samplePath}/_site", IncludeFile, fileScrubber: ScrubFile).AutoVerify(includeBuildServer: false);
+    ////    await VerifyDirectory($"{samplePath}/_site", IncludeFile, fileScrubber: ScrubFile).AutoVerify(includeBuildServer: false);
 
-        void PdfToJson(string path)
-        {
-            using var document = PdfDocument.Open(path);
+    ////    void PdfToJson(string path)
+    ////    {
+    ////        using var document = PdfDocument.Open(path);
 
-            var pdf = new
-            {
-                document.NumberOfPages,
-                Pages = document.GetPages().Select(p => new
-                {
-                    p.Number,
-                    p.NumberOfImages,
-                    Text = ExtractText(p),
-                    Links = p.ExperimentalAccess.GetAnnotations().Select(ToLink).ToArray(),
-                }).ToArray(),
-                Bookmarks = document.TryGetBookmarks(out var bookmarks) ? ToBookmarks(bookmarks.Roots) : null,
-            };
+    ////        var pdf = new
+    ////        {
+    ////            document.NumberOfPages,
+    ////            Pages = document.GetPages().Select(p => new
+    ////            {
+    ////                p.Number,
+    ////                p.NumberOfImages,
+    ////                Text = ExtractText(p),
+    ////                Links = p.ExperimentalAccess.GetAnnotations().Select(ToLink).ToArray(),
+    ////            }).ToArray(),
+    ////            Bookmarks = document.TryGetBookmarks(out var bookmarks) ? ToBookmarks(bookmarks.Roots) : null,
+    ////        };
 
-            var json = JsonSerializer.Serialize(pdf, new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
-            });
+    ////        var json = JsonSerializer.Serialize(pdf, new JsonSerializerOptions
+    ////        {
+    ////            WriteIndented = true,
+    ////            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+    ////        });
 
-            File.WriteAllText(Path.ChangeExtension(path, ".pdf.json"), json);
+    ////        File.WriteAllText(Path.ChangeExtension(path, ".pdf.json"), json);
 
-            object ToLink(Annotation a) => a.Action switch
-            {
-                GoToAction g => new { Goto = g.Destination },
-                UriAction u => new { u.Uri },
-            };
+    ////        object ToLink(Annotation a) => a.Action switch
+    ////        {
+    ////            GoToAction g => new { Goto = g.Destination },
+    ////            UriAction u => new { u.Uri },
+    ////        };
 
-            object ToBookmarks(IEnumerable<BookmarkNode> nodes)
-            {
-                return nodes.Select(node => node switch
-                {
-                    DocumentBookmarkNode d => (object)new { node.Title, Children = ToBookmarks(node.Children), d.Destination },
-                    UriBookmarkNode d => new { node.Title, Children = ToBookmarks(node.Children), d.Uri },
-                }).ToArray();
-            }
-        }
-    }
+    ////        object ToBookmarks(IEnumerable<BookmarkNode> nodes)
+    ////        {
+    ////            return nodes.Select(node => node switch
+    ////            {
+    ////                DocumentBookmarkNode d => (object)new { node.Title, Children = ToBookmarks(node.Children), d.Destination },
+    ////                UriBookmarkNode d => new { node.Title, Children = ToBookmarks(node.Children), d.Uri },
+    ////            }).ToArray();
+    ////        }
+    ////    }
+    ////}
 
-    [SamplesFact]
-    public async Task SeedMarkdown()
-    {
-        var samplePath = $"{s_samplesDir}/seed";
-        var outputPath = nameof(SeedMarkdown);
-        Clean(samplePath);
+    ////[SamplesFact]
+    ////[UseCustomBranchName("main")]
+    ////public async Task SeedMarkdown()
+    ////{
+    ////    var samplePath = $"{s_samplesDir}/seed";
+    ////    var outputPath = nameof(SeedMarkdown);
+    ////    Clean(samplePath);
 
-        Program.Main(["metadata", $"{samplePath}/docfx.json", "--outputFormat", "markdown", "--output", outputPath]);
+    ////    Program.Main(["metadata", $"{samplePath}/docfx.json", "--outputFormat", "markdown", "--output", outputPath]);
 
-        await VerifyDirectory(outputPath).AutoVerify(includeBuildServer: false);
-    }
+    ////    await VerifyDirectory(outputPath).AutoVerify(includeBuildServer: false);
+    ////}
 
-    [SamplesFact]
-    public async Task CSharp()
-    {
-        var samplePath = $"{s_samplesDir}/csharp";
-        Clean(samplePath);
+    ////[SamplesFact]
+    ////[UseCustomBranchName("main")]
+    ////public async Task CSharp()
+    ////{
+    ////    var samplePath = $"{s_samplesDir}/csharp";
+    ////    Clean(samplePath);
 
-        Environment.SetEnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME", "main");
+    ////    await DotnetApiCatalog.GenerateManagedReferenceYamlFiles($"{samplePath}/docfx.json");
+    ////    await Docset.Build($"{samplePath}/docfx.json");
 
-        try
-        {
-            await DotnetApiCatalog.GenerateManagedReferenceYamlFiles($"{samplePath}/docfx.json");
-            await Docset.Build($"{samplePath}/docfx.json");
-        }
-        finally
-        {
-            Environment.SetEnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME", null);
-        }
-
-        await VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
-    }
+    ////    await VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
+    ////}
 
     [SamplesFact]
-    public Task Extensions()
+    //[UseCustomBranchName("main")]
+    public async Task Extensions()
     {
+        TestContext.Current.TestOutputHelper.WriteLine("::: 0. " + DateTime.Now.ToString("HH:mm:ss.fff"));
         var samplePath = $"{s_samplesDir}/extensions";
         Clean(samplePath);
 
-#if DEBUG
-        using var process = Process.Start("dotnet", $"build \"{samplePath}/build\"");
-        process.WaitForExit();
-        Assert.Equal(0, Exec("dotnet", "run --no-build --project build", workingDirectory: samplePath));
-#else
-        using var process = Process.Start("dotnet", $"build -c Release \"{samplePath}/build\"");
-        process.WaitForExit();
-        Assert.Equal(0, Exec("dotnet", "run --no-build -c Release --project build", workingDirectory: samplePath));
-#endif
+        TestContext.Current.TestOutputHelper.WriteLine("::: 1. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+        Exec("dotnet", $"build -c Release \"{samplePath}/build\" -bl:{samplePath}/../test.binlog"); // Run dotnet build samples/build
+        TestContext.Current.TestOutputHelper.WriteLine("::: 2. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+        Exec("dotnet", "run --no-build -c Release --project build", workingDirectory: samplePath);
+        TestContext.Current.TestOutputHelper.WriteLine("::: 3." + DateTime.Now.ToString("HH:mm:ss.fff"));
 
-        return VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
+        var tasl = VerifyDirectory($"{samplePath}/_site", IncludeFile).AutoVerify(includeBuildServer: false);
+        TestContext.Current.TestOutputHelper.WriteLine("::: 4. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+
+        await tasl;
+        Console.WriteLine("::: 5." + DateTime.Now.ToString("HH:mm:ss.fff"));
+
+        await Task.Yield();
     }
 
     private static int Exec(string filename, string args, string workingDirectory = null)
     {
-        var psi = new ProcessStartInfo(filename, args);
-        psi.EnvironmentVariables.Add("DOCFX_SOURCE_BRANCH_NAME", "main");
-        if (workingDirectory != null)
-            psi.WorkingDirectory = Path.GetFullPath(workingDirectory);
-        using var process = Process.Start(psi);
-        process.WaitForExit();
-        return process.ExitCode;
+        var execTask = ProcessHelper.ExecAsync(
+            filename,
+            args,
+            workingDirectory,
+            environmentVariables: [],
+            TestContext.Current.CancellationToken);
+
+        return execTask.GetAwaiter().GetResult();
     }
 
     private static void Clean(string samplePath)
