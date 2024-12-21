@@ -46,8 +46,7 @@
   </PropertyGroup>
 
   <!-- Settings for VSTest mode. These settings will be removed in future. -->
-  <PropertyGroup> 
-    
+  <PropertyGroup Condition="'$(ContinuousIntegrationBuild)' == 'true' AND '$(PERCY_TOKEN)' == ''">
     <!-- See: https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-platform-vs-vstest#communication-protocol-preview -->
     <VSTestResultsDirectory>$(MSBuildThisFileDirectory)TestResults</VSTestResultsDirectory>
     <VSTestLogger>$(VSTestLogger);trx%3BLogFileName=TestResults-$(MSBuildProjectName)-$(TargetFramework)-$(RUNNER_OS).trx</VSTestLogger>
