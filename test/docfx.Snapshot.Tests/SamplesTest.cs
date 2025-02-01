@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
@@ -11,6 +12,8 @@ using Docfx.Dotnet;
 using UglyToad.PdfPig;
 using UglyToad.PdfPig.Actions;
 using UglyToad.PdfPig.Annotations;
+using UglyToad.PdfPig.Content;
+using UglyToad.PdfPig.DocumentLayoutAnalysis.TextExtractor;
 using UglyToad.PdfPig.Outline;
 
 namespace Docfx.Tests;
@@ -54,7 +57,7 @@ public class SamplesTest : IDisposable
         using var process = Process.Start("dotnet", $"build \"{s_samplesDir}/seed/dotnet/assembly/BuildFromAssembly.csproj\"");
         await process.WaitForExitAsync();
 
-        if (Debugger.IsAttached)
+        if (Debugger.IsAttached || IsWslRemoteTest())
         {
             Environment.SetEnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME", "main");
             Assert.Equal(0, Program.Main([$"{samplePath}/docfx.json"]));
@@ -80,7 +83,7 @@ public class SamplesTest : IDisposable
                 {
                     p.Number,
                     p.NumberOfImages,
-                    p.Text,
+                    Text = ExtractText(p),
                     Links = p.ExperimentalAccess.GetAnnotations().Select(ToLink).ToArray(),
                 }).ToArray(),
                 Bookmarks = document.TryGetBookmarks(out var bookmarks) ? ToBookmarks(bookmarks.Roots) : null,
@@ -206,5 +209,34 @@ public class SamplesTest : IDisposable
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             }));
         }
+    }
+
+    private string ExtractText(Page page)
+    {
+        // Gets PDF text content
+        var text = ContentOrderTextExtractor.GetText(page, new ContentOrderTextExtractor.Options { ReplaceWhitespaceWithSpace = true });
+
+        // string.Normalize is not works when using `Globalization Invariant Mode`.
+        StringBuilder sb = new(text);
+
+        // Normalize known ligature chars. (Note: `string.Normalize` is not works when using `Globalization Invariant Mode`)
+        sb.Replace("ﬀ", "ff");
+        sb.Replace("ﬃ", "ffi");
+        sb.Replace("ﬂ", "fl");
+        sb.Replace("ﬁ", "fi");
+
+        // Normalize newline char.
+        sb.Replace("\r\n", "\n");
+
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// Returns true if running on WSL and executed on Visual Studio Remote Testing.
+    /// </summary>
+    private static bool IsWslRemoteTest([CallerFilePath] string callerFilePath = "")
+    {
+        return Environment.GetEnvironmentVariable("WSLENV") != null
+            && callerFilePath.Contains('\\', StringComparison.Ordinal); // Contains `\` when build on windows environment.
     }
 }

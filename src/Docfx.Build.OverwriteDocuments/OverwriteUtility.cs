@@ -79,7 +79,7 @@ public static partial class OverwriteUtility
             value = new MarkdownFragment
             {
                 Uid = uid,
-                Properties = new Dictionary<string, MarkdownProperty>(),
+                Properties = [],
                 Metadata = metadata
             };
             fragments.Add(uid, value);
@@ -93,7 +93,7 @@ public static partial class OverwriteUtility
     {
         if (!fragment.Properties.TryGetValue(oPath, out var property))
         {
-            fragment.Properties[oPath] = property = new MarkdownProperty { OPath = oPath};
+            fragment.Properties[oPath] = property = new MarkdownProperty { OPath = oPath };
         }
 
         if (string.IsNullOrEmpty(property.Content))
