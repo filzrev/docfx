@@ -64,7 +64,7 @@ internal class CustomStringComparer : IComparer<string>
     }
 
     // ASCII character sort order lookup table.
-    // It's based on `StringComparer.CurrentCultureIgnoreCase`'s sort order
+    // It's based on `StringComparer.InvariantCultureIgnoreCase`'s sort order.
     private static readonly byte[] AsciiCharSortOrders =
     [
         0,    // NUL
@@ -99,7 +99,7 @@ internal class CustomStringComparer : IComparer<string>
         24,   // CAN
         25,   // EM
         26,   // SUB
-        33,   //  
+        33,   // SPC
         39,   // !
         43,   // "
         55,   // #
@@ -194,6 +194,6 @@ internal class CustomStringComparer : IComparer<string>
         63,   // |
         49,   // }
         64,   // ~
-        27,   // ESC
+        27,   // ESC
     ];
 }
