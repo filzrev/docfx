@@ -4,6 +4,7 @@
 using System.Collections.Concurrent;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.Serialization;
 using Docfx.YamlSerialization.Helpers;
 using Docfx.YamlSerialization.ObjectDescriptors;
 using YamlDotNet.Core;
@@ -15,6 +16,9 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
 {
     private static readonly ConcurrentDictionary<Type, CachingItem> _cache = new();
     private static readonly ConcurrentDictionary<Type, List<IPropertyDescriptor>> _propertyDescriptorCache = new();
+    private static readonly ConcurrentDictionary<(Type, string), string> enumNameCache = new();
+    private static readonly ConcurrentDictionary<(Type, string), string> enumValueCache = new();
+
     private readonly ITypeResolver _resolver;
 
     public EmitTypeInspector(ITypeResolver resolver)
@@ -60,6 +64,60 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
         return (from ep in item.ExtensibleProperties
                 where name.StartsWith(ep.Prefix, StringComparison.Ordinal)
                 select new ExtensiblePropertyDescriptor(ep, name, _resolver)).FirstOrDefault();
+    }
+
+    // This code is based on ReflectionTypeInspector implementation(See: https://github.com/aaubry/YamlDotNet/blob/master/YamlDotNet/Serialization/TypeInspectors/ReflectionTypeInspector.cs)
+    // TODO: Currently flags enum is not support by GetEnumName/GetEnumValue (https://github.com/aaubry/YamlDotNet/issues/1016)
+    public override string GetEnumName(Type enumType, string name)
+    {
+        var key = (enumType, name);
+
+        if (enumNameCache.TryGetValue(key, out var result))
+            return result;
+
+        // Try to gets enum name from EnumMemberAttribute
+        foreach (var enumMember in enumType.GetMembers())
+        {
+            var attribute = enumMember.GetCustomAttribute<EnumMemberAttribute>(inherit: false);
+            if (attribute != null && attribute.Value == name)
+            {
+                name = enumMember.Name;
+                break;
+            }
+        }
+
+        // Add enum name to cache
+        enumNameCache.TryAdd(key, name);
+
+        return name;
+    }
+
+    public override string GetEnumValue(object enumValue)
+    {
+        Type enumType = enumValue.GetType();
+        string valueText = enumValue.ToString()!;
+
+        var key = (enumType, valueText);
+        if (enumValueCache.TryGetValue(key, out var result))
+            return result;
+
+        // Try to gets enum value from EnumMemberAttribute
+        if (enumType.GetCustomAttribute<FlagsAttribute>() != null)
+        {
+            var enumMember = enumType.GetMember(valueText).FirstOrDefault();
+            if (enumMember != null)
+            {
+                var attribute = enumMember.GetCustomAttribute<EnumMemberAttribute>(inherit: false);
+                if (attribute?.Value != null)
+                {
+                    valueText = attribute.Value;
+                }
+            }
+        }
+
+        enumValueCache.TryAdd(key, valueText);
+
+        return valueText;
     }
 
     private sealed class CachingItem
@@ -129,7 +187,7 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
             return result;
         }
 
-        private static Func<object, object> CreateReader(MethodInfo getMethod)
+        private static Func<object, object?> CreateReader(MethodInfo getMethod)
         {
             var hostType = getMethod.DeclaringType!;
             var propertyType = getMethod.ReturnType;
@@ -151,7 +209,7 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
                 il.Emit(OpCodes.Box, propertyType);
             }
             il.Emit(OpCodes.Ret);
-            return (Func<object, object>)dm.CreateDelegate(typeof(Func<object, object>));
+            return (Func<object, object?>)dm.CreateDelegate(typeof(Func<object, object?>));
         }
 
         private static Action<object, object?> CreateWriter(MethodInfo setMethod)
@@ -248,7 +306,7 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
             return (Func<object, ICollection<string>>)dm.CreateDelegate(typeof(Func<object, ICollection<string>>));
         }
 
-        private static Func<object, string, object> CreateDictionaryReader(MethodInfo getMethod, Type valueType)
+        private static Func<object, string, object?> CreateDictionaryReader(MethodInfo getMethod, Type valueType)
         {
             var hostType = getMethod.DeclaringType!;
             var propertyType = getMethod.ReturnType;
@@ -301,7 +359,7 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
             il.Emit(OpCodes.Ldnull);
             il.Emit(OpCodes.Ret);
 
-            return (Func<object, string, object>)dm.CreateDelegate(typeof(Func<object, string, object>));
+            return (Func<object, string, object?>)dm.CreateDelegate(typeof(Func<object, string, object?>));
         }
 
         private static Action<object, string, object?> CreateDictionaryWriter(MethodInfo getMethod, Type valueType)
@@ -362,7 +420,7 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
 
         internal required PropertyInfo Property { get; set; }
 
-        internal required Func<object, object> Reader { get; set; }
+        internal required Func<object, object?> Reader { get; set; }
 
         internal required Action<object, object?>? Writer { get; set; }
 
@@ -401,7 +459,13 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
 
         public Type? TypeOverride { get; set; }
 
-        public T GetCustomAttribute<T>() where T : Attribute => (T)_skeleton.GetCustomAttribute(typeof(T));
+        public bool AllowNulls { get; set; }
+
+        public bool Required { get; set; }
+
+        public Type? ConverterType { get; set; }
+
+        public T? GetCustomAttribute<T>() where T : Attribute => (T)_skeleton.GetCustomAttribute(typeof(T));
 
         public IObjectDescriptor Read(object target)
         {
@@ -420,7 +484,7 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
     {
         internal required string Prefix { get; set; }
 
-        internal required Func<object, string, object> Reader { get; set; }
+        internal required Func<object, string, object?> Reader { get; set; }
 
         internal required Action<object, string, object?> Writer { get; set; }
 
@@ -460,6 +524,12 @@ public class EmitTypeInspector : ExtensibleTypeInspectorSkeleton
         public Type Type => _skeleton.Type;
 
         public Type? TypeOverride { get; set; }
+
+        public bool AllowNulls { get; set; }
+
+        public bool Required { get; set; }
+
+        public Type? ConverterType { get; set; }
 
         public T? GetCustomAttribute<T>() where T : Attribute => null;
 

@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Globalization;
-
 using YamlDotNet.Serialization;
 
 namespace Docfx.YamlSerialization.TypeInspectors;
@@ -11,7 +10,7 @@ public abstract class ExtensibleTypeInspectorSkeleton : ITypeInspector, IExtensi
 {
     public abstract IEnumerable<IPropertyDescriptor> GetProperties(Type type, object? container);
 
-    public IPropertyDescriptor GetProperty(Type type, object? container, string name, bool ignoreUnmatched)
+    public IPropertyDescriptor GetProperty(Type type, object? container, string name, bool ignoreUnmatched, bool caseInsensitivePropertyMatching)
     {
         var candidates =
             from p in GetProperties(type, container)
@@ -61,4 +60,8 @@ public abstract class ExtensibleTypeInspectorSkeleton : ITypeInspector, IExtensi
     }
 
     public virtual IPropertyDescriptor? GetProperty(Type type, object? container, string name) => null;
+
+    public abstract string GetEnumName(Type enumType, string name);
+
+    public abstract string GetEnumValue(object enumValue);
 }
