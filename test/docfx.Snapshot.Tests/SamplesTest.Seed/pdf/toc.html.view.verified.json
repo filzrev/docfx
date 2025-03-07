@@ -77,39 +77,6 @@
       "includedFrom": "~/obj/api/toc.yml",
       "items": [
         {
-          "name": "BuildFromAssembly",
-          "href": "../api/BuildFromAssembly.html",
-          "topicHref": "../api/BuildFromAssembly.html",
-          "topicUid": "BuildFromAssembly",
-          "type": "Namespace",
-          "items": [
-            {
-              "name": "Class1",
-              "href": "../api/BuildFromAssembly.Class1.html",
-              "topicHref": "../api/BuildFromAssembly.Class1.html",
-              "topicUid": "BuildFromAssembly.Class1",
-              "type": "Class",
-              "tocHref": null,
-              "level": 4,
-              "items": [],
-              "leaf": true
-            },
-            {
-              "name": "Issue5432",
-              "href": "../api/BuildFromAssembly.Issue5432.html",
-              "topicHref": "../api/BuildFromAssembly.Issue5432.html",
-              "topicUid": "BuildFromAssembly.Issue5432",
-              "type": "Struct",
-              "tocHref": null,
-              "level": 4,
-              "items": [],
-              "leaf": true
-            }
-          ],
-          "tocHref": null,
-          "level": 3
-        },
-        {
           "name": "BuildFromCSharpSourceCode",
           "href": "../api/BuildFromCSharpSourceCode.html",
           "topicHref": "../api/BuildFromCSharpSourceCode.html",
@@ -557,10 +524,10 @@
               "level": 4
             },
             {
-              "name": "CatException<T>",
-              "href": "../api/CatLibrary.CatException-1.html",
-              "topicHref": "../api/CatLibrary.CatException-1.html",
-              "topicUid": "CatLibrary.CatException`1",
+              "name": "Cat<T, K>",
+              "href": "../api/CatLibrary.Cat-2.html",
+              "topicHref": "../api/CatLibrary.Cat-2.html",
+              "topicUid": "CatLibrary.Cat`2",
               "type": "Class",
               "tocHref": null,
               "level": 4,
@@ -568,10 +535,10 @@
               "leaf": true
             },
             {
-              "name": "Cat<T, K>",
-              "href": "../api/CatLibrary.Cat-2.html",
-              "topicHref": "../api/CatLibrary.Cat-2.html",
-              "topicUid": "CatLibrary.Cat`2",
+              "name": "CatException<T>",
+              "href": "../api/CatLibrary.CatException-1.html",
+              "topicHref": "../api/CatLibrary.CatException-1.html",
+              "topicUid": "CatLibrary.CatException`1",
               "type": "Class",
               "tocHref": null,
               "level": 4,

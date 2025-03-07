@@ -105,11 +105,8 @@
     },
     {
       "Number": 5,
-      "Text": "5 / 22\nClasses\nClass1\nThis is a test class.\nStructs\nIssue5432\nNamespace BuildFromAssembly",
+      "Text": "5 / 22\nClasses\nCSharp\nNamespace BuildFromCSharpSourceCode",
       "Links": [
-        {
-          "Uri": ""
-        },
         {
           "Uri": ""
         }
@@ -117,11 +114,8 @@
     },
     {
       "Number": 6,
-      "Text": "6 / 22\nNamespace BuildFromAssembly\nClasses\nClass1\nThis is a test class.\nStructs\nIssue5432",
+      "Text": "6 / 22\nNamespace BuildFromCSharpSourceCode\nClasses\nCSharp",
       "Links": [
-        {
-          "Uri": ""
-        },
         {
           "Uri": ""
         }
@@ -129,11 +123,8 @@
     },
     {
       "Number": 7,
-      "Text": "7 / 22\nClasses\nClass1\nThis is a test class.\nStructs\nIssue5432\nNamespace BuildFromAssembly",
+      "Text": "7 / 22\nClasses\nCSharp\nNamespace BuildFromCSharpSourceCode",
       "Links": [
-        {
-          "Uri": ""
-        },
         {
           "Uri": ""
         }

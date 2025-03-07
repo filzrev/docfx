@@ -2,29 +2,6 @@
   "order": 100,
   "items": [
     {
-      "name": "BuildFromAssembly",
-      "href": "BuildFromAssembly.html",
-      "topicHref": "BuildFromAssembly.html",
-      "topicUid": "BuildFromAssembly",
-      "type": "Namespace",
-      "items": [
-        {
-          "name": "Class1",
-          "href": "BuildFromAssembly.Class1.html",
-          "topicHref": "BuildFromAssembly.Class1.html",
-          "topicUid": "BuildFromAssembly.Class1",
-          "type": "Class"
-        },
-        {
-          "name": "Issue5432",
-          "href": "BuildFromAssembly.Issue5432.html",
-          "topicHref": "BuildFromAssembly.Issue5432.html",
-          "topicUid": "BuildFromAssembly.Issue5432",
-          "type": "Struct"
-        }
-      ]
-    },
-    {
       "name": "BuildFromCSharpSourceCode",
       "href": "BuildFromCSharpSourceCode.html",
       "topicHref": "BuildFromCSharpSourceCode.html",
@@ -326,17 +303,17 @@
           ]
         },
         {
-          "name": "CatException<T>",
-          "href": "CatLibrary.CatException-1.html",
-          "topicHref": "CatLibrary.CatException-1.html",
-          "topicUid": "CatLibrary.CatException`1",
-          "type": "Class"
-        },
-        {
           "name": "Cat<T, K>",
           "href": "CatLibrary.Cat-2.html",
           "topicHref": "CatLibrary.Cat-2.html",
           "topicUid": "CatLibrary.Cat`2",
+          "type": "Class"
+        },
+        {
+          "name": "CatException<T>",
+          "href": "CatLibrary.CatException-1.html",
+          "topicHref": "CatLibrary.CatException-1.html",
+          "topicUid": "CatLibrary.CatException`1",
           "type": "Class"
         },
         {
