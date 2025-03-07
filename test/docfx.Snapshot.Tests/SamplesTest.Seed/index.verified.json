@@ -1,19 +1,4 @@
 ﻿{
-  "api/BuildFromAssembly.Class1.html": {
-    "href": "api/BuildFromAssembly.Class1.html",
-    "title": "Class Class1 | docfx seed website",
-    "summary": "Class Class1 Namespace BuildFromAssembly Assembly BuildFromAssembly.dll This is a test class. public class Class1 Inheritance object Class1 Inherited Members object.GetType() object.MemberwiseClone() object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() Constructors Class1() public Class1() Methods HelloWorld() Hello World. public static void HelloWorld()"
-  },
-  "api/BuildFromAssembly.Issue5432.html": {
-    "href": "api/BuildFromAssembly.Issue5432.html",
-    "title": "Struct Issue5432 | docfx seed website",
-    "summary": "Struct Issue5432 Namespace BuildFromAssembly Assembly BuildFromAssembly.dll public struct Issue5432 Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.GetType() object.Equals(object, object) object.ReferenceEquals(object, object) Properties Name public string Name { get; } Property Value string"
-  },
-  "api/BuildFromAssembly.html": {
-    "href": "api/BuildFromAssembly.html",
-    "title": "Namespace BuildFromAssembly | docfx seed website",
-    "summary": "Namespace BuildFromAssembly Classes Class1 This is a test class. Structs Issue5432"
-  },
   "api/BuildFromCSharpSourceCode.CSharp.html": {
     "href": "api/BuildFromCSharpSourceCode.CSharp.html",
     "title": "Class CSharp | docfx seed website",
@@ -284,21 +269,6 @@
     "title": "Namespace MRef.Demo.Enumeration | docfx seed website",
     "summary": "Namespace MRef.Demo.Enumeration Enums ColorType Enumeration ColorType"
   },
-  "apipage/BuildFromAssembly.Class1.html": {
-    "href": "apipage/BuildFromAssembly.Class1.html",
-    "title": "Class Class1 | docfx seed website",
-    "summary": "Class Class1 Namespace BuildFromAssembly Assembly BuildFromAssembly.dll This is a test class. public class Class1 Inheritance object Class1 Inherited Members object.GetType() object.MemberwiseClone() object.ToString() object.Equals(object?) object.Equals(object?, object?) object.ReferenceEquals(object?, object?) object.GetHashCode() Constructors Class1() public Class1() Methods HelloWorld() Hello World. public static void HelloWorld()"
-  },
-  "apipage/BuildFromAssembly.Issue5432.html": {
-    "href": "apipage/BuildFromAssembly.Issue5432.html",
-    "title": "Struct Issue5432 | docfx seed website",
-    "summary": "Struct Issue5432 Namespace BuildFromAssembly Assembly BuildFromAssembly.dll public struct Issue5432 Inherited Members object.GetType() object.ToString() object.Equals(object?) object.Equals(object?, object?) object.ReferenceEquals(object?, object?) object.GetHashCode() Properties Name public string Name { get; } Property Value string"
-  },
-  "apipage/BuildFromAssembly.html": {
-    "href": "apipage/BuildFromAssembly.html",
-    "title": "Namespace BuildFromAssembly | docfx seed website",
-    "summary": "Namespace BuildFromAssembly Classes Class1 This is a test class. Structs Issue5432"
-  },
   "apipage/BuildFromCSharpSourceCode.CSharp.html": {
     "href": "apipage/BuildFromCSharpSourceCode.CSharp.html",
     "title": "Class CSharp | docfx seed website",
@@ -442,7 +412,7 @@
   "apipage/BuildFromProject.html": {
     "href": "apipage/BuildFromProject.html",
     "title": "Namespace BuildFromProject | docfx seed website",
-    "summary": "Namespace BuildFromProject Namespaces BuildFromProject.Issue8540 Classes Inheritdoc.Issue6366.Class1<T> Class1 Inheritdoc.Issue6366.Class2 Dog Class representing a dog. Inheritdoc Inheritdoc.Issue6366 Inheritdoc.Issue7035 Inheritdoc.Issue7484 This is a test class to have something for DocFX to document. Inheritdoc.Issue8101 Class1.Issue8665 Class1.Issue8696Attribute Issue8725 A nice class Class1.Issue8948 Inheritdoc.Issue9736 Inheritdoc.Issue9736.JsonApiOptions Class1.Test<T> Structs Inheritdoc.Issue8129 Interfaces IInheritdoc Class1.IIssue8948 Inheritdoc.Issue9736.IJsonApiOptions Enums Class1.Issue9260"
+    "summary": "Namespace BuildFromProject Namespaces BuildFromProject.Issue8540 Classes Class1 Inheritdoc.Issue6366.Class1<T> Inheritdoc.Issue6366.Class2 Dog Class representing a dog. Inheritdoc Inheritdoc.Issue6366 Inheritdoc.Issue7035 Inheritdoc.Issue7484 This is a test class to have something for DocFX to document. Inheritdoc.Issue8101 Class1.Issue8665 Class1.Issue8696Attribute Issue8725 A nice class Class1.Issue8948 Inheritdoc.Issue9736 Inheritdoc.Issue9736.JsonApiOptions Class1.Test<T> Structs Inheritdoc.Issue8129 Interfaces IInheritdoc Class1.IIssue8948 Inheritdoc.Issue9736.IJsonApiOptions Enums Class1.Issue9260"
   },
   "apipage/BuildFromVBSourceCode.BaseClass1.html": {
     "href": "apipage/BuildFromVBSourceCode.BaseClass1.html",
@@ -604,21 +574,6 @@
     "title": "docfx-seed | docfx seed website",
     "summary": "docfx-seed Description This is a sample docfx documentation project. It contains .NET source code and markdown files. docfx.json is the configuration file for running docfx. docfx will generate a static website as similar to http://docascode.github.io/docfx-seed. How to run Under Windows Download and unzip docfx.zip to run docfx.exe directly! Run docfx under current repo! Website will be generated under _site folder. Run any web hosting tool to host _site folder, e.g. docfx serve _site. Cross platform and use dnx As a prerequisite, you will need to install DNVM and DNX. ###Quick Start dnvm upgrade to get the latest dnvm. Add feed https://www.myget.org/F/aspnetrelease/api/v2/ to Nuget.config For Windows, the nuget config file is %AppData%\\NuGet\\NuGet.config. For Linux/OSX, the nuget config file is ~/.config/NuGet/NuGet.config. dnu commands install docfx to install docfx as a command Run docfx under current repo! Website will be generated under _site folder. Run any web hosting tool to host _site folder, e.g. docfx serve _site. Further information about docfx docfx is a tool to generate documentation towards .NET source code and markdown files. Please refer to docfx to get start. The docfx website itself is generated by docfx!"
   },
-  "md/BuildFromAssembly.Class1.html": {
-    "href": "md/BuildFromAssembly.Class1.html",
-    "title": "Class Class1 | docfx seed website",
-    "summary": "Class Class1 Namespace: BuildFromAssembly Assembly: BuildFromAssembly.dll This is a test class. public class Class1 Inheritance object ← Class1 Inherited Members object.GetType(), object.MemberwiseClone(), object.ToString(), object.Equals(object?), object.Equals(object?, object?), object.ReferenceEquals(object?, object?), object.GetHashCode() Constructors Class1() public Class1() Methods HelloWorld() Hello World. public static void HelloWorld()"
-  },
-  "md/BuildFromAssembly.Issue5432.html": {
-    "href": "md/BuildFromAssembly.Issue5432.html",
-    "title": "Struct Issue5432 | docfx seed website",
-    "summary": "Struct Issue5432 Namespace: BuildFromAssembly Assembly: BuildFromAssembly.dll public struct Issue5432 Inherited Members object.GetType(), object.ToString(), object.Equals(object?), object.Equals(object?, object?), object.ReferenceEquals(object?, object?), object.GetHashCode() Properties Name public string Name { get; } Property Value string"
-  },
-  "md/BuildFromAssembly.html": {
-    "href": "md/BuildFromAssembly.html",
-    "title": "Namespace BuildFromAssembly | docfx seed website",
-    "summary": "Namespace BuildFromAssembly Classes Class1 This is a test class. Structs Issue5432"
-  },
   "md/BuildFromCSharpSourceCode.CSharp.html": {
     "href": "md/BuildFromCSharpSourceCode.CSharp.html",
     "title": "Class CSharp | docfx seed website",
@@ -762,7 +717,7 @@
   "md/BuildFromProject.html": {
     "href": "md/BuildFromProject.html",
     "title": "Namespace BuildFromProject | docfx seed website",
-    "summary": "Namespace BuildFromProject Namespaces BuildFromProject.Issue8540 Classes Inheritdoc.Issue6366.Class1<T> Class1 Inheritdoc.Issue6366.Class2 Dog Class representing a dog. Inheritdoc Inheritdoc.Issue6366 Inheritdoc.Issue7035 Inheritdoc.Issue7484 This is a test class to have something for DocFX to document. Inheritdoc.Issue8101 Class1.Issue8665 Class1.Issue8696Attribute Issue8725 A nice class Class1.Issue8948 Inheritdoc.Issue9736 Inheritdoc.Issue9736.JsonApiOptions Class1.Test<T> Structs Inheritdoc.Issue8129 Interfaces IInheritdoc Class1.IIssue8948 Inheritdoc.Issue9736.IJsonApiOptions Enums Class1.Issue9260"
+    "summary": "Namespace BuildFromProject Namespaces BuildFromProject.Issue8540 Classes Class1 Inheritdoc.Issue6366.Class1<T> Inheritdoc.Issue6366.Class2 Dog Class representing a dog. Inheritdoc Inheritdoc.Issue6366 Inheritdoc.Issue7035 Inheritdoc.Issue7484 This is a test class to have something for DocFX to document. Inheritdoc.Issue8101 Class1.Issue8665 Class1.Issue8696Attribute Issue8725 A nice class Class1.Issue8948 Inheritdoc.Issue9736 Inheritdoc.Issue9736.JsonApiOptions Class1.Test<T> Structs Inheritdoc.Issue8129 Interfaces IInheritdoc Class1.IIssue8948 Inheritdoc.Issue9736.IJsonApiOptions Enums Class1.Issue9260"
   },
   "md/BuildFromVBSourceCode.BaseClass1.html": {
     "href": "md/BuildFromVBSourceCode.BaseClass1.html",
