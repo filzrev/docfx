@@ -21,7 +21,11 @@ partial class DotnetApiCatalog
 
         foreach (var (assembly, compilation) in assemblies)
         {
-            Logger.LogInfo($"Processing {assembly.Name}");
+            if (assembly.Name != "?")
+                Logger.LogInfo($"Processing {assembly.Name}");
+            else
+                Logger.LogInfo($"Processing assembly that generated from source files"); // Assembly that generated from source files.
+
             var projectMetadata = assembly.Accept(new SymbolVisitorAdapter(
                 compilation, new(compilation, config.MemberLayout, allAssemblies), config, filter, extensionMethods));
 
