@@ -26,12 +26,13 @@ public class Inheritdoc.Issue7484
 
 ## Remarks
 
-We're going to talk about things now.
+    We're going to talk about things now.
+
 <table><thead><tr></tr></thead><tbody><tr><td class="term"><xref href="BuildFromProject.Inheritdoc.Issue7484.BoolReturningMethod(System.Boolean)" data-throw-if-not-resolved="false"></xref></td><td class="description"><summary>
-Simple method to generate docs for.
-</summary></td></tr><tr><td class="term"><xref href="BuildFromProject.Inheritdoc.Issue7484.DoDad" data-throw-if-not-resolved="false"></xref></td><td class="description"><summary>
-A string that could have something.
-</summary></td></tr></tbody></table>
+    Simple method to generate docs for.
+    </summary></td></tr><tr><td class="term"><xref href="BuildFromProject.Inheritdoc.Issue7484.DoDad" data-throw-if-not-resolved="false"></xref></td><td class="description"><summary>
+    A string that could have something.
+    </summary></td></tr></tbody></table>
 
 ## Constructors
 

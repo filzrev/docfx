@@ -710,7 +710,7 @@
     "level": 0
   },
   "summary": "<p sourcefile=\"obj/api/BuildFromProject.Inheritdoc.Issue7484.yml\" sourcestartlinenumber=\"1\">This is a test class to have something for DocFX to document.</p>\n",
-  "remarks": "<p sourcefile=\"obj/api/BuildFromProject.Inheritdoc.Issue7484.yml\" sourcestartlinenumber=\"1\">We're going to talk about things now.</p>\n<table><thead><tr></tr></thead><tbody><tr><td class=\"term\"><xref href=\"BuildFromProject.Inheritdoc.Issue7484.BoolReturningMethod(System.Boolean)\" data-throw-if-not-resolved=\"false\"></xref></td><td class=\"description\"><summary>\nSimple method to generate docs for.\n</summary></td></tr><tr><td class=\"term\"><xref href=\"BuildFromProject.Inheritdoc.Issue7484.DoDad\" data-throw-if-not-resolved=\"false\"></xref></td><td class=\"description\"><summary>\nA string that could have something.\n</summary></td></tr></tbody></table>\n",
+  "remarks": "<pre><code sourcefile=\"obj/api/BuildFromProject.Inheritdoc.Issue7484.yml\" sourcestartlinenumber=\"1\">We're going to talk about things now.\n</code></pre>\n<table><thead><tr></tr></thead><tbody><tr><td class=\"term\"><xref href=\"BuildFromProject.Inheritdoc.Issue7484.BoolReturningMethod(System.Boolean)\" data-throw-if-not-resolved=\"false\"></xref></td><td class=\"description\"><summary>\n    Simple method to generate docs for.\n    </summary></td></tr><tr><td class=\"term\"><xref href=\"BuildFromProject.Inheritdoc.Issue7484.DoDad\" data-throw-if-not-resolved=\"false\"></xref></td><td class=\"description\"><summary>\n    A string that could have something.\n    </summary></td></tr></tbody></table>\n",
   "example": [],
   "syntax": {
     "content": [

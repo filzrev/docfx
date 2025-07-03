@@ -30,7 +30,8 @@ IClass1
 
 ### <a id="BuildFromProject_Class1_Issue1651"></a> Issue1651\(\)
 
-Pricing models are used to calculate theoretical option values
+    Pricing models are used to calculate theoretical option values
+
 <ul><li><span class="term">1</span>Black Scholes</li><li><span class="term">2</span>Black76</li><li><span class="term">3</span>Black76Fut</li><li><span class="term">4</span>Equity Tree</li><li><span class="term">5</span>Variance Swap</li><li><span class="term">6</span>Dividend Forecast</li></ul>
 
 ```csharp
@@ -93,6 +94,7 @@ for (var i = 0; i > 10; i++) // & " '
 var range = new Range<int> { Min = 0, Max = 10 };
 ```
 
+
 <pre><code class="lang-csharp">var range = new Range&lt;int&gt; { Min = 0, Max = 10 };</code></pre>
 
 ### <a id="BuildFromProject_Class1_Issue4017"></a> Issue4017\(\)
@@ -144,7 +146,8 @@ public void Issue7484()
 
 #### Remarks
 
-There's really no reason to not believe that this class can test things.
+    There's really no reason to not believe that this class can test things.
+
 <table><thead><tr><th class="term">Term</th><th class="description">Description</th></tr></thead><tbody><tr><td class="term">A Term</td><td class="description">A Description</td></tr><tr><td class="term">Bee Term</td><td class="description">Bee Description</td></tr></tbody></table>
 
 ### <a id="BuildFromProject_Class1_Issue8764__1"></a> Issue8764<T\>\(\)

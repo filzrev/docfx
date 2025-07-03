@@ -1707,7 +1707,7 @@
     },
     {
       "Number": 15,
-      "Text": "15 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5 Class1\nImplements\nIClass1\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 ,\nobject.ToString()\uF1C5\nMethods\nPricing models are used to calculate theoretical option values\n1 - Black Scholes\n2 - Black76\n3 - Black76Fut\n4 - Equity Tree\n5 - Variance Swap\n6 - Dividend Forecast\nIConfiguration related helper and extension routines.\nClass Class1\npublic class Class1 : IClass1\n\uF12C\nIssue1651()\npublic void Issue1651()\nIssue1887()",
+      "Text": "15 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5 Class1\nImplements\nIClass1\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 ,\nobject.ToString()\uF1C5\nMethods\n1 - Black Scholes\n2 - Black76\n3 - Black76Fut\n4 - Equity Tree\n5 - Variance Swap\n6 - Dividend Forecast\nIConfiguration related helper and extension routines.\nClass Class1\npublic class Class1 : IClass1\n\uF12C\nIssue1651()\nPricing models are used to calculate theoretical option values\npublic void Issue1651()\nIssue1887()",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -1832,12 +1832,12 @@
     },
     {
       "Number": 18,
-      "Text": "18 / 88\nRemarks\n@\"\\\\?\\\" @\"\\\\?\\\"\nRemarks\nThere's really no reason to not believe that this class can test things.\nTerm Description\nA Term A Description\nBee Term Bee Description\nType Parameters\nT   \nmyClass.Execute();\n}\nIssue4392()\npublic void Issue4392()\nIssue7484()\npublic void Issue7484()\nIssue8764<T>()\npublic void Issue8764<T>() where T : unmanaged\nIssue896()",
+      "Text": "18 / 88\nRemarks\n@\"\\\\?\\\" @\"\\\\?\\\"\nRemarks\nTerm Description\nA Term A Description\nBee Term Bee Description\nType Parameters\nT   \nmyClass.Execute();\n}\nIssue4392()\npublic void Issue4392()\nIssue7484()\npublic void Issue7484()\nThere's really no reason to not believe that this class can test things.\nIssue8764<T>()\npublic void Issue8764<T>() where T : unmanaged",
       "Links": []
     },
     {
       "Number": 19,
-      "Text": "19 / 88\nTest\nSee Also\nClass1.Test<T>, Class1\nCalculates the determinant of a 3-dimensional matrix:\nReturns the smallest value:\nReturns\ndouble\uF1C5\nThis method should do something...\nRemarks\nThis is remarks.\npublic void Issue896()\nIssue9216()\npublic static double Issue9216()\nXmlCommentIncludeTag()\npublic void XmlCommentIncludeTag()",
+      "Text": "19 / 88\nTest\nSee Also\nClass1.Test<T>, Class1\nCalculates the determinant of a 3-dimensional matrix:\nReturns the smallest value:\nReturns\ndouble\uF1C5\nThis method should do something...\nRemarks\nThis is remarks.\nIssue896()\npublic void Issue896()\nIssue9216()\npublic static double Issue9216()\nXmlCommentIncludeTag()\npublic void XmlCommentIncludeTag()",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.double"
@@ -3692,7 +3692,7 @@
     },
     {
       "Number": 39,
-      "Text": "39 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nThis is a test class to have something for DocFX to document.\nInheritance\nobject\uF1C5 Inheritdoc.Issue7484\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 ,\nobject.ToString()\uF1C5\nRemarks\nWe're going to talk about things now.\nBoolReturningMethod(bool) Simple method to generate docs for.\nDoDad A string that could have something.\nConstructors\nThis is a constructor to document.\nProperties\nClass Inheritdoc.Issue7484\npublic class Inheritdoc.Issue7484\n\uF12C\nIssue7484()\npublic Issue7484()\nDoDad",
+      "Text": "39 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nThis is a test class to have something for DocFX to document.\nInheritance\nobject\uF1C5 Inheritdoc.Issue7484\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 ,\nobject.ToString()\uF1C5\nRemarks\nBoolReturningMethod(bool) Simple method to generate docs for.\nDoDad A string that could have something.\nConstructors\nThis is a constructor to document.\nProperties\nClass Inheritdoc.Issue7484\npublic class Inheritdoc.Issue7484\n\uF12C\nWe're going to talk about things now.\nIssue7484()\npublic Issue7484()",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -3798,7 +3798,7 @@
             "PageNumber": 40,
             "Coordinates": {
               "Left": 0,
-              "Top": 582.75
+              "Top": 550.5
             }
           }
         },
@@ -3807,7 +3807,7 @@
             "PageNumber": 40,
             "Coordinates": {
               "Left": 0,
-              "Top": 582.75
+              "Top": 550.5
             }
           }
         },
@@ -3816,25 +3816,25 @@
             "PageNumber": 40,
             "Coordinates": {
               "Left": 0,
-              "Top": 582.75
+              "Top": 550.5
             }
           }
         },
         {
           "Goto": {
-            "PageNumber": 39,
+            "PageNumber": 40,
             "Coordinates": {
               "Left": 0,
-              "Top": 89.25
+              "Top": 792
             }
           }
         },
         {
           "Goto": {
-            "PageNumber": 39,
+            "PageNumber": 40,
             "Coordinates": {
               "Left": 0,
-              "Top": 89.25
+              "Top": 792
             }
           }
         }
@@ -3842,7 +3842,7 @@
     },
     {
       "Number": 40,
-      "Text": "40 / 88\nA string that could have something.\nProperty Value\nstring\uF1C5\nMethods\nSimple method to generate docs for.\nParameters\nsource bool\uF1C5\nA meaningless boolean value, much like most questions in the world.\nReturns\nbool\uF1C5\nAn exactly equivalently meaningless boolean value, much like most answers in the world.\nRemarks\nI'd like to take a moment to thank all of those who helped me get to a place where I can\nwrite documentation like this.\npublic string DoDad { get; }\nBoolReturningMethod(bool)\npublic bool BoolReturningMethod(bool source)",
+      "Text": "40 / 88\nA string that could have something.\nProperty Value\nstring\uF1C5\nMethods\nSimple method to generate docs for.\nParameters\nsource bool\uF1C5\nA meaningless boolean value, much like most questions in the world.\nReturns\nbool\uF1C5\nAn exactly equivalently meaningless boolean value, much like most answers in the world.\nRemarks\nI'd like to take a moment to thank all of those who helped me get to a place where I can\nwrite documentation like this.\nDoDad\npublic string DoDad { get; }\nBoolReturningMethod(bool)\npublic bool BoolReturningMethod(bool source)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.string"
@@ -4295,7 +4295,7 @@
     },
     {
       "Number": 45,
-      "Text": "45 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\nInterface\nInheritdoc.Issue9736.IJsonApiOptions\npublic interface Inheritdoc.Issue9736.IJsonApiOptions\nUseRelativeLinks\nbool UseRelativeLinks { get; }\noptions.UseRelativeLinks = true;\n{ \n\"type\": \"articles\",\n\"id\": \"4309\",\n\"relationships\": {\n\"author\": {\n\"links\": {\n\"self\": \"/api/shopping/articles/4309/relationships/author\",\n\"related\": \"/api/shopping/articles/4309/author\"\n}    \n} \n}\n}",
+      "Text": "45 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\n\"type\": \"articles\", \"id\": \"4309\", \"relationships\": { \"author\": { \"links\": { \"self\":\n\"/api/shopping/articles/4309/relationships/author\", \"related\":\n\"/api/shopping/articles/4309/author\" } } } }\nInterface\nInheritdoc.Issue9736.IJsonApiOptions\npublic interface Inheritdoc.Issue9736.IJsonApiOptions\nUseRelativeLinks\nbool UseRelativeLinks { get; }\noptions.UseRelativeLinks = true;\n<pre><code class=\"lang-csharp\">{",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.boolean"
@@ -4337,7 +4337,7 @@
     },
     {
       "Number": 46,
-      "Text": "46 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5 Inheritdoc.Issue9736.JsonApiOptions\nImplements\nInheritdoc.Issue9736.IJsonApiOptions\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 , object.ToString()\uF1C5\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\nClass Inheritdoc.Issue9736.JsonApiOptions\npublic sealed class Inheritdoc.Issue9736.JsonApiOptions :\nInheritdoc.Issue9736.IJsonApiOptions\n\uF12C\nUseRelativeLinks\npublic bool UseRelativeLinks { get; set; }\noptions.UseRelativeLinks = true;\n{ \n\"type\": \"articles\",\n\"id\": \"4309\",",
+      "Text": "46 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5 Inheritdoc.Issue9736.JsonApiOptions\nImplements\nInheritdoc.Issue9736.IJsonApiOptions\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 , object.ToString()\uF1C5\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\nClass Inheritdoc.Issue9736.JsonApiOptions\npublic sealed class Inheritdoc.Issue9736.JsonApiOptions :\nInheritdoc.Issue9736.IJsonApiOptions\n\uF12C\nUseRelativeLinks\npublic bool UseRelativeLinks { get; set; }\noptions.UseRelativeLinks = true;\n<pre><code class=\"lang-csharp\">{",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -4487,7 +4487,7 @@
     },
     {
       "Number": 47,
-      "Text": "47 / 88\n\"relationships\": {\n\"author\": {\n\"links\": {\n\"self\": \"/api/shopping/articles/4309/relationships/author\",\n\"related\": \"/api/shopping/articles/4309/author\"\n}    \n} \n}\n}",
+      "Text": "47 / 88\n\"type\": \"articles\", \"id\": \"4309\", \"relationships\": { \"author\": { \"links\": { \"self\":\n\"/api/shopping/articles/4309/relationships/author\", \"related\":\n\"/api/shopping/articles/4309/author\" } } } }",
       "Links": []
     },
     {
@@ -4990,7 +4990,7 @@
     },
     {
       "Number": 53,
-      "Text": "53 / 88\nNamespaces\nCatLibrary.Core\nClasses\nCatException<T>\nCat<T, K>\nHere's main class of this Demo.\nYou can see mostly type of article within this class and you for more detail, please see the\nremarks.\nthis class is a template class. It has two Generic parameter. they are: T and K.\nThe extension method of this class can refer to ICatExtension class\nComplex<T, J>\nICatExtension\nIt's the class that contains ICat interface's extension method.\nThis class must be public and static.\nAlso it shouldn't be a geneic class\nTom\nTom class is only inherit from Object. Not any member inside itself.\nTomFromBaseClass\nTomFromBaseClass inherits from @\nInterfaces\nIAnimal\nThis is basic interface of all animal.\nICat\nCat's interface\nDelegates\nFakeDelegate<T>\nFake delegate\nNamespace CatLibrary",
+      "Text": "53 / 88\nNamespaces\nCatLibrary.Core\nClasses\nCatException<T>\nCat<T, K>\nHere's main class of this Demo.\nYou can see mostly type of article within this class and you for more detail, please see the\nremarks.\nthis class is a template class. It has two Generic parameter. they are: T and K.\nThe extension method of this class can refer to ICatExtension class\nComplex<T, J>\nICatExtension\nThis class must be public and static.\nAlso it shouldn't be a geneic class\nTom\nTom class is only inherit from Object. Not any member inside itself.\nTomFromBaseClass\nTomFromBaseClass inherits from @\nInterfaces\nIAnimal\nThis is basic interface of all animal.\nICat\nCat's interface\nDelegates\nFakeDelegate<T>\nNamespace CatLibrary\nIt's the class that contains ICat interface's extension method.",
       "Links": [
         {
           "Goto": {
@@ -5158,7 +5158,7 @@
     },
     {
       "Number": 54,
-      "Text": "54 / 88\nMRefDelegate<K, T, L>\nGeneric delegate with many constrains.\nMRefNormalDelegate\nDelegate in the namespace",
+      "Text": "54 / 88\nFake delegate\nMRefDelegate<K, T, L>\nGeneric delegate with many constrains.\nMRefNormalDelegate\nDelegate in the namespace",
       "Links": [
         {
           "Goto": {
@@ -6542,7 +6542,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -6551,7 +6551,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -6560,7 +6560,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -6569,7 +6569,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -6578,7 +6578,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -6587,7 +6587,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -6596,7 +6596,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -6605,7 +6605,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -6886,7 +6886,7 @@
     },
     {
       "Number": 72,
-      "Text": "72 / 88\nAddition operator of this class.\nParameters\nlsr Cat<T, K>\n..\nrsr int\uF1C5\n~~\nReturns\nint\uF1C5\nResult with int type.\nExpilicit operator of this class.\nIt means this cat can evolve to change to Tom. Tom and Jerry.\nParameters\nsrc Cat<T, K>\nInstance of this class.\nReturns\nTom\nAdvanced class type of cat.\noperator +(Cat<T, K>, int)\npublic static int operator +(Cat<T, K> lsr, int rsr)\nexplicit operator Tom(Cat<T, K>)\npublic static explicit operator Tom(Cat<T, K> src)",
+      "Text": "72 / 88\nAddition operator of this class.\nParameters\nlsr Cat<T, K>\n..\nrsr int\uF1C5\n~~\nReturns\nint\uF1C5\nResult with int type.\nIt means this cat can evolve to change to Tom. Tom and Jerry.\nParameters\nsrc Cat<T, K>\nInstance of this class.\nReturns\nTom\noperator +(Cat<T, K>, int)\npublic static int operator +(Cat<T, K> lsr, int rsr)\nexplicit operator Tom(Cat<T, K>)\nExpilicit operator of this class.\npublic static explicit operator Tom(Cat<T, K> src)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
@@ -6937,7 +6937,7 @@
     },
     {
       "Number": 73,
-      "Text": "73 / 88\nSimilar with operaotr +, refer to that topic.\nParameters\nlsr Cat<T, K>\nrsr int\uF1C5\nReturns\nint\uF1C5\noperator -(Cat<T, K>, int)\npublic static int operator -(Cat<T, K> lsr, int rsr)",
+      "Text": "73 / 88\nAdvanced class type of cat.\nSimilar with operaotr +, refer to that topic.\nParameters\nlsr Cat<T, K>\nrsr int\uF1C5\nReturns\nint\uF1C5\noperator -(Cat<T, K>, int)\npublic static int operator -(Cat<T, K> lsr, int rsr)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
@@ -7312,7 +7312,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -7321,7 +7321,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -7330,7 +7330,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -7339,7 +7339,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -7348,7 +7348,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -7357,7 +7357,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -7366,7 +7366,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -7375,7 +7375,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 348.75
+              "Top": 330
             }
           }
         },
@@ -7419,7 +7419,7 @@
     },
     {
       "Number": 80,
-      "Text": "80 / 88\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nIt's the class that contains ICat interface's extension method.\nThis class must be public and static.\nAlso it shouldn't be a geneic class\nInheritance\nobject\uF1C5 ICatExtension\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 ,\nobject.ToString()\uF1C5\nMethods\nExtension method to let cat play\nParameters\nicat ICat\nCat\ntoy ContainersRefType.ColorType\nSomething to play\nClass ICatExtension\npublic static class ICatExtension\n\uF12C\nPlay(ICat, ColorType)\npublic static void Play(this ICat icat, ContainersRefType.ColorType toy)",
+      "Text": "80 / 88\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nThis class must be public and static.\nAlso it shouldn't be a geneic class\nInheritance\nobject\uF1C5 ICatExtension\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 ,\nobject.ToString()\uF1C5\nMethods\nExtension method to let cat play\nParameters\nicat ICat\nCat\ntoy ContainersRefType.ColorType\nSomething to play\nClass ICatExtension\nIt's the class that contains ICat interface's extension method.\npublic static class ICatExtension\n\uF12C\nPlay(ICat, ColorType)\npublic static void Play(this ICat icat, ContainersRefType.ColorType toy)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"

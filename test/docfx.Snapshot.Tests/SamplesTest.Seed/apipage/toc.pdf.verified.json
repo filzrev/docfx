@@ -1320,7 +1320,7 @@
     },
     {
       "Number": 15,
-      "Text": "15 / 93\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5  Class1\nImplements\nIClass1\nInherited Members\nobject.Equals(object?)\uF1C5 , object.Equals(object?, object?)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 ,\nobject.ReferenceEquals(object?, object?)\uF1C5 , object.ToString()\uF1C5\nMethods\nPricing models are used to calculate theoretical option values\n1 - Black Scholes\n2 - Black76\n3 - Black76Fut\n4 - Equity Tree\n5 - Variance Swap\n6 - Dividend Forecast\nClass Class1 Preview\nDOCFX001\uF1C5 : 'BuildFromProject.Class1' is for evaluation purposes only and is subject to\nchange or removal in future updates.\npublic class Class1 : IClass1\n\uF12C\nIssue1651()\npublic void Issue1651()",
+      "Text": "15 / 93\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5  Class1\nImplements\nIClass1\nInherited Members\nobject.Equals(object?)\uF1C5 , object.Equals(object?, object?)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 ,\nobject.ReferenceEquals(object?, object?)\uF1C5 , object.ToString()\uF1C5\nMethods\n1 - Black Scholes\n2 - Black76\n3 - Black76Fut\n4 - Equity Tree\n5 - Variance Swap\n6 - Dividend Forecast\nClass Class1 Preview\nDOCFX001\uF1C5 : 'BuildFromProject.Class1' is for evaluation purposes only and is subject to\nchange or removal in future updates.\npublic class Class1 : IClass1\n\uF12C\nIssue1651()\nPricing models are used to calculate theoretical option values",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -1425,12 +1425,12 @@
     },
     {
       "Number": 16,
-      "Text": "16 / 93\nIConfiguration related helper and extension routines.\nExamples\nRemarks\nFor example:\nIssue1887() Preview\n'BuildFromProject.Class1.Issue1887()' is for evaluation purposes only and is subject to\nchange or removal in future updates.\npublic void Issue1887()\nIssue2623()\npublic void Issue2623()\nMyClass myClass = new MyClass();\nvoid Update()\n{   \nmyClass.Execute();\n}\nMyClass myClass = new MyClass();\nvoid Update()\n{   \nmyClass.Execute();\n}\nIssue2723()",
+      "Text": "16 / 93\nIConfiguration related helper and extension routines.\nExamples\nRemarks\nFor example:\npublic void Issue1651()\nIssue1887() Preview\n'BuildFromProject.Class1.Issue1887()' is for evaluation purposes only and is subject to\nchange or removal in future updates.\npublic void Issue1887()\nIssue2623()\npublic void Issue2623()\nMyClass myClass = new MyClass();\nvoid Update()\n{   \nmyClass.Execute();\n}\nMyClass myClass = new MyClass();\nvoid Update()\n{   \nmyClass.Execute();\n}",
       "Links": []
     },
     {
       "Number": 17,
-      "Text": "17 / 93\nRemarks\nInline <angle brackets>.\nlink\uF1C5\nExamples\npublic void Issue2723()\nNOTE\nThis is a <note>. & \" '\n\uF431\nfor (var i = 0; i > 10; i++) // & \" '\nvar range = new Range<int> { Min = 0, Max = 10 };\nvar range = new Range<int> { Min = 0, Max = 10 };\nIssue4017()\npublic void Issue4017()\npublic void HookMessageDeleted(BaseSocketClient client)\n{   \nclient.MessageDeleted += HandleMessageDelete;\n}\npublic Task HandleMessageDelete(Cacheable<IMessage, ulong> cachedMessage,\nISocketMessageChannel channel)\n{   \n// check if the message exists in cache; if not, we cannot report what\nwas removed\nif (!cachedMessage.HasValue) return;\nvar message = cachedMessage.Value;\nConsole.WriteLine($\"A message ({message.Id}) from {message.Author} was removed\nfrom the channel {channel.Name} ({channel.Id}):\"\n+ Environment.NewLine",
+      "Text": "17 / 93\nRemarks\nInline <angle brackets>.\nlink\uF1C5\nExamples\nIssue2723()\npublic void Issue2723()\nNOTE\nThis is a <note>. & \" '\n\uF431\nfor (var i = 0; i > 10; i++) // & \" '\nvar range = new Range<int> { Min = 0, Max = 10 };\nvar range = new Range<int> { Min = 0, Max = 10 };\nIssue4017()\npublic void Issue4017()\npublic void HookMessageDeleted(BaseSocketClient client)\n{   \nclient.MessageDeleted += HandleMessageDelete;\n}\npublic Task HandleMessageDelete(Cacheable<IMessage, ulong> cachedMessage,\nISocketMessageChannel channel)\n{   \n// check if the message exists in cache; if not, we cannot report what\nwas removed\nif (!cachedMessage.HasValue) return;\nvar message = cachedMessage.Value;",
       "Links": [
         {
           "Uri": "https://www.github.com/"
@@ -1445,12 +1445,12 @@
     },
     {
       "Number": 18,
-      "Text": "18 / 93\nRemarks\nRemarks\n@\"\\\\?\\\" @\"\\\\?\\\"\nRemarks\nThere's really no reason to not believe that this class can test things.\nTerm Description\nA Term A Description\nBee Term Bee Description\n+ message.Content);\nreturn Task.CompletedTask;\n}\nvoid Update()\n{   \nmyClass.Execute();\n}\nIssue4392()\npublic void Issue4392()\nIssue7484()\npublic void Issue7484()\nIssue8764<T>()",
+      "Text": "18 / 93\nRemarks\nRemarks\n@\"\\\\?\\\" @\"\\\\?\\\"\nRemarks\nTerm Description\nA Term A Description\nBee Term Bee Description\nConsole.WriteLine($\"A message ({message.Id}) from {message.Author} was removed\nfrom the channel {channel.Name} ({channel.Id}):\"\n+ Environment.NewLine\n+ message.Content);\nreturn Task.CompletedTask;\n}\nvoid Update()\n{   \nmyClass.Execute();\n}\nIssue4392()\npublic void Issue4392()\nIssue7484()\npublic void Issue7484()\nThere's really no reason to not believe that this class can test things.",
       "Links": []
     },
     {
       "Number": 19,
-      "Text": "19 / 93\nType Parameters\nT\nTest\nSee Also\nClass1.Test<T> , Class1\nCalculates the determinant of a 3-dimensional matrix:\nReturns the smallest value:\nReturns\ndouble\uF1C5\npublic void Issue8764<T>() where T : unmanaged\nIssue896()\npublic void Issue896()\nIssue9216()\npublic static double Issue9216()\nXmlCommentIncludeTag()",
+      "Text": "19 / 93\nType Parameters\nT\nTest\nSee Also\nClass1.Test<T> , Class1\nCalculates the determinant of a 3-dimensional matrix:\nReturns the smallest value:\nReturns\ndouble\uF1C5\nIssue8764<T>()\npublic void Issue8764<T>() where T : unmanaged\nIssue896()\npublic void Issue896()\nIssue9216()\npublic static double Issue9216()",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.double"
@@ -1492,7 +1492,7 @@
     },
     {
       "Number": 20,
-      "Text": "20 / 93\nThis method should do something...\nRemarks\nThis is remarks.\npublic void XmlCommentIncludeTag()",
+      "Text": "20 / 93\nThis method should do something...\nRemarks\nThis is remarks.\nXmlCommentIncludeTag()\npublic void XmlCommentIncludeTag()",
       "Links": []
     },
     {
@@ -3126,7 +3126,7 @@
     },
     {
       "Number": 38,
-      "Text": "38 / 93\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nThis is a test class to have something for DocFX to document.\nInheritance\nobject\uF1C5  Inheritdoc.Issue7484\nInherited Members\nobject.Equals(object?)\uF1C5 , object.Equals(object?, object?)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 ,\nobject.ReferenceEquals(object?, object?)\uF1C5 , object.ToString()\uF1C5\nRemarks\nWe're going to talk about things now.\nBoolReturningMethod(bool) Simple method to generate docs for.\nDoDad A string that could have something.\nConstructors\nThis is a constructor to document.\nClass Inheritdoc.Issue7484\npublic class Inheritdoc.Issue7484\n\uF12C\nIssue7484()\npublic Issue7484()",
+      "Text": "38 / 93\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nThis is a test class to have something for DocFX to document.\nInheritance\nobject\uF1C5  Inheritdoc.Issue7484\nInherited Members\nobject.Equals(object?)\uF1C5 , object.Equals(object?, object?)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 ,\nobject.ReferenceEquals(object?, object?)\uF1C5 , object.ToString()\uF1C5\nRemarks\nBoolReturningMethod(bool) Simple method to generate docs for.\nDoDad A string that could have something.\nConstructors\nThis is a constructor to document.\nClass Inheritdoc.Issue7484\npublic class Inheritdoc.Issue7484\n\uF12C\nWe're going to talk about things now.\nIssue7484()\npublic Issue7484()",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -3681,7 +3681,7 @@
     },
     {
       "Number": 44,
-      "Text": "44 / 93\n{ \n\"type\": \"articles\",\n\"id\": \"4309\",\n\"relationships\": {\n\"author\": {\n\"links\": {\n\"self\": \"/api/shopping/articles/4309/relationships/author\",\n\"related\": \"/api/shopping/articles/4309/author\"\n}    \n} \n}\n}",
+      "Text": "44 / 93\n\"type\": \"articles\", \"id\": \"4309\", \"relationships\": { \"author\": { \"links\": { \"self\":\n\"/api/shopping/articles/4309/relationships/author\", \"related\":\n\"/api/shopping/articles/4309/author\" } } } }\n<pre><code class=\"lang-csharp\">{",
       "Links": []
     },
     {
@@ -3913,7 +3913,7 @@
     },
     {
       "Number": 50,
-      "Text": "50 / 93\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\nInterface\nInheritdoc.Issue9736.IJsonApiOptions\npublic interface Inheritdoc.Issue9736.IJsonApiOptions\nUseRelativeLinks\nbool UseRelativeLinks { get; }\noptions.UseRelativeLinks = true;\n{ \n\"type\": \"articles\",\n\"id\": \"4309\",\n\"relationships\": {\n\"author\": {\n\"links\": {\n\"self\": \"/api/shopping/articles/4309/relationships/author\",\n\"related\": \"/api/shopping/articles/4309/author\"\n}    \n} \n}\n}",
+      "Text": "50 / 93\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\n\"type\": \"articles\", \"id\": \"4309\", \"relationships\": { \"author\": { \"links\": { \"self\":\n\"/api/shopping/articles/4309/relationships/author\", \"related\":\n\"/api/shopping/articles/4309/author\" } } } }\nInterface\nInheritdoc.Issue9736.IJsonApiOptions\npublic interface Inheritdoc.Issue9736.IJsonApiOptions\nUseRelativeLinks\nbool UseRelativeLinks { get; }\noptions.UseRelativeLinks = true;\n<pre><code class=\"lang-csharp\">{",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.boolean"
@@ -4306,7 +4306,7 @@
     },
     {
       "Number": 57,
-      "Text": "57 / 93\nNamespaces\nCatLibrary.Core\nClasses\nCat<T, K>\nHere's main class of this Demo.\nYou can see mostly type of article within this class and you for more detail, please see the\nremarks.\nthis class is a template class. It has two Generic parameter. they are: T and K.\nThe extension method of this class can refer to ICatExtension class\nCatException<T>\nComplex<T, J>\nICatExtension\nIt's the class that contains ICat interface's extension method.\nThis class must be public and static.\nAlso it shouldn't be a geneic class\nTom\nTom class is only inherit from Object. Not any member inside itself.\nTomFromBaseClass\nTomFromBaseClass inherits from @\nInterfaces\nIAnimal\nThis is basic interface of all animal.\nICat\nNamespace CatLibrary",
+      "Text": "57 / 93\nNamespaces\nCatLibrary.Core\nClasses\nCat<T, K>\nHere's main class of this Demo.\nYou can see mostly type of article within this class and you for more detail, please see the\nremarks.\nthis class is a template class. It has two Generic parameter. they are: T and K.\nThe extension method of this class can refer to ICatExtension class\nCatException<T>\nComplex<T, J>\nICatExtension\nThis class must be public and static.\nAlso it shouldn't be a geneic class\nTom\nTom class is only inherit from Object. Not any member inside itself.\nTomFromBaseClass\nTomFromBaseClass inherits from @\nInterfaces\nIAnimal\nThis is basic interface of all animal.\nICat\nNamespace CatLibrary\nIt's the class that contains ICat interface's extension method.",
       "Links": [
         {
           "Goto": {
@@ -5126,7 +5126,7 @@
             "PageNumber": 79,
             "Coordinates": {
               "Left": 0,
-              "Top": 318
+              "Top": 299.25
             }
           }
         },
@@ -5135,7 +5135,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 792
+              "Top": 738
             }
           }
         }
@@ -5380,17 +5380,8 @@
     },
     {
       "Number": 75,
-      "Text": "75 / 93\nint\uF1C5\nResult with int type.\nExpilicit operator of this class.\nIt means this cat can evolve to change to Tom. Tom and Jerry.\nParameters\nsrc Cat<T, K>\nInstance of this class.\nReturns\nTom\nAdvanced class type of cat.\nSimilar with operaotr +, refer to that topic.\nParameters\nlsr Cat<T, K>\nrsr int\uF1C5\nReturns\nint\uF1C5\nexplicit operator Tom(Cat<T, K>)\npublic static explicit operator Tom(Cat<T, K> src)\noperator -(Cat<T, K>, int)\npublic static int operator -(Cat<T, K> lsr, int rsr)",
+      "Text": "75 / 93\nint\uF1C5\nResult with int type.\nIt means this cat can evolve to change to Tom. Tom and Jerry.\nParameters\nsrc Cat<T, K>\nInstance of this class.\nReturns\nTom\nAdvanced class type of cat.\nSimilar with operaotr +, refer to that topic.\nParameters\nlsr Cat<T, K>\nrsr int\uF1C5\nReturns\nexplicit operator Tom(Cat<T, K>)\nExpilicit operator of this class.\npublic static explicit operator Tom(Cat<T, K> src)\noperator -(Cat<T, K>, int)\npublic static int operator -(Cat<T, K> lsr, int rsr)",
       "Links": [
-        {
-          "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
-        },
-        {
-          "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
-        },
-        {
-          "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
-        },
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
         },
@@ -5440,8 +5431,18 @@
     },
     {
       "Number": 76,
-      "Text": "76 / 93",
-      "Links": []
+      "Text": "76 / 93\nint\uF1C5",
+      "Links": [
+        {
+          "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
+        },
+        {
+          "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
+        },
+        {
+          "Uri": "https://learn.microsoft.com/dotnet/api/system.int32"
+        }
+      ]
     },
     {
       "Number": 77,
@@ -5763,7 +5764,7 @@
     },
     {
       "Number": 79,
-      "Text": "79 / 93\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nIt's the class that contains ICat interface's extension method.\nThis class must be public and static.\nAlso it shouldn't be a geneic class\nInheritance\nobject\uF1C5  ICatExtension\nInherited Members\nobject.Equals(object?)\uF1C5 , object.Equals(object?, object?)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 ,\nobject.ReferenceEquals(object?, object?)\uF1C5 , object.ToString()\uF1C5\nMethods\nExtension method to let cat play\nParameters\nicat ICat\nCat\ntoy ContainersRefType.ColorType\nSomething to play\nClass ICatExtension\npublic static class ICatExtension\n\uF12C\nPlay(ICat, ColorType)\npublic static void Play(this ICat icat, ContainersRefType.ColorType toy)",
+      "Text": "79 / 93\nNamespace: CatLibrary\nAssembly: CatLibrary.dll\nThis class must be public and static.\nAlso it shouldn't be a geneic class\nInheritance\nobject\uF1C5  ICatExtension\nInherited Members\nobject.Equals(object?)\uF1C5 , object.Equals(object?, object?)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.MemberwiseClone()\uF1C5 ,\nobject.ReferenceEquals(object?, object?)\uF1C5 , object.ToString()\uF1C5\nMethods\nExtension method to let cat play\nParameters\nicat ICat\nCat\ntoy ContainersRefType.ColorType\nClass ICatExtension\nIt's the class that contains ICat interface's extension method.\npublic static class ICatExtension\n\uF12C\nPlay(ICat, ColorType)\npublic static void Play(this ICat icat, ContainersRefType.ColorType toy)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -5886,7 +5887,7 @@
     },
     {
       "Number": 80,
-      "Text": "80 / 93\nExtension method hint that how long the cat can sleep.\nParameters\nicat ICat\nThe type will be extended.\nhours long\uF1C5\nThe length of sleep.\nSleep(ICat, long)\npublic static void Sleep(this ICat icat, long hours)",
+      "Text": "80 / 93\nSomething to play\nExtension method hint that how long the cat can sleep.\nParameters\nicat ICat\nThe type will be extended.\nhours long\uF1C5\nThe length of sleep.\nSleep(ICat, long)\npublic static void Sleep(this ICat icat, long hours)",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.int64"
@@ -6346,7 +6347,7 @@
             "PageNumber": 79,
             "Coordinates": {
               "Left": 0,
-              "Top": 318
+              "Top": 299.25
             }
           }
         },
@@ -6355,7 +6356,7 @@
             "PageNumber": 80,
             "Coordinates": {
               "Left": 0,
-              "Top": 792
+              "Top": 738
             }
           }
         }

@@ -3321,7 +3321,7 @@
           },
           "level": 0,
           "type": "operator",
-          "summary": "<p sourcefile=\"obj/api/CatLibrary.Cat-2.yml\" sourcestartlinenumber=\"1\">Expilicit operator of this class.</p>\n<p>It means this cat can evolve to change to Tom. Tom and Jerry.</p>\n",
+          "summary": "<pre><code sourcefile=\"obj/api/CatLibrary.Cat-2.yml\" sourcestartlinenumber=\"1\">Expilicit operator of this class.\n</code></pre>\n<p>It means this cat can evolve to change to Tom. Tom and Jerry.</p>\n",
           "platform": null,
           "docurl": "https://github.com/dotnet/docfx/new/main/apiSpec/new?filename=CatLibrary_Cat_2_op_Explicit_CatLibrary_Cat__0__1___CatLibrary_Tom.md&value=---%0Auid%3A%20CatLibrary.Cat%602.op_Explicit(CatLibrary.Cat%7B%600%2C%601%7D)~CatLibrary.Tom%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A",
           "sourceurl": "https://github.com/dotnet/docfx/blob/main/samples/seed/dotnet/solution/CatLibrary/Class1.cs/#L199",
@@ -3714,7 +3714,7 @@
   "summary": "<p>Here's main class of this <i>Demo</i>.</p>\n<p>You can see mostly type of article within this class and you for more detail, please see the remarks.</p>\n<p></p>\n<p>this class is a template class. It has two Generic parameter. they are: <code class=\"typeparamref\">T</code> and <code class=\"typeparamref\">K</code>.</p>\n<p>The extension method of this class can refer to <xref href=\"CatLibrary.ICatExtension\" data-throw-if-not-resolved=\"false\"></xref> class</p>\n",
   "remarks": "<p sourcefile=\"specs/Cat.md\" sourcestartlinenumber=\"1\"><em sourcefile=\"specs/Cat.md\" sourcestartlinenumber=\"1\">THIS</em> is remarks overridden in <em sourcefile=\"specs/Cat.md\" sourcestartlinenumber=\"1\">MARKDWON</em> file</p>\n",
   "example": [
-    "<p>Here's example of how to create an instance of this class. As T is limited with <code>class</code> and K is limited with <code>struct</code>.</p>\n<pre><code class=\"lang-c#\">var a = new Cat(object, int)();\nint catNumber = new int();\nunsafe\n{\n    a.GetFeetLength(catNumber);\n}</code></pre>\n<p>As you see, here we bring in <b>pointer</b> so we need to add <code class=\"languageKeyword\">unsafe</code> keyword.</p>\n"
+    "<p>Here's example of how to create an instance of this class. As T is limited with <code>class</code> and K is limited with <code>struct</code>.</p>\n    <pre><code class=\"lang-c#\">var a = new Cat(object, int)();\nint catNumber = new int();\nunsafe\n{\n    a.GetFeetLength(catNumber);\n}</code></pre>\n<p>As you see, here we bring in <b>pointer</b> so we need to add <code class=\"languageKeyword\">unsafe</code> keyword.</p>\n"
   ],
   "syntax": {
     "content": [
