@@ -3681,7 +3681,7 @@
     },
     {
       "Number": 44,
-      "Text": "44 / 93\n{ \n\"type\": \"articles\",\n\"id\": \"4309\",\n\"relationships\": {\n\"author\": {\n\"links\": {\n\"self\": \"/api/shopping/articles/4309/relationships/author\",\n\"related\": \"/api/shopping/articles/4309/author\"\n}    \n} \n}\n}",
+      "Text": "44 / 93\n\"type\": \"articles\", \"id\": \"4309\", \"relationships\": { \"author\": { \"links\": { \"self\":\n\"/api/shopping/articles/4309/relationships/author\", \"related\":\n\"/api/shopping/articles/4309/author\" } } } }\n<pre><code class=\"lang-csharp\">{",
       "Links": []
     },
     {
@@ -3913,7 +3913,7 @@
     },
     {
       "Number": 50,
-      "Text": "50 / 93\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\nInterface\nInheritdoc.Issue9736.IJsonApiOptions\npublic interface Inheritdoc.Issue9736.IJsonApiOptions\nUseRelativeLinks\nbool UseRelativeLinks { get; }\noptions.UseRelativeLinks = true;\n{ \n\"type\": \"articles\",\n\"id\": \"4309\",\n\"relationships\": {\n\"author\": {\n\"links\": {\n\"self\": \"/api/shopping/articles/4309/relationships/author\",\n\"related\": \"/api/shopping/articles/4309/author\"\n}    \n} \n}\n}",
+      "Text": "50 / 93\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\n\"type\": \"articles\", \"id\": \"4309\", \"relationships\": { \"author\": { \"links\": { \"self\":\n\"/api/shopping/articles/4309/relationships/author\", \"related\":\n\"/api/shopping/articles/4309/author\" } } } }\nInterface\nInheritdoc.Issue9736.IJsonApiOptions\npublic interface Inheritdoc.Issue9736.IJsonApiOptions\nUseRelativeLinks\nbool UseRelativeLinks { get; }\noptions.UseRelativeLinks = true;\n<pre><code class=\"lang-csharp\">{",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.boolean"

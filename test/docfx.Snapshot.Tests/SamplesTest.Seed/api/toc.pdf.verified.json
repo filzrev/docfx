@@ -4295,7 +4295,7 @@
     },
     {
       "Number": 45,
-      "Text": "45 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\nInterface\nInheritdoc.Issue9736.IJsonApiOptions\npublic interface Inheritdoc.Issue9736.IJsonApiOptions\nUseRelativeLinks\nbool UseRelativeLinks { get; }\noptions.UseRelativeLinks = true;\n{ \n\"type\": \"articles\",\n\"id\": \"4309\",\n\"relationships\": {\n\"author\": {\n\"links\": {\n\"self\": \"/api/shopping/articles/4309/relationships/author\",\n\"related\": \"/api/shopping/articles/4309/author\"\n}    \n} \n}\n}",
+      "Text": "45 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\n\"type\": \"articles\", \"id\": \"4309\", \"relationships\": { \"author\": { \"links\": { \"self\":\n\"/api/shopping/articles/4309/relationships/author\", \"related\":\n\"/api/shopping/articles/4309/author\" } } } }\nInterface\nInheritdoc.Issue9736.IJsonApiOptions\npublic interface Inheritdoc.Issue9736.IJsonApiOptions\nUseRelativeLinks\nbool UseRelativeLinks { get; }\noptions.UseRelativeLinks = true;\n<pre><code class=\"lang-csharp\">{",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.boolean"
@@ -4337,7 +4337,7 @@
     },
     {
       "Number": 46,
-      "Text": "46 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5 Inheritdoc.Issue9736.JsonApiOptions\nImplements\nInheritdoc.Issue9736.IJsonApiOptions\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 , object.ToString()\uF1C5\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\nClass Inheritdoc.Issue9736.JsonApiOptions\npublic sealed class Inheritdoc.Issue9736.JsonApiOptions :\nInheritdoc.Issue9736.IJsonApiOptions\n\uF12C\nUseRelativeLinks\npublic bool UseRelativeLinks { get; set; }\noptions.UseRelativeLinks = true;\n{ \n\"type\": \"articles\",\n\"id\": \"4309\",",
+      "Text": "46 / 88\nNamespace: BuildFromProject\nAssembly: BuildFromProject.dll\nInheritance\nobject\uF1C5 Inheritdoc.Issue9736.JsonApiOptions\nImplements\nInheritdoc.Issue9736.IJsonApiOptions\nInherited Members\nobject.Equals(object)\uF1C5 , object.Equals(object, object)\uF1C5 , object.GetHashCode()\uF1C5 ,\nobject.GetType()\uF1C5 , object.ReferenceEquals(object, object)\uF1C5 , object.ToString()\uF1C5\nProperties\nWhether to use relative links for all resources. false by default.\nProperty Value\nbool\uF1C5\nExamples\nClass Inheritdoc.Issue9736.JsonApiOptions\npublic sealed class Inheritdoc.Issue9736.JsonApiOptions :\nInheritdoc.Issue9736.IJsonApiOptions\n\uF12C\nUseRelativeLinks\npublic bool UseRelativeLinks { get; set; }\noptions.UseRelativeLinks = true;\n<pre><code class=\"lang-csharp\">{",
       "Links": [
         {
           "Uri": "https://learn.microsoft.com/dotnet/api/system.object"
@@ -4487,7 +4487,7 @@
     },
     {
       "Number": 47,
-      "Text": "47 / 88\n\"relationships\": {\n\"author\": {\n\"links\": {\n\"self\": \"/api/shopping/articles/4309/relationships/author\",\n\"related\": \"/api/shopping/articles/4309/author\"\n}    \n} \n}\n}",
+      "Text": "47 / 88\n\"type\": \"articles\", \"id\": \"4309\", \"relationships\": { \"author\": { \"links\": { \"self\":\n\"/api/shopping/articles/4309/relationships/author\", \"related\":\n\"/api/shopping/articles/4309/author\" } } } }",
       "Links": []
     },
     {
