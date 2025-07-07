@@ -172,9 +172,6 @@ internal partial class XmlComment
         // Gets markdown text from XElement. (Insert empty line between Markdown/HTML tags)
         var xml = GetMarkdownText(node);
 
-        if (xml.Contains("Pricing models are us"))
-            ;
-
         // Trim extra indents.
         xml = TrimEachLine(xml);
 
