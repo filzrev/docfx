@@ -97,8 +97,6 @@ internal partial class XmlComment
             xml = $"<member>{xml}</member>";
         }
 
-        bool isC = xml.Contains("\r");
-
         // Transform triple slash comment
         xml = XmlCommentTransformer.Transform(xml);
 

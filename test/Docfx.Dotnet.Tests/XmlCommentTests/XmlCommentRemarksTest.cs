@@ -37,6 +37,33 @@ public class XmlCommentRemarksTest
          );
     }
 
+    [Fact]
+    public void Remarks_WithCodeBlocks()
+    {
+        ValidateRemarks(
+            // Input XML
+            """
+            <remarks>
+            ```csharp
+            CSharpCode1
+            ```
+
+            <code>
+            CSharpCode2
+            </code>
+            </remarks>
+            """,
+            // Expected Markdown
+            """
+            ```csharp
+            CSharpCode1
+            ```
+
+            <pre><code class="lang-csharp">CSharpCode2</code></pre>
+            """
+         );
+    }
+
     private static void ValidateRemarks(string input, string expected)
     {
         // Act

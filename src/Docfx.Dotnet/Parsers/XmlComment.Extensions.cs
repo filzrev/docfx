@@ -91,7 +91,7 @@ static file class XElementExtensions
             case XmlNodeType.Text:
                 var textNode = (XText)prev;
 
-                if (textNode.Value.EndsWith("\n\n"))
+                if (textNode.Value.TrimEnd([' ', '\t']).EndsWith("\n\n"))
                     return false;
                 return true;
 
