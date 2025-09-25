@@ -41,6 +41,24 @@ internal partial class XmlComment
     [GeneratedRegex(@"^(\s*)&gt;", RegexOptions.Multiline)]
     private static partial Regex BlockQuoteRegex();
 
+    // List of block tags that are defined by CommonMark
+    // https://spec.commonmark.org/0.31.2/#html-blocks
+    private static readonly string[] BlockTags =
+    {
+        "ol",
+        "p",
+        "table",
+        "ul",
+
+        // Recommended XML tags for C# documentation comments
+        "example",
+        
+        // Other tags
+        "pre",
+    };
+
+    private static readonly Lazy<string> BlockTagsXPath = new(string.Join(" | ", BlockTags.Select(tagName => $".//{tagName}")));
+
     private readonly XmlCommentParserContext _context;
 
     public string Summary { get; private set; }
@@ -81,6 +99,7 @@ internal partial class XmlComment
 
         // Transform triple slash comment
         xml = XmlCommentTransformer.Transform(xml);
+
         var doc = XDocument.Parse(xml, LoadOptions.PreserveWhitespace | LoadOptions.SetLineInfo);
 
         _context = context;
@@ -93,15 +112,15 @@ internal partial class XmlComment
         ResolveCode(doc, context);
 
         var nav = doc.CreateNavigator();
-        Summary = GetSingleNodeValue(nav, "/member/summary");
-        Remarks = GetSingleNodeValue(nav, "/member/remarks");
-        Returns = GetSingleNodeValue(nav, "/member/returns");
+        Summary = GetSingleNodeValue(doc, "/member/summary");
+        Remarks = GetSingleNodeValue(doc, "/member/remarks");
+        Returns = GetSingleNodeValue(doc, "/member/returns");
 
-        Exceptions = ToListNullOnEmpty(GetMultipleCrefInfo(nav, "/member/exception"));
-        SeeAlsos = ToListNullOnEmpty(GetMultipleLinkInfo(nav, "/member/seealso"));
-        Examples = GetMultipleExampleNodes(nav, "/member/example").ToList();
-        Parameters = GetListContent(nav, "/member/param", "parameter", context);
-        TypeParameters = GetListContent(nav, "/member/typeparam", "type parameter", context);
+        Exceptions = ToListNullOnEmpty(GetMultipleCrefInfo(doc, "/member/exception"));
+        SeeAlsos = ToListNullOnEmpty(GetMultipleLinkInfo(doc, "/member/seealso"));
+        Examples = GetMultipleExampleNodes(doc, "/member/example").ToList();
+        Parameters = GetListContent(doc, "/member/param", "parameter", context);
+        TypeParameters = GetListContent(doc, "/member/typeparam", "type parameter", context);
 
         // Nulls and empty list are treated differently in overwrite files:
         //   null values can be replaced, but empty list are merged by merge key
@@ -142,17 +161,22 @@ internal partial class XmlComment
         return TypeParameters.GetValueOrDefault(name);
     }
 
-    private void ResolveCode(XDocument doc, XmlCommentParserContext context)
+    private static void ResolveCode(XDocument doc, XmlCommentParserContext context)
     {
-        foreach (var node in doc.XPathSelectElements("//code").ToList())
+        var nodes = doc.XPathSelectElements("//code").ToArray();
+        foreach (var node in nodes)
         {
+            // Remove `data-inline` attribute if it exists.
             if (node.Attribute("data-inline") is { } inlineAttribute)
             {
                 inlineAttribute.Remove();
                 continue;
             }
 
+            // Gets indents placed before `<code>` tag
             var indent = new string(' ', ((IXmlLineInfo)node).LinePosition - 2);
+
+            // Try to resolve `source` attribute
             var (lang, value) = ResolveCodeSource(node, context);
             value = TrimEachLine(value ?? node.Value, indent);
             var code = new XElement("code", value);
@@ -169,18 +193,7 @@ internal partial class XmlComment
 
             code.SetAttributeValue("class", $"lang-{lang}");
 
-            if (node.PreviousNode is null
-             || node.PreviousNode is XText xText && xText.Value == $"\n{indent}")
-            {
-                // Xml writer formats <pre><code> with unintended identation
-                // when there is no preceeding text node.
-                // Prepend a text node with the same indentation to force <pre><code>.
-                node.ReplaceWith($"\n{indent}", new XElement("pre", code));
-            }
-            else
-            {
-                node.ReplaceWith(new XElement("pre", code));
-            }
+            node.ReplaceWith(new XElement("pre", code));
         }
     }
 
@@ -256,25 +269,23 @@ internal partial class XmlComment
         }
     }
 
-    private Dictionary<string, string> GetListContent(XPathNavigator navigator, string xpath, string contentType, XmlCommentParserContext context)
+    private Dictionary<string, string> GetListContent(XDocument doc, string xpath, string contentType, XmlCommentParserContext context)
     {
-        var iterator = navigator.Select(xpath);
         var result = new Dictionary<string, string>();
-        if (iterator == null)
+        var nodes = doc.XPathSelectElements(xpath).ToArray();
+
+        foreach (var node in nodes)
         {
-            return result;
-        }
-        foreach (XPathNavigator nav in iterator)
-        {
-            string name = nav.GetAttribute("name", string.Empty);
-            string description = GetXmlValue(nav);
-            if (!string.IsNullOrEmpty(name))
+            var name = node.Attribute("name")?.Value;
+            if (name == null)
+                continue;
+
+            string description = GetXmlValue(node);
+
+            if (!result.TryAdd(name, description))
             {
-                if (!result.TryAdd(name, description))
-                {
-                    string path = context.Source?.Remote != null ? Path.Combine(EnvironmentContext.BaseDirectory, context.Source.Remote.Path) : context.Source?.Path;
-                    Logger.LogWarning($"Duplicate {contentType} '{name}' found in comments, the latter one is ignored.", file: StringExtension.ToDisplayPath(path), line: context.Source?.StartLine.ToString());
-                }
+                string path = context.Source?.Remote != null ? Path.Combine(EnvironmentContext.BaseDirectory, context.Source.Remote.Path) : context.Source?.Path;
+                Logger.LogWarning($"Duplicate {contentType} '{name}' found in comments, the latter one is ignored.", file: StringExtension.ToDisplayPath(path), line: context.Source?.StartLine.ToString());
             }
         }
 
@@ -295,6 +306,124 @@ internal partial class XmlComment
         }
 
         return (RegionRegex(), EndRegionRegex());
+    }
+
+    private IEnumerable<string> GetMultipleExampleNodes(XDocument doc, string selector)
+    {
+        // Gets nodes with XPath selector
+        var nodes = doc.XPathSelectElements(selector).ToArray();
+        foreach (var node in nodes)
+        {
+            var xml = GetXmlValue(node);
+            yield return xml;
+        }
+    }
+
+    private IEnumerable<ExceptionInfo> GetMultipleCrefInfo(XDocument doc, string selector)
+    {
+        var nodes = doc.XPathSelectElements(selector).ToArray();
+        foreach (var node in nodes)
+        {
+            string description = GetXmlValue(node);
+            string commentId = node.Attribute("cref")?.Value ?? "";
+            string refId = node.Attribute("refId")?.Value ?? "";
+
+            if (refId != "")
+            {
+                yield return new ExceptionInfo
+                {
+                    Description = description,
+                    Type = refId,
+                    CommentId = commentId,
+                };
+                continue;
+            }
+
+            if (commentId == "")
+                continue;
+
+            // Check if exception type is valid and trim prefix
+            var match = CommentIdRegex().Match(commentId);
+            if (match.Success)
+            {
+                var id = match.Groups["id"].Value;
+                var type = match.Groups["type"].Value;
+                if (type == "T")
+                {
+                    yield return new ExceptionInfo
+                    {
+                        Description = description,
+                        Type = id,
+                        CommentId = commentId,
+                    };
+                }
+            }
+        }
+    }
+
+    private static IEnumerable<LinkInfo> GetMultipleLinkInfo(XDocument doc, string selector)
+    {
+        var nodes = doc.XPathSelectElements(selector).ToArray();
+
+        foreach (var node in nodes)
+        {
+            string altText = GetInnerXml(node).Trim();
+            if (string.IsNullOrEmpty(altText))
+            {
+                altText = null;
+            }
+
+            string commentId = node.Attribute("cref")?.Value ?? "";
+
+            string refId = node.Attribute("refId")?.Value ?? "";
+
+            if (refId != "")
+            {
+                yield return new LinkInfo
+                {
+                    AltText = altText,
+                    LinkId = refId,
+                    CommentId = commentId,
+                    LinkType = LinkType.CRef
+                };
+                continue;
+            }
+
+            if (commentId != "")
+            {
+                // Check if cref type is valid and trim prefix
+                var match = CommentIdRegex().Match(commentId);
+                if (match.Success)
+                {
+                    var id = match.Groups["id"].Value;
+                    var type = match.Groups["type"].Value;
+                    if (type == "Overload")
+                    {
+                        id += '*';
+                    }
+
+                    yield return new LinkInfo
+                    {
+                        AltText = altText,
+                        LinkId = id,
+                        CommentId = commentId,
+                        LinkType = LinkType.CRef
+                    };
+                }
+                continue;
+            }
+
+            string url = node.Attribute("href")?.Value ?? "";
+            if (!string.IsNullOrEmpty(url))
+            {
+                yield return new LinkInfo
+                {
+                    AltText = altText ?? url,
+                    LinkId = url,
+                    LinkType = LinkType.HRef
+                };
+            }
+        }
     }
 
     private static void ResolveLangword(XNode node)
@@ -402,138 +531,29 @@ internal partial class XmlComment
         }
     }
 
-    private IEnumerable<string> GetMultipleExampleNodes(XPathNavigator navigator, string selector)
+    private string GetSingleNodeValue(XDocument doc, string selector)
     {
-        var iterator = navigator.Select(selector);
-        if (iterator == null)
-        {
-            yield break;
-        }
-        foreach (XPathNavigator nav in iterator)
-        {
-            yield return GetXmlValue(nav);
-        }
+        var elem = doc.XPathSelectElement(selector);
+
+        return GetXmlValue(elem);
     }
 
-    private IEnumerable<ExceptionInfo> GetMultipleCrefInfo(XPathNavigator navigator, string selector)
-    {
-        var iterator = navigator.Clone().Select(selector);
-        if (iterator == null)
-        {
-            yield break;
-        }
-        foreach (XPathNavigator nav in iterator)
-        {
-            string description = GetXmlValue(nav);
-            string commentId = nav.GetAttribute("cref", string.Empty);
-            string refId = nav.GetAttribute("refId", string.Empty);
-            if (!string.IsNullOrEmpty(refId))
-            {
-                yield return new ExceptionInfo
-                {
-                    Description = description,
-                    Type = refId,
-                    CommentId = commentId
-                };
-            }
-            else if (!string.IsNullOrEmpty(commentId))
-            {
-                // Check if exception type is valid and trim prefix
-                var match = CommentIdRegex().Match(commentId);
-                if (match.Success)
-                {
-                    var id = match.Groups["id"].Value;
-                    var type = match.Groups["type"].Value;
-                    if (type == "T")
-                    {
-                        yield return new ExceptionInfo
-                        {
-                            Description = description,
-                            Type = id,
-                            CommentId = commentId
-                        };
-                    }
-                }
-            }
-        }
-    }
-
-    private static IEnumerable<LinkInfo> GetMultipleLinkInfo(XPathNavigator navigator, string selector)
-    {
-        var iterator = navigator.Clone().Select(selector);
-        if (iterator == null)
-        {
-            yield break;
-        }
-        foreach (XPathNavigator nav in iterator)
-        {
-            string altText = nav.InnerXml.Trim();
-            if (string.IsNullOrEmpty(altText))
-            {
-                altText = null;
-            }
-
-            string commentId = nav.GetAttribute("cref", string.Empty);
-            string url = nav.GetAttribute("href", string.Empty);
-            string refId = nav.GetAttribute("refId", string.Empty);
-            if (!string.IsNullOrEmpty(refId))
-            {
-                yield return new LinkInfo
-                {
-                    AltText = altText,
-                    LinkId = refId,
-                    CommentId = commentId,
-                    LinkType = LinkType.CRef
-                };
-            }
-            else if (!string.IsNullOrEmpty(commentId))
-            {
-                // Check if cref type is valid and trim prefix
-                var match = CommentIdRegex().Match(commentId);
-                if (match.Success)
-                {
-                    var id = match.Groups["id"].Value;
-                    var type = match.Groups["type"].Value;
-                    if (type == "Overload")
-                    {
-                        id += '*';
-                    }
-
-                    yield return new LinkInfo
-                    {
-                        AltText = altText,
-                        LinkId = id,
-                        CommentId = commentId,
-                        LinkType = LinkType.CRef
-                    };
-                }
-            }
-            else if (!string.IsNullOrEmpty(url))
-            {
-                yield return new LinkInfo
-                {
-                    AltText = altText ?? url,
-                    LinkId = url,
-                    LinkType = LinkType.HRef
-                };
-            }
-        }
-    }
-
-    private string GetSingleNodeValue(XPathNavigator nav, string selector)
-    {
-        return GetXmlValue(nav.Clone().SelectSingleNode(selector));
-    }
-
-    private string GetXmlValue(XPathNavigator node)
+    private string GetXmlValue(XElement node)
     {
         if (node is null)
             return null;
 
         if (_context.SkipMarkup)
-            return TrimEachLine(node.InnerXml);
+            return TrimEachLine(GetInnerXml(node));
 
-        return GetInnerXmlAsMarkdown(TrimEachLine(node.InnerXml));
+        // Gets markdown text from XElement. (Insert empty line between Markdown/HTML tags)
+        var xml = GetMarkdownText(node);
+
+        // Trim extra indents.
+        xml = TrimEachLine(xml);
+
+        // Decode XML Entity References to markdown
+        return GetInnerXmlAsMarkdown(xml);
     }
 
     private static string TrimEachLine(string text, string indent = "")
@@ -557,19 +577,10 @@ internal partial class XmlComment
         // Trim leading empty lines
         var trimStart = true;
 
-        // Apply indentation to all lines except the first,
-        // since the first new line in <pre></code> is significant
-        var firstLine = true;
-
         foreach (var line in lines)
         {
             if (trimStart && string.IsNullOrWhiteSpace(line))
                 continue;
-
-            if (firstLine)
-                firstLine = false;
-            else
-                builder.Append(indent);
 
             if (string.IsNullOrWhiteSpace(line))
             {
@@ -584,13 +595,15 @@ internal partial class XmlComment
         return builder.ToString().TrimEnd();
     }
 
+    private static readonly MarkdownPipeline pipeline = new MarkdownPipelineBuilder().UseMathematics().EnableTrackTrivia().Build();
+
     private static string GetInnerXmlAsMarkdown(string xml)
     {
         if (!xml.Contains('&'))
             return xml;
 
         xml = HandleBlockQuote(xml);
-        var pipeline = new MarkdownPipelineBuilder().UseMathematics().EnableTrackTrivia().Build();
+
         var markdown = Markdown.Parse(xml, pipeline);
         MarkdownXmlDecode(markdown);
         var sw = new StringWriter();
