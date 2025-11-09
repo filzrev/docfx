@@ -13,19 +13,21 @@
   </PropertyGroup>
 
   <!-- Configure `Microsoft.Testing.Platform` mode behaviors (https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-platform-integration-dotnet-test)-->
-  <PropertyGroup>
-    <!-- Enable `Microsoft.Testing.Platform` mode for `dotnet test` -->
+
+  <!-- Enable `Microsoft.Testing.Platform` mode for `dotnet test` (Required for .NET 9 SDK and earlier) -->
+  <PropertyGroup Condition="'$(TargetFramework)'=='net9.0' OR '$(TargetFramework)'=='net8.0'">
     <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
-
-    <!-- Show failure per test -->
     <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
+  </PropertyGroup>
 
-    <!-- Show complete platform output -->
-    <TestingPlatformCaptureOutput>false</TestingPlatformCaptureOutput>
-
-    <!-- Use `Microsoft.Testing.Platform` entrypoint. -->
+  <PropertyGroup>
+    <!-- Use `Microsoft.Testing.Platform` entrypoint -->
     <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
 
+    <TestingPlatformCaptureOutput>false</TestingPlatformCaptureOutput>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <!-- Show xUnit.net headers and information -->
     <TestingPlatformCommandLineArguments>$(TestingPlatformCommandLineArguments) --xunit-info</TestingPlatformCommandLineArguments>
 
@@ -48,14 +50,6 @@
     <TestingPlatformCommandLineArguments>$(TestingPlatformCommandLineArguments) --report-xunit-trx  --report-xunit-trx-filename  TestResults-$(MSBuildProjectName)-$(TargetFramework)-$(RUNNER_OS).trx</TestingPlatformCommandLineArguments>
     <TestingPlatformCommandLineArguments>$(TestingPlatformCommandLineArguments) --report-xunit-html --report-xunit-html-filename TestResults-$(MSBuildProjectName)-$(TargetFramework)-$(RUNNER_OS).html</TestingPlatformCommandLineArguments>
     <TestingPlatformCommandLineArguments>$(TestingPlatformCommandLineArguments) --report-ctrf       --report-ctrf-filename       TestResults-$(MSBuildProjectName)-$(TargetFramework)-$(RUNNER_OS).ctrf</TestingPlatformCommandLineArguments>
-  </PropertyGroup>
-
-  <!-- Settings for VSTest mode. These settings will be removed in future. -->
-  <PropertyGroup Condition="'$(ContinuousIntegrationBuild)' == 'true' AND '$(PERCY_TOKEN)' == ''">
-    <!-- See: https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-platform-vs-vstest#communication-protocol-preview -->
-    <VSTestResultsDirectory>$(MSBuildThisFileDirectory)TestResults</VSTestResultsDirectory>
-    <VSTestLogger>$(VSTestLogger);trx%3BLogFileName=TestResults-$(MSBuildProjectName)-$(TargetFramework)-$(RUNNER_OS).trx</VSTestLogger>
-    <VSTestLogger>$(VSTestLogger);html%3BLogFileName=TestResults-$(MSBuildProjectName)-$(TargetFramework)-$(RUNNER_OS).html</VSTestLogger>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(IsTestProject)' == 'true'">
