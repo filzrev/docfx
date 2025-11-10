@@ -3,6 +3,8 @@
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net8.0</TargetFrameworks>
     <IsTestProject>true</IsTestProject>
+    <!-- It's required for `dotnet test`. When TargetFrameworks are different between test projects. -->
+    <IsTestingPlatformApplication>true</IsTestingPlatformApplication>
   </PropertyGroup>
 
   <ItemGroup>
