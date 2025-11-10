@@ -2,8 +2,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net8.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <!-- Settings to support running `dotnet test` command with solution file -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <IsTestProject>true</IsTestProject>
-    <!-- It's required for `dotnet test`. When TargetFrameworks are different between test projects. -->
     <IsTestingPlatformApplication>true</IsTestingPlatformApplication>
   </PropertyGroup>
 
