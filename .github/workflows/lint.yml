@@ -25,7 +25,7 @@ jobs:
 
       - name: Run `dotnet format` command
         run: |
-          dotnet restore
+          dotnet build -c Release
           dotnet format --no-restore --verify-no-changes
 
       - name: Report failures as Job Summary
