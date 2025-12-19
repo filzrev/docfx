@@ -28,6 +28,10 @@ jobs:
           dotnet restore
           dotnet format --no-restore -v diag
 
+      - shell: pwsh
+        run:
+           Get-Content /home/runner/work/docfx/docfx/test/Docfx.Dotnet.Tests/XmlCommentTests/XmlCommentExamplesTest.cs -Raw
+
       - name: Report failures as Job Summary
         if: ${{ failure() }}
         shell: pwsh
