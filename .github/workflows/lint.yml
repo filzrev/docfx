@@ -29,8 +29,9 @@ jobs:
           dotnet format --no-restore -v diag
 
       - shell: pwsh
-        run:
-           Get-Content /home/runner/work/docfx/docfx/test/Docfx.Dotnet.Tests/XmlCommentTests/XmlCommentExamplesTest.cs -Raw
+        run: |
+           $content = Get-Content /home/runner/work/docfx/docfx/test/Docfx.Dotnet.Tests/XmlCommentTests/XmlCommentExamplesTest.cs -Raw
+           Write-Output $content >> $env:GITHUB_STEP_SUMMARY
 
       - name: Report failures as Job Summary
         if: ${{ failure() }}

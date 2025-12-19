@@ -12,69 +12,70 @@ public class XmlCommentExamplesTest
     public void Examples()
     {
         // Indent of first line should be preserved
-        ValidateExamples(
+        ValidateExamples
+        (
             // Input XML
             """
-            <example>
-            This sample shows how to call the <see cref="M: Docfx.EntityModel.XmlCommentParser.GetExceptions(System.String, Docfx.EntityModel.XmlCommentParserContext)"/> method.
-            <code>
-            class TestClass
-            {
-                static int Main()
-                {
-                    return GetExceptions(null, null).Count();
-                }
-            } 
-            </code>
-            </example>
+           <example>
+           This sample shows how to call the <see cref="M: Docfx.EntityModel.XmlCommentParser.GetExceptions(System.String, Docfx.EntityModel.XmlCommentParserContext)"/> method.
+           <code>
+           class TestClass
+           {
+               static int Main()
+               {
+                   return GetExceptions(null, null).Count();
+               }
+           } 
+           </code>
+           </example>
 
-            <example>
-            This is another example
-            </example>
+           <example>
+           This is another example
+           </example>
 
-            <example>
-            Check empty code.
-            <code></code>
-            </example>
+           <example>
+           Check empty code.
+           <code></code>
+           </example>
 
-            <example>
-            This is an example using source reference.
-            <code source="Example.cs" region="Example"/>
-            </example>
-            """,
+           <example>
+           This is an example using source reference.
+           <code source="Example.cs" region="Example"/>
+           </example>
+           """,
             // Expected Markdown
             [
                // Example #1
                """
-               This sample shows how to call the <see cref="M: Docfx.EntityModel.XmlCommentParser.GetExceptions(System.String, Docfx.EntityModel.XmlCommentParserContext)"></see> method.
+              This sample shows how to call the <see cref="M: Docfx.EntityModel.XmlCommentParser.GetExceptions(System.String, Docfx.EntityModel.XmlCommentParserContext)"></see> method.
 
-               <pre><code class="lang-csharp">class TestClass
-               {
-                   static int Main()
-                   {
-                       return GetExceptions(null, null).Count();
-                   }
-               }</code></pre>
-               """,
+              <pre><code class="lang-csharp">class TestClass
+              {
+                  static int Main()
+                  {
+                      return GetExceptions(null, null).Count();
+                  }
+              }</code></pre>
+              """,
 
-               // Example #2
-               """
-               This is another example
-               """,
+              // Example #2
+              """
+              This is another example
+              """,
 
-               // Example #3
-               """
-               Check empty code.
+              // Example #3
+              """
+              Check empty code.
 
-               <pre><code class="lang-csharp"></code></pre>
-               """,
+              <pre><code class="lang-csharp"></code></pre>
+              """,
 
-               // Example #4
-               """
-               This is an example using source reference.
+              // Example #4
+              """
+              This is an example using source reference.
 
-               <pre><code class="lang-cs"></code></pre>
-               """,
+              <pre><code class="lang-cs"></code></pre>
+              """,
             ]);
     }
 
