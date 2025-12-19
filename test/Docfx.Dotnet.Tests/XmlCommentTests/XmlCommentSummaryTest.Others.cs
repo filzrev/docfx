@@ -10,7 +10,8 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void Example()
     {
-        ValidateSummary(
+        ValidateSummary
+        (
             // Input XML
             """
             <summary>
@@ -37,7 +38,8 @@ public partial class XmlCommentSummaryTest
     public void ContainsXmlEscapeChars()
     {
         // ['<' '>' '%'] chars are not unescaped. These chars need to be escaped before converting markdown. 
-        ValidateSummary(
+        ValidateSummary
+        (
             // Input XML
             """
             <summary>
@@ -53,7 +55,8 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void ContainsBr()
     {
-        ValidateSummary(
+        ValidateSummary
+        (
             // Input XML
             """
             <summary> 
@@ -77,7 +80,8 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void ContainsEmptyLine_BeforeMarkdownBlock()
     {
-        ValidateSummary(
+        ValidateSummary
+        (
             // Input XML
             """
             <summary>
@@ -104,7 +108,8 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void ContainsEmptyLine_AfterMarkdownBlock()
     {
-        ValidateSummary(
+        ValidateSummary
+        (
             // Input XML
             """
             <summary>

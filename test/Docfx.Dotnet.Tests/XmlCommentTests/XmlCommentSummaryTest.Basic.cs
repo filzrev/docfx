@@ -10,7 +10,8 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void Summary_Basic()
     {
-        ValidateSummary(
+        ValidateSummary
+        (
             // Input XML
             """
             <summary>
@@ -26,7 +27,8 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void Summary_WithMarkdown()
     {
-        ValidateSummary(
+        ValidateSummary
+        (
             // Input XML
             """
             <summary>

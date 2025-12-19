@@ -11,7 +11,8 @@ public class XmlCommentRemarksTest
     [Fact]
     public void Remarks()
     {
-        ValidateRemarks(
+        ValidateRemarks
+        (
             // Input XML
             """
             <remarks>
@@ -40,7 +41,8 @@ public class XmlCommentRemarksTest
     [Fact]
     public void Remarks_WithCodeBlocks()
     {
-        ValidateRemarks(
+        ValidateRemarks
+        (
             // Input XML
             """
             <remarks>
