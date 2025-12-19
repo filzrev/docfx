@@ -28,6 +28,18 @@ jobs:
           dotnet restore
           dotnet format --no-restore -v diag
 
+      # Show diff file names (It's required when using dryrun option)
+      - name: Show diff file names
+        run: |
+          git diff --name-only
+
+      # Commit updated snapshot contents
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        id: auto-commit-action
+        if: ${{ github.event.inputs.dryrun == 'false'}} 
+        with:
+          commit_message: 'test(snapshot): update snapshots ${{ github.sha }}'
+
       - shell: pwsh
         run: |
            $content = Get-Content /home/runner/work/docfx/docfx/test/Docfx.Dotnet.Tests/XmlCommentTests/XmlCommentExamplesTest.cs -Raw
