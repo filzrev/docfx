@@ -12,8 +12,7 @@ public class XmlCommentSeeAlsosTest
     [Fact]
     public void SeeAlsos()
     {
-        ValidateSeeAlsos
-        (
+        ValidateSeeAlsos(
             // Input XML
             """
             <seealso cref="T:System.IO.WaitForChangedResult"/>

@@ -10,8 +10,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void ListTypeTable()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -38,8 +37,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void ListTypeBullet()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -66,8 +64,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void ListTypeNumber()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -94,8 +91,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void ListWithCode()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -129,8 +125,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void ListComplex()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>

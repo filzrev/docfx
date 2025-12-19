@@ -12,8 +12,7 @@ public class XmlCommentExceptionsTest
     [Fact]
     public void Exceptions()
     {
-        ValidateException
-        (
+        ValidateException(
             // Input XML
             """
             <exception cref="T:System.Xml.XmlException">This is a sample of exception node. Ref <see href="http://exception.com">Exception</see></exception>

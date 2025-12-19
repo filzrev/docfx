@@ -11,8 +11,7 @@ public partial class XmlCommentSummaryTest
     public void Indent_NoIndent()
     {
         // Basic sumamry content
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -31,8 +30,7 @@ public partial class XmlCommentSummaryTest
     public void Indent_SharedIndent_Removed()
     {
         // Shared indent should be removed.
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -51,8 +49,7 @@ public partial class XmlCommentSummaryTest
     public void Indent_FirstLine()
     {
         // Indent of first line should be preserved
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -71,8 +68,7 @@ public partial class XmlCommentSummaryTest
     public void Indent_SecondLine()
     {
         // Indent of second line should be preserved
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -91,8 +87,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void Indent_BetweenInlineTags()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -110,8 +105,7 @@ public partial class XmlCommentSummaryTest
     public void Indent_MarkdownLineBreak1()
     {
         // Indent of before new line is preserved.
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -129,8 +123,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void Indent_MarkdownLineBreak2()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -151,8 +144,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void Indent_Code()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <member name="M:BuildFromProject.Class1.Issue1651">

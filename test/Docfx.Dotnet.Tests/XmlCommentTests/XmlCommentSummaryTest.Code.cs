@@ -10,8 +10,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void Code_Block()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>
@@ -32,8 +31,7 @@ public partial class XmlCommentSummaryTest
     [Fact]
     public void Code_Inline()
     {
-        ValidateSummary
-        (
+        ValidateSummary(
             // Input XML
             """
             <summary>

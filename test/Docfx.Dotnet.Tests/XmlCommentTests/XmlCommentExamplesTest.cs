@@ -12,8 +12,7 @@ public class XmlCommentExamplesTest
     public void Examples()
     {
         // Indent of first line should be preserved
-        ValidateExamples
-        (
+        ValidateExamples(
             // Input XML
             """
             <example>
@@ -82,8 +81,7 @@ public class XmlCommentExamplesTest
     [Fact]
     public void Examples_WithIndent()
     {
-        ValidateExamples
-        (
+        ValidateExamples(
             // Input XML
             """
             <member>
@@ -121,8 +119,7 @@ public class XmlCommentExamplesTest
     [Fact]
     public void Examples_WithIndent2()
     {
-        ValidateExamples
-        (
+        ValidateExamples(
             // Input XML
             """
             <member>
@@ -169,8 +166,7 @@ public class XmlCommentExamplesTest
     [Fact]
     public void Examples_WithIndentedCodes()
     {
-        ValidateExamples
-        (
+        ValidateExamples(
             // Input XML
             """
             <member>

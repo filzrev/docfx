@@ -11,8 +11,7 @@ public class XmlCommentParametersTest
     [Fact]
     public void Parameters()
     {
-        ValidateParameters
-        (
+        ValidateParameters(
             // Input XML
             """
             <param name="input">This is <see cref='T:System.AccessViolationException'/>the input</param>

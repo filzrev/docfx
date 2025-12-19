@@ -11,8 +11,7 @@ public class XmlCommentTypeParametersTest
     [Fact]
     public void TypeParameters()
     {
-        ValidateTypeParameters
-        (
+        ValidateTypeParameters(
             // Input XML
             """
             <typeparam name="T">
