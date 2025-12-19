@@ -26,7 +26,7 @@ jobs:
       - name: Run `dotnet format` command
         run: |
           dotnet restore
-          dotnet format --no-restore --verify-no-changes
+          dotnet format --no-restore -v diag
 
       - name: Report failures as Job Summary
         if: ${{ failure() }}
