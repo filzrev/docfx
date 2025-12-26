@@ -33,8 +33,14 @@ public class CommandLineTest
     [Fact]
     public static void FailForUnknownArgs()
     {
-        Assert.Equal(-1, Program.Main(["--unknown"]));
-        Logger.ResetCount();
+        try
+        {
+            Assert.Equal(-1, Program.Main(["--unknown"]));
+        }
+        finally
+        {
+            Logger.ResetCount();
+        }
     }
 
     [Fact]
