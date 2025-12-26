@@ -6,12 +6,13 @@ using Docfx.Common;
 namespace Docfx.Tests;
 
 [Collection("docfx STA")]
-public class CommandLineTest
+public class CommandLineTest : IDisposable
 {
     public CommandLineTest()
     {
         Logger.ResetCount();
     }
+    public void Dispose() => Logger.ResetCount();
 
     [Fact]
     public static void PrintsVersion()
