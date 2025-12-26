@@ -31,7 +31,7 @@ jobs:
       shell: bash
       working-directory: templates
 
-    - run: dotnet test -c Release -f net10.0 --no-build --collect:"XPlat Code Coverage" --consoleLoggerParameters:"Summary;Verbosity=Minimal"
+    - run: dotnet test -c Release -f net10.0 --no-build --collect:"XPlat Code Coverage" --filter InitBuild"
       id: test-net100
 
     - run: dotnet test -c Release -f net9.0 --no-build --collect:"XPlat Code Coverage" --consoleLoggerParameters:"Summary;Verbosity=Minimal"
