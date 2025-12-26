@@ -6,14 +6,8 @@ using Docfx.Common;
 namespace Docfx.Tests;
 
 [Collection("docfx STA")]
-public class CommandLineTest : IDisposable
+public class CommandLineTest
 {
-    public CommandLineTest()
-    {
-        Logger.ResetCount();
-    }
-    public void Dispose() => Logger.ResetCount();
-
     [Fact]
     public static void PrintsVersion()
     {
@@ -39,14 +33,13 @@ public class CommandLineTest : IDisposable
     [Fact]
     public static void FailForUnknownArgs()
     {
-
         Assert.Equal(-1, Program.Main(["--unknown"]));
+        Logger.ResetCount();
     }
 
     [Fact]
     public static void InitBuild()
     {
-        Logger.ResetCount();
         Assert.Equal(0, Program.Main(["init", "-o", "init", "-y"]));
         Assert.Equal(0, Program.Main(["init/docfx.json"]));
     }
