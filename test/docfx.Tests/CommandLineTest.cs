@@ -39,12 +39,14 @@ public class CommandLineTest : IDisposable
     [Fact]
     public static void FailForUnknownArgs()
     {
-        Assert.Equal(-2, Program.Main(["--unknown"]));
+
+        Assert.Equal(-1, Program.Main(["--unknown"]));
     }
 
     [Fact]
     public static void InitBuild()
     {
+        Logger.ResetCount();
         Assert.Equal(0, Program.Main(["init", "-o", "init", "-y"]));
         Assert.Equal(0, Program.Main(["init/docfx.json"]));
     }
