@@ -70,6 +70,9 @@ public static class Logger
             return;
         }
 
+        if (item.LogLevel == LogLevel.Error)
+            Console.WriteLine("+++Error: " + item.Message);
+
         if (item.LogLevel == LogLevel.Warning)
         {
             if (WarningsAsErrors)

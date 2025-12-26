@@ -40,34 +40,39 @@ internal class Program
 
         static void OnException(Exception e, ITypeResolver? resolver)
         {
-            // Try to unwrap AggregateException.
-            if (e is AggregateException ae && ae.InnerExceptions.Count == 1)
-                e = ae.InnerExceptions[0];
-
-            if (!Console.IsOutputRedirected)
+            try
             {
-                // Write exception to console.
-                AnsiConsole.Console.WriteException(e);
+                // Try to unwrap AggregateException.
+                if (e is AggregateException ae && ae.InnerExceptions.Count == 1)
+                    e = ae.InnerExceptions[0];
 
-                // Write exception to ReportLogListener if exists.
-                var reportLogListener = Logger.FindListener(x => x is ReportLogListener);
-                reportLogListener?.WriteLine(Logger.GetLogItem(LogLevel.Error, e.ToString(), code: ErrorCodes.Build.FatalError));
+                if (!Console.IsOutputRedirected)
+                {
+                    // Write exception to console.
+                    AnsiConsole.Console.WriteException(e);
+
+                    // Write exception to ReportLogListener if exists.
+                    var reportLogListener = Logger.FindListener(x => x is ReportLogListener);
+                    reportLogListener?.WriteLine(Logger.GetLogItem(LogLevel.Error, e.ToString(), code: ErrorCodes.Build.FatalError));
+                }
+                else
+                {
+                    // Write exception with Logger API if stdout is redirected.
+                    // To avoid line wrap issue https://github.com/spectreconsole/spectre.console/issues/1782
+                    var exceptions = e is AggregateException ae2
+                        ? ae2.Flatten().InnerExceptions.ToArray()
+                        : [e];
+
+                    foreach (var ex in exceptions)
+                        Logger.LogError(e.ToString(), code: ErrorCodes.Build.FatalError);
+                }
             }
-            else
+            finally
             {
-                // Write exception with Logger API if stdout is redirected.
-                // To avoid line wrap issue https://github.com/spectreconsole/spectre.console/issues/1782
-                var exceptions = e is AggregateException ae2
-                    ? ae2.Flatten().InnerExceptions.ToArray()
-                    : [e];
-
-                foreach (var ex in exceptions)
-                    Logger.LogError(e.ToString(), code: ErrorCodes.Build.FatalError);
+                // Cleanup logger.
+                Logger.Flush();
+                Logger.UnregisterAllListeners();
             }
-
-            // Cleanup logger.
-            Logger.Flush();
-            Logger.UnregisterAllListeners();
         }
     }
 }
