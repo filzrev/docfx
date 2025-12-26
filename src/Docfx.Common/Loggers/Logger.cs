@@ -96,6 +96,7 @@ public static class Logger
 
         if (item.LogLevel == LogLevel.Error)
         {
+            Console.WriteLine("+++ERROR: " + item.Message);
             HasError = true;
             Interlocked.Increment(ref _errorCount);
         }
