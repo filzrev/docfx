@@ -39,7 +39,7 @@ public class CommandLineTest : IDisposable
     [Fact]
     public static void FailForUnknownArgs()
     {
-        Assert.Equal(-1, Program.Main(["--unknown"]));
+        Assert.Equal(-2, Program.Main(["--unknown"]));
     }
 
     [Fact]
