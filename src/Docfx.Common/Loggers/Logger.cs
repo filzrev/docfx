@@ -100,9 +100,11 @@ public static class Logger
         if (item.LogLevel == LogLevel.Error)
         {
             Console.WriteLine("+++ERROR: " + item.Message);
-            throw new Exception(item.Message);
+        
             HasError = true;
             Interlocked.Increment(ref _errorCount);
+
+            throw new Exception(item.Message);
         }
 
         Debug.WriteLine(item.Message);
