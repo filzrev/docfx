@@ -8,6 +8,11 @@ namespace Docfx.Tests;
 [Collection("docfx STA")]
 public class CommandLineTest
 {
+    public CommandLineTest()
+    {
+        Logger.ResetCount();
+    }
+
     [Fact]
     public static void PrintsVersion()
     {
@@ -40,7 +45,6 @@ public class CommandLineTest
     public static void InitBuild()
     {
         Assert.Equal(0, Program.Main(["init", "-o", "init", "-y"]));
-        Logger.ResetCount();
         Assert.Equal(0, Program.Main(["init/docfx.json"]));
     }
 }
