@@ -1,10 +1,12 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Docfx.Common;
+
 namespace Docfx.Tests;
 
 [Collection("docfx STA")]
-public static class CommandLineTest
+public class CommandLineTest
 {
     [Fact]
     public static void PrintsVersion()
@@ -38,6 +40,7 @@ public static class CommandLineTest
     public static void InitBuild()
     {
         Assert.Equal(0, Program.Main(["init", "-o", "init", "-y"]));
+        Logger.ResetCount();
         Assert.Equal(0, Program.Main(["init/docfx.json"]));
     }
 }
