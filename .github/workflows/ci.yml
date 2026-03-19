@@ -21,7 +21,7 @@ jobs:
         repository: ${{ github.event.pull_request.head.repo.full_name }}
         lfs: true
 
-    - run: curl -v https://dotnet.github.io/docfx/xrefmap.yml
+    - run: openssl s_client -connect dotnet.github.io:443 -status
 
     - uses: ./.github/actions/build
 
