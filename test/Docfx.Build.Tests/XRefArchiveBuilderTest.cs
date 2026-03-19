@@ -20,7 +20,7 @@ public class XRefArchiveBuilderTest
         // sorted: true
         // references: []
         // ```
-        Assert.True(await builder.DownloadAsync(new Uri("http://dotnet.github.io/docfx/xrefmap.yml"), ZipFile));
+        Assert.True(await builder.DownloadAsync(new Uri("https://dotnet.github.io/docfx/xrefmap.yml"), ZipFile));
 
         using (var xar = XRefArchive.Open(ZipFile, XRefArchiveMode.Read))
         {
