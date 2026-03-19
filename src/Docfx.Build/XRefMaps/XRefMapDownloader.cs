@@ -3,8 +3,9 @@
 
 using System.IO.Compression;
 using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using Docfx.Common;
-
 using EnvironmentVariables = Docfx.DataContracts.Common.Constants.EnvironmentVariables;
 
 namespace Docfx.Build.Engine;
@@ -158,6 +159,20 @@ public sealed class XRefMapDownloader
         {
             AutomaticDecompression = DecompressionMethods.All,
             CheckCertificateRevocationList = !EnvironmentVariables.NoCheckCertificateRevocationList,
+            ServerCertificateCustomValidationCallback = (req, cert, chain, errors) =>
+            {
+                if (errors == SslPolicyErrors.None)
+                    return true;
+
+                // Ignore OCSP validation error on macos. (On GitHub Actions environment.OSCP HTTP protocol seems not stable)
+                if (OperatingSystem.IsMacOS())
+                {
+                    if (chain?.ChainStatus != null && chain.ChainStatus.All(s => s.Status == X509ChainStatusFlags.RevocationStatusUnknown))
+                        return true;
+                }
+
+                return false;
+            }
         })
         {
             Timeout = TimeSpan.FromMinutes(30), // Default: 100 seconds
