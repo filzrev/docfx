@@ -26,10 +26,9 @@ public class XRefArchiveBuilder
                 using var xa = XRefArchive.Open(outputFile, XRefArchiveMode.Create);
                 await DownloadCoreAsync(uri, xa, cancellationToken);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Logger.LogError($"Unable to create archive: {ex.Message}");
-                return false;
+                throw;
             }
             Logger.LogInfo("Xref archive file created.");
             return true;
