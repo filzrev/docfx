@@ -1142,6 +1142,9 @@
     "additionalNotes"
   ],
   "_key": "api/CSharp10.ParameterlessStructConstructors.yml",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
   "_path": "api/CSharp10.ParameterlessStructConstructors.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",

@@ -591,6 +591,9 @@
     "additionalNotes"
   ],
   "_key": "api/CSharp12.yml",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
   "_path": "api/CSharp12.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",

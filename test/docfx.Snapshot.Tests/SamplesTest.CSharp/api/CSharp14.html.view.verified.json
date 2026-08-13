@@ -1,5 +1,5 @@
 ﻿{
-  "uid": "CSharp10",
+  "uid": "CSharp14",
   "isEii": false,
   "isExtensionMethod": false,
   "children": [
@@ -9,47 +9,47 @@
       "id": "classes",
       "children": [
         {
-          "uid": "CSharp10.ConstantInterpolatedStrings",
+          "uid": "CSharp14.FieldBackedPropertySample",
           "isExtensionMethod": false,
-          "href": "CSharp10.ConstantInterpolatedStrings.html",
+          "href": "CSharp14.FieldBackedPropertySample.html",
           "name": [
             {
               "lang": "csharp",
-              "value": "ConstantInterpolatedStrings"
+              "value": "FieldBackedPropertySample"
             },
             {
               "lang": "vb",
-              "value": "ConstantInterpolatedStrings"
+              "value": "FieldBackedPropertySample"
             }
           ],
           "nameWithType": [
             {
               "lang": "csharp",
-              "value": "ConstantInterpolatedStrings"
+              "value": "FieldBackedPropertySample"
             },
             {
               "lang": "vb",
-              "value": "ConstantInterpolatedStrings"
+              "value": "FieldBackedPropertySample"
             }
           ],
           "fullName": [
             {
               "lang": "csharp",
-              "value": "CSharp10.ConstantInterpolatedStrings"
+              "value": "CSharp14.FieldBackedPropertySample"
             },
             {
               "lang": "vb",
-              "value": "CSharp10.ConstantInterpolatedStrings"
+              "value": "CSharp14.FieldBackedPropertySample"
             }
           ],
           "specName": [
             {
               "lang": "csharp",
-              "value": "<xref uid=\"CSharp10.ConstantInterpolatedStrings\" text=\"ConstantInterpolatedStrings\"/>"
+              "value": "<xref uid=\"CSharp14.FieldBackedPropertySample\" text=\"FieldBackedPropertySample\"/>"
             },
             {
               "lang": "vb",
-              "value": "<xref uid=\"CSharp10.ConstantInterpolatedStrings\" text=\"ConstantInterpolatedStrings\"/>"
+              "value": "<xref uid=\"CSharp14.FieldBackedPropertySample\" text=\"FieldBackedPropertySample\"/>"
             }
           ],
           "level": 0,
@@ -66,52 +66,53 @@
           "implements": "",
           "example": "",
           "seealso": [],
-          "id": "CSharp10_ConstantInterpolatedStrings",
+          "id": "CSharp14_FieldBackedPropertySample",
           "hideTitleType": false,
           "hideSubtitle": false
         },
         {
-          "uid": "CSharp10.Issue7737",
+          "uid": "CSharp14.SampleClass",
           "isExtensionMethod": false,
-          "href": "CSharp10.Issue7737.html",
+          "parent": "CSharp14",
+          "href": "CSharp14.SampleClass.html",
           "name": [
             {
               "lang": "csharp",
-              "value": "Issue7737"
+              "value": "SampleClass"
             },
             {
               "lang": "vb",
-              "value": "Issue7737"
+              "value": "SampleClass"
             }
           ],
           "nameWithType": [
             {
               "lang": "csharp",
-              "value": "Issue7737"
+              "value": "SampleClass"
             },
             {
               "lang": "vb",
-              "value": "Issue7737"
+              "value": "SampleClass"
             }
           ],
           "fullName": [
             {
               "lang": "csharp",
-              "value": "CSharp10.Issue7737"
+              "value": "CSharp14.SampleClass"
             },
             {
               "lang": "vb",
-              "value": "CSharp10.Issue7737"
+              "value": "CSharp14.SampleClass"
             }
           ],
           "specName": [
             {
               "lang": "csharp",
-              "value": "<xref uid=\"CSharp10.Issue7737\" text=\"Issue7737\"/>"
+              "value": "<xref uid=\"CSharp14.SampleClass\" text=\"SampleClass\"/>"
             },
             {
               "lang": "vb",
-              "value": "<xref uid=\"CSharp10.Issue7737\" text=\"Issue7737\"/>"
+              "value": "<xref uid=\"CSharp14.SampleClass\" text=\"SampleClass\"/>"
             }
           ],
           "level": 0,
@@ -128,52 +129,52 @@
           "implements": "",
           "example": "",
           "seealso": [],
-          "id": "CSharp10_Issue7737",
+          "id": "CSharp14_SampleClass",
           "hideTitleType": false,
           "hideSubtitle": false
         },
         {
-          "uid": "CSharp10.RecordClass",
+          "uid": "CSharp14.SampleClassExtensions",
           "isExtensionMethod": false,
-          "href": "CSharp10.RecordClass.html",
+          "href": "CSharp14.SampleClassExtensions.html",
           "name": [
             {
               "lang": "csharp",
-              "value": "RecordClass"
+              "value": "SampleClassExtensions"
             },
             {
               "lang": "vb",
-              "value": "RecordClass"
+              "value": "SampleClassExtensions"
             }
           ],
           "nameWithType": [
             {
               "lang": "csharp",
-              "value": "RecordClass"
+              "value": "SampleClassExtensions"
             },
             {
               "lang": "vb",
-              "value": "RecordClass"
+              "value": "SampleClassExtensions"
             }
           ],
           "fullName": [
             {
               "lang": "csharp",
-              "value": "CSharp10.RecordClass"
+              "value": "CSharp14.SampleClassExtensions"
             },
             {
               "lang": "vb",
-              "value": "CSharp10.RecordClass"
+              "value": "CSharp14.SampleClassExtensions"
             }
           ],
           "specName": [
             {
               "lang": "csharp",
-              "value": "<xref uid=\"CSharp10.RecordClass\" text=\"RecordClass\"/>"
+              "value": "<xref uid=\"CSharp14.SampleClassExtensions\" text=\"SampleClassExtensions\"/>"
             },
             {
               "lang": "vb",
-              "value": "<xref uid=\"CSharp10.RecordClass\" text=\"RecordClass\"/>"
+              "value": "<xref uid=\"CSharp14.SampleClassExtensions\" text=\"SampleClassExtensions\"/>"
             }
           ],
           "level": 0,
@@ -190,126 +191,58 @@
           "implements": "",
           "example": "",
           "seealso": [],
-          "id": "CSharp10_RecordClass",
-          "hideTitleType": false,
-          "hideSubtitle": false
-        }
-      ]
-    },
-    {
-      "inStruct": true,
-      "typePropertyName": "inStruct",
-      "id": "structs",
-      "children": [
-        {
-          "uid": "CSharp10.ParameterlessStructConstructors",
-          "isExtensionMethod": false,
-          "href": "CSharp10.ParameterlessStructConstructors.html",
-          "name": [
-            {
-              "lang": "csharp",
-              "value": "ParameterlessStructConstructors"
-            },
-            {
-              "lang": "vb",
-              "value": "ParameterlessStructConstructors"
-            }
-          ],
-          "nameWithType": [
-            {
-              "lang": "csharp",
-              "value": "ParameterlessStructConstructors"
-            },
-            {
-              "lang": "vb",
-              "value": "ParameterlessStructConstructors"
-            }
-          ],
-          "fullName": [
-            {
-              "lang": "csharp",
-              "value": "CSharp10.ParameterlessStructConstructors"
-            },
-            {
-              "lang": "vb",
-              "value": "CSharp10.ParameterlessStructConstructors"
-            }
-          ],
-          "specName": [
-            {
-              "lang": "csharp",
-              "value": "<xref uid=\"CSharp10.ParameterlessStructConstructors\" text=\"ParameterlessStructConstructors\"/>"
-            },
-            {
-              "lang": "vb",
-              "value": "<xref uid=\"CSharp10.ParameterlessStructConstructors\" text=\"ParameterlessStructConstructors\"/>"
-            }
-          ],
-          "level": 0,
-          "summary": "",
-          "type": "struct",
-          "platform": null,
-          "isEii": false,
-          "docurl": "",
-          "sourceurl": "",
-          "description": "",
-          "remarks": "",
-          "conceptual": "",
-          "syntax": "",
-          "implements": "",
-          "example": "",
-          "seealso": [],
-          "id": "CSharp10_ParameterlessStructConstructors",
+          "id": "CSharp14_SampleClassExtensions",
           "hideTitleType": false,
           "hideSubtitle": false
         },
         {
-          "uid": "CSharp10.ReadOnlyRecordStruct",
+          "uid": "CSharp14.UserDefinedCompoundAssignmentOperatorsSample",
           "isExtensionMethod": false,
-          "href": "CSharp10.ReadOnlyRecordStruct.html",
+          "parent": "CSharp14",
+          "href": "CSharp14.UserDefinedCompoundAssignmentOperatorsSample.html",
           "name": [
             {
               "lang": "csharp",
-              "value": "ReadOnlyRecordStruct"
+              "value": "UserDefinedCompoundAssignmentOperatorsSample"
             },
             {
               "lang": "vb",
-              "value": "ReadOnlyRecordStruct"
+              "value": "UserDefinedCompoundAssignmentOperatorsSample"
             }
           ],
           "nameWithType": [
             {
               "lang": "csharp",
-              "value": "ReadOnlyRecordStruct"
+              "value": "UserDefinedCompoundAssignmentOperatorsSample"
             },
             {
               "lang": "vb",
-              "value": "ReadOnlyRecordStruct"
+              "value": "UserDefinedCompoundAssignmentOperatorsSample"
             }
           ],
           "fullName": [
             {
               "lang": "csharp",
-              "value": "CSharp10.ReadOnlyRecordStruct"
+              "value": "CSharp14.UserDefinedCompoundAssignmentOperatorsSample"
             },
             {
               "lang": "vb",
-              "value": "CSharp10.ReadOnlyRecordStruct"
+              "value": "CSharp14.UserDefinedCompoundAssignmentOperatorsSample"
             }
           ],
           "specName": [
             {
               "lang": "csharp",
-              "value": "<xref uid=\"CSharp10.ReadOnlyRecordStruct\" text=\"ReadOnlyRecordStruct\"/>"
+              "value": "<xref uid=\"CSharp14.UserDefinedCompoundAssignmentOperatorsSample\" text=\"UserDefinedCompoundAssignmentOperatorsSample\"/>"
             },
             {
               "lang": "vb",
-              "value": "<xref uid=\"CSharp10.ReadOnlyRecordStruct\" text=\"ReadOnlyRecordStruct\"/>"
+              "value": "<xref uid=\"CSharp14.UserDefinedCompoundAssignmentOperatorsSample\" text=\"UserDefinedCompoundAssignmentOperatorsSample\"/>"
             }
           ],
           "level": 0,
           "summary": "",
-          "type": "struct",
+          "type": "class",
           "platform": null,
           "isEii": false,
           "docurl": "",
@@ -321,69 +254,7 @@
           "implements": "",
           "example": "",
           "seealso": [],
-          "id": "CSharp10_ReadOnlyRecordStruct",
-          "hideTitleType": false,
-          "hideSubtitle": false
-        },
-        {
-          "uid": "CSharp10.RecordStruct",
-          "isExtensionMethod": false,
-          "href": "CSharp10.RecordStruct.html",
-          "name": [
-            {
-              "lang": "csharp",
-              "value": "RecordStruct"
-            },
-            {
-              "lang": "vb",
-              "value": "RecordStruct"
-            }
-          ],
-          "nameWithType": [
-            {
-              "lang": "csharp",
-              "value": "RecordStruct"
-            },
-            {
-              "lang": "vb",
-              "value": "RecordStruct"
-            }
-          ],
-          "fullName": [
-            {
-              "lang": "csharp",
-              "value": "CSharp10.RecordStruct"
-            },
-            {
-              "lang": "vb",
-              "value": "CSharp10.RecordStruct"
-            }
-          ],
-          "specName": [
-            {
-              "lang": "csharp",
-              "value": "<xref uid=\"CSharp10.RecordStruct\" text=\"RecordStruct\"/>"
-            },
-            {
-              "lang": "vb",
-              "value": "<xref uid=\"CSharp10.RecordStruct\" text=\"RecordStruct\"/>"
-            }
-          ],
-          "level": 0,
-          "summary": "",
-          "type": "struct",
-          "platform": null,
-          "isEii": false,
-          "docurl": "",
-          "sourceurl": "",
-          "description": "",
-          "remarks": "",
-          "conceptual": "",
-          "syntax": "",
-          "implements": "",
-          "example": "",
-          "seealso": [],
-          "id": "CSharp10_RecordStruct",
+          "id": "CSharp14_UserDefinedCompoundAssignmentOperatorsSample",
           "hideTitleType": false,
           "hideSubtitle": false
         }
@@ -397,31 +268,31 @@
   "name": [
     {
       "lang": "csharp",
-      "value": "CSharp10"
+      "value": "CSharp14"
     },
     {
       "lang": "vb",
-      "value": "CSharp10"
+      "value": "CSharp14"
     }
   ],
   "nameWithType": [
     {
       "lang": "csharp",
-      "value": "CSharp10"
+      "value": "CSharp14"
     },
     {
       "lang": "vb",
-      "value": "CSharp10"
+      "value": "CSharp14"
     }
   ],
   "fullName": [
     {
       "lang": "csharp",
-      "value": "CSharp10"
+      "value": "CSharp14"
     },
     {
       "lang": "vb",
-      "value": "CSharp10"
+      "value": "CSharp14"
     }
   ],
   "type": "namespace",
@@ -465,11 +336,11 @@
     "attributes",
     "additionalNotes"
   ],
-  "_key": "api/CSharp10.yml",
+  "_key": "api/CSharp14.yml",
   "_navKey": "~/toc.yml",
   "_navPath": "toc.html",
   "_navRel": "../toc.html",
-  "_path": "api/CSharp10.html",
+  "_path": "api/CSharp14.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",
   "_tocPath": "api/toc.html",
@@ -559,7 +430,7 @@
   "implements": "",
   "example": "",
   "seealso": [],
-  "id": "CSharp10",
+  "id": "CSharp14",
   "hideTitleType": false,
   "hideSubtitle": false,
   "isNamespace": true,

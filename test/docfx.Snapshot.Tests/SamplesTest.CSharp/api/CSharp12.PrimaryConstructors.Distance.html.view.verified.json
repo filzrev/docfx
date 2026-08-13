@@ -1004,6 +1004,9 @@
     "additionalNotes"
   ],
   "_key": "api/CSharp12.PrimaryConstructors.Distance.yml",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
   "_path": "api/CSharp12.PrimaryConstructors.Distance.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",

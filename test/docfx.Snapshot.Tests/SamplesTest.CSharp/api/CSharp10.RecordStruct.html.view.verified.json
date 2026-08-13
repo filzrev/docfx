@@ -1140,6 +1140,9 @@
     "additionalNotes"
   ],
   "_key": "api/CSharp10.RecordStruct.yml",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
   "_path": "api/CSharp10.RecordStruct.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",

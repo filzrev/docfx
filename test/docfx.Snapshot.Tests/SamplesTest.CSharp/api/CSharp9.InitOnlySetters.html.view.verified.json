@@ -1141,6 +1141,9 @@
     "additionalNotes"
   ],
   "_key": "api/CSharp9.InitOnlySetters.yml",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
   "_path": "api/CSharp9.InitOnlySetters.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",

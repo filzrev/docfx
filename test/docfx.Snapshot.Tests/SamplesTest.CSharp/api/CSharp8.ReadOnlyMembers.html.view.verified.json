@@ -1398,6 +1398,9 @@
     "additionalNotes"
   ],
   "_key": "api/CSharp8.ReadOnlyMembers.yml",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
   "_path": "api/CSharp8.ReadOnlyMembers.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",

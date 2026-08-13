@@ -828,6 +828,9 @@
     "additionalNotes"
   ],
   "_key": "api/CSharp11.ScopedModifier.yml",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
   "_path": "api/CSharp11.ScopedModifier.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",

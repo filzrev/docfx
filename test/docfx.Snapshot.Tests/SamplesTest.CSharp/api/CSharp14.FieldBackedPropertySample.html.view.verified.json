@@ -1,55 +1,243 @@
 ﻿{
-  "uid": "CSharp12.PrimaryConstructors",
+  "uid": "CSharp14.FieldBackedPropertySample",
   "isEii": false,
   "isExtensionMethod": false,
   "parent": {
-    "uid": "CSharp12",
+    "uid": "CSharp14",
     "isEii": false,
     "isExtensionMethod": false,
-    "href": "CSharp12.html",
+    "href": "CSharp14.html",
     "name": [
       {
         "lang": "csharp",
-        "value": "CSharp12"
+        "value": "CSharp14"
       },
       {
         "lang": "vb",
-        "value": "CSharp12"
+        "value": "CSharp14"
       }
     ],
     "nameWithType": [
       {
         "lang": "csharp",
-        "value": "CSharp12"
+        "value": "CSharp14"
       },
       {
         "lang": "vb",
-        "value": "CSharp12"
+        "value": "CSharp14"
       }
     ],
     "fullName": [
       {
         "lang": "csharp",
-        "value": "CSharp12"
+        "value": "CSharp14"
       },
       {
         "lang": "vb",
-        "value": "CSharp12"
+        "value": "CSharp14"
       }
     ],
     "specName": [
       {
         "lang": "csharp",
-        "value": "<xref uid=\"CSharp12\" text=\"CSharp12\"/>"
+        "value": "<xref uid=\"CSharp14\" text=\"CSharp14\"/>"
       },
       {
         "lang": "vb",
-        "value": "<xref uid=\"CSharp12\" text=\"CSharp12\"/>"
+        "value": "<xref uid=\"CSharp14\" text=\"CSharp14\"/>"
       }
     ],
     "level": 0
   },
-  "children": [],
+  "children": [
+    {
+      "inProperty": true,
+      "typePropertyName": "inProperty",
+      "id": "properties",
+      "children": [
+        {
+          "uid": "CSharp14.FieldBackedPropertySample.FieldBackedProperty",
+          "isEii": false,
+          "isExtensionMethod": false,
+          "parent": "CSharp14.FieldBackedPropertySample",
+          "isExternal": false,
+          "name": [
+            {
+              "lang": "csharp",
+              "value": "FieldBackedProperty"
+            },
+            {
+              "lang": "vb",
+              "value": "FieldBackedProperty"
+            }
+          ],
+          "nameWithType": [
+            {
+              "lang": "csharp",
+              "value": "FieldBackedPropertySample.FieldBackedProperty"
+            },
+            {
+              "lang": "vb",
+              "value": "FieldBackedPropertySample.FieldBackedProperty"
+            }
+          ],
+          "fullName": [
+            {
+              "lang": "csharp",
+              "value": "CSharp14.FieldBackedPropertySample.FieldBackedProperty"
+            },
+            {
+              "lang": "vb",
+              "value": "CSharp14.FieldBackedPropertySample.FieldBackedProperty"
+            }
+          ],
+          "specName": [
+            {
+              "lang": "csharp",
+              "value": "<xref uid=\"CSharp14.FieldBackedPropertySample.FieldBackedProperty\" text=\"FieldBackedProperty\"/>"
+            },
+            {
+              "lang": "vb",
+              "value": "<xref uid=\"CSharp14.FieldBackedPropertySample.FieldBackedProperty\" text=\"FieldBackedProperty\"/>"
+            }
+          ],
+          "syntax": {
+            "content": [
+              {
+                "lang": "csharp",
+                "value": "public int FieldBackedProperty { get; set; }"
+              },
+              {
+                "lang": "vb",
+                "value": "Public Property FieldBackedProperty As Integer"
+              }
+            ],
+            "parameters": [],
+            "return": null,
+            "propertyValue": {
+              "type": {
+                "uid": "System.Int32",
+                "name": [
+                  {
+                    "lang": "csharp",
+                    "value": "int"
+                  },
+                  {
+                    "lang": "vb",
+                    "value": "Integer"
+                  }
+                ],
+                "nameWithType": [
+                  {
+                    "lang": "csharp",
+                    "value": "int"
+                  },
+                  {
+                    "lang": "vb",
+                    "value": "Integer"
+                  }
+                ],
+                "fullName": [
+                  {
+                    "lang": "csharp",
+                    "value": "int"
+                  },
+                  {
+                    "lang": "vb",
+                    "value": "Integer"
+                  }
+                ],
+                "specName": [
+                  {
+                    "lang": "csharp",
+                    "value": "<xref uid=\"System.Int32\" text=\"int\"/>"
+                  },
+                  {
+                    "lang": "vb",
+                    "value": "<xref uid=\"System.Int32\" text=\"int\"/>"
+                  }
+                ]
+              }
+            }
+          },
+          "source": {
+            "remote": {
+              "path": "samples/csharp/src/CSharp14.cs",
+              "branch": "main",
+              "repo": "https://github.com/dotnet/docfx"
+            },
+            "id": "FieldBackedProperty",
+            "path": "src/CSharp14.cs",
+            "startLine": 5,
+            "endLine": 0
+          },
+          "assemblies": [
+            "CSharp"
+          ],
+          "namespace": "CSharp14",
+          "overload": {
+            "uid": "CSharp14.FieldBackedPropertySample.FieldBackedProperty*",
+            "name": [
+              {
+                "lang": "csharp",
+                "value": "FieldBackedProperty"
+              },
+              {
+                "lang": "vb",
+                "value": "FieldBackedProperty"
+              }
+            ],
+            "nameWithType": [
+              {
+                "lang": "csharp",
+                "value": "FieldBackedPropertySample.FieldBackedProperty"
+              },
+              {
+                "lang": "vb",
+                "value": "FieldBackedPropertySample.FieldBackedProperty"
+              }
+            ],
+            "fullName": [
+              {
+                "lang": "csharp",
+                "value": "CSharp14.FieldBackedPropertySample.FieldBackedProperty"
+              },
+              {
+                "lang": "vb",
+                "value": "CSharp14.FieldBackedPropertySample.FieldBackedProperty"
+              }
+            ],
+            "specName": [
+              {
+                "lang": "csharp",
+                "value": "<xref uid=\"CSharp14.FieldBackedPropertySample.FieldBackedProperty*\" text=\"FieldBackedProperty\"/>"
+              },
+              {
+                "lang": "vb",
+                "value": "<xref uid=\"CSharp14.FieldBackedPropertySample.FieldBackedProperty*\" text=\"FieldBackedProperty\"/>"
+              }
+            ],
+            "id": "CSharp14_FieldBackedPropertySample_FieldBackedProperty_"
+          },
+          "level": 0,
+          "type": "property",
+          "summary": "",
+          "platform": null,
+          "docurl": "https://github.com/dotnet/docfx/new/main/apiSpec/new?filename=CSharp14_FieldBackedPropertySample_FieldBackedProperty.md&value=---%0Auid%3A%20CSharp14.FieldBackedPropertySample.FieldBackedProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A",
+          "sourceurl": "https://github.com/dotnet/docfx/blob/main/samples/csharp/src/CSharp14.cs/#L6",
+          "description": "",
+          "remarks": "",
+          "conceptual": "",
+          "implements": "",
+          "example": "",
+          "seealso": [],
+          "id": "CSharp14_FieldBackedPropertySample_FieldBackedProperty",
+          "hideTitleType": false,
+          "hideSubtitle": false
+        }
+      ]
+    }
+  ],
   "langs": [
     "csharp",
     "vb"
@@ -57,91 +245,91 @@
   "name": [
     {
       "lang": "csharp",
-      "value": "PrimaryConstructors"
+      "value": "FieldBackedPropertySample"
     },
     {
       "lang": "vb",
-      "value": "PrimaryConstructors"
+      "value": "FieldBackedPropertySample"
     }
   ],
   "nameWithType": [
     {
       "lang": "csharp",
-      "value": "PrimaryConstructors"
+      "value": "FieldBackedPropertySample"
     },
     {
       "lang": "vb",
-      "value": "PrimaryConstructors"
+      "value": "FieldBackedPropertySample"
     }
   ],
   "fullName": [
     {
       "lang": "csharp",
-      "value": "CSharp12.PrimaryConstructors"
+      "value": "CSharp14.FieldBackedPropertySample"
     },
     {
       "lang": "vb",
-      "value": "CSharp12.PrimaryConstructors"
+      "value": "CSharp14.FieldBackedPropertySample"
     }
   ],
   "type": "class",
   "source": {
     "remote": {
-      "path": "samples/csharp/src/CSharp12.cs",
+      "path": "samples/csharp/src/CSharp14.cs",
       "branch": "main",
       "repo": "https://github.com/dotnet/docfx"
     },
-    "id": "PrimaryConstructors",
-    "path": "src/CSharp12.cs",
-    "startLine": 4,
+    "id": "FieldBackedPropertySample",
+    "path": "src/CSharp14.cs",
+    "startLine": 3,
     "endLine": 0
   },
   "assemblies": [
     "CSharp"
   ],
   "namespace": {
-    "uid": "CSharp12",
+    "uid": "CSharp14",
     "isEii": false,
     "isExtensionMethod": false,
-    "href": "CSharp12.html",
+    "href": "CSharp14.html",
     "name": [
       {
         "lang": "csharp",
-        "value": "CSharp12"
+        "value": "CSharp14"
       },
       {
         "lang": "vb",
-        "value": "CSharp12"
+        "value": "CSharp14"
       }
     ],
     "nameWithType": [
       {
         "lang": "csharp",
-        "value": "CSharp12"
+        "value": "CSharp14"
       },
       {
         "lang": "vb",
-        "value": "CSharp12"
+        "value": "CSharp14"
       }
     ],
     "fullName": [
       {
         "lang": "csharp",
-        "value": "CSharp12"
+        "value": "CSharp14"
       },
       {
         "lang": "vb",
-        "value": "CSharp12"
+        "value": "CSharp14"
       }
     ],
     "specName": [
       {
         "lang": "csharp",
-        "value": "<xref uid=\"CSharp12\" text=\"CSharp12\"/>"
+        "value": "<xref uid=\"CSharp14\" text=\"CSharp14\"/>"
       },
       {
         "lang": "vb",
-        "value": "<xref uid=\"CSharp12\" text=\"CSharp12\"/>"
+        "value": "<xref uid=\"CSharp14\" text=\"CSharp14\"/>"
       }
     ],
     "level": 0
@@ -150,11 +338,11 @@
     "content": [
       {
         "lang": "csharp",
-        "value": "public class PrimaryConstructors"
+        "value": "public class FieldBackedPropertySample"
       },
       {
         "lang": "vb",
-        "value": "Public Class PrimaryConstructors"
+        "value": "Public Class FieldBackedPropertySample"
       }
     ]
   },
@@ -592,11 +780,11 @@
     "attributes",
     "additionalNotes"
   ],
-  "_key": "api/CSharp12.PrimaryConstructors.yml",
+  "_key": "api/CSharp14.FieldBackedPropertySample.yml",
   "_navKey": "~/toc.yml",
   "_navPath": "toc.html",
   "_navRel": "../toc.html",
-  "_path": "api/CSharp12.PrimaryConstructors.html",
+  "_path": "api/CSharp14.FieldBackedPropertySample.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",
   "_tocPath": "api/toc.html",
@@ -676,8 +864,8 @@
     "_shared": {}
   },
   "yamlmime": "ManagedReference",
-  "docurl": "https://github.com/dotnet/docfx/new/main/apiSpec/new?filename=CSharp12_PrimaryConstructors.md&value=---%0Auid%3A%20CSharp12.PrimaryConstructors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A",
-  "sourceurl": "https://github.com/dotnet/docfx/blob/main/samples/csharp/src/CSharp12.cs/#L5",
+  "docurl": "https://github.com/dotnet/docfx/new/main/apiSpec/new?filename=CSharp14_FieldBackedPropertySample.md&value=---%0Auid%3A%20CSharp14.FieldBackedPropertySample%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A",
+  "sourceurl": "https://github.com/dotnet/docfx/blob/main/samples/csharp/src/CSharp14.cs/#L4",
   "summary": "",
   "description": "",
   "remarks": "",
@@ -685,7 +873,7 @@
   "implements": "",
   "example": "",
   "seealso": [],
-  "id": "CSharp12_PrimaryConstructors",
+  "id": "CSharp14_FieldBackedPropertySample",
   "hideTitleType": false,
   "hideSubtitle": false,
   "isClass": true,

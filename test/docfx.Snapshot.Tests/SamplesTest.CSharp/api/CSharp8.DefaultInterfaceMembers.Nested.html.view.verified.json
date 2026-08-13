@@ -593,6 +593,9 @@
     "additionalNotes"
   ],
   "_key": "api/CSharp8.DefaultInterfaceMembers.Nested.yml",
+  "_navKey": "~/toc.yml",
+  "_navPath": "toc.html",
+  "_navRel": "../toc.html",
   "_path": "api/CSharp8.DefaultInterfaceMembers.Nested.html",
   "_rel": "../",
   "_tocKey": "~/api/toc.yml",
