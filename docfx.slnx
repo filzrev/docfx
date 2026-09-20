@@ -41,23 +41,8 @@
     <File Path="test/Directory.Build.props" />
     <File Path="test/Directory.Build.targets" />
     <File Path="test/Directory.Packages.props" />
-    <Project Path="test/Docfx.Build.Common.Tests/Docfx.Build.Common.Tests.csproj" />
-    <Project Path="test/Docfx.Build.Tests/Docfx.Build.Tests.csproj" />
-    <Project Path="test/Docfx.Common.Tests/Docfx.Common.Tests.csproj" />
-    <Project Path="test/Docfx.Dotnet.Tests/Docfx.Dotnet.Tests.csproj" />
-    <Project Path="test/Docfx.Glob.Tests/Docfx.Glob.Tests.csproj" />
-    <Project Path="test/Docfx.MarkdigEngine.Extensions.Tests/Docfx.MarkdigEngine.Extensions.Tests.csproj" />
-    <Project Path="test/Docfx.MarkdigEngine.Tests/Docfx.MarkdigEngine.Tests.csproj" />
-    <Project Path="test/docfx.Snapshot.Tests/docfx.Snapshot.Tests.csproj" />
     <Project Path="test/Docfx.Tests.Common/Docfx.Tests.Common.csproj" />
     <Project Path="test/docfx.Tests/docfx.Tests.csproj" />
   </Folder>
-  <Folder Name="/test/Extensions/">
-    <Project Path="test/Docfx.Build.ManagedReference.Tests/Docfx.Build.ManagedReference.Tests.csproj" />
-    <Project Path="test/Docfx.Build.OverwriteDocuments.Tests/Docfx.Build.OverwriteDocuments.Tests.csproj" />
-    <Project Path="test/Docfx.Build.RestApi.Tests/Docfx.Build.RestApi.Tests.csproj" />
-    <Project Path="test/Docfx.Build.RestApi.WithPlugins.Tests/Docfx.Build.RestApi.WithPlugins.Tests.csproj" />
-    <Project Path="test/Docfx.Build.SchemaDriven.Tests/Docfx.Build.SchemaDriven.Tests.csproj" />
-    <Project Path="test/Docfx.Build.UniversalReference.Tests/Docfx.Build.UniversalReference.Tests.csproj" />
-  </Folder>
+  <Folder Name="/test/Extensions/" />
 </Solution>
