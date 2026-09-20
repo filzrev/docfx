@@ -8,4 +8,8 @@
     <ProjectReference Include="..\..\src\Docfx.Plugins\Docfx.Plugins.csproj" />
     <ProjectReference Include="..\..\src\Docfx.Common\Docfx.Common.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
 </Project>

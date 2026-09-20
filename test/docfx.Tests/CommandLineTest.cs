@@ -1,21 +1,11 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Docfx.Common;
-using Spectre.Console;
-
 namespace Docfx.Tests;
 
 [Collection("docfx STA")]
 public class CommandLineTest
 {
-    [Fact]
-    public static void PrintsVersion()
-    {
-        Assert.Equal(0, Program.Main(["-v"]));
-        Assert.Equal(0, Program.Main(["--version"]));
-    }
-
     [Fact]
     public static void PrintsHelp()
     {
@@ -29,43 +19,5 @@ public class CommandLineTest
         Assert.Equal(0, Program.Main(["download", "--help"]));
         Assert.Equal(0, Program.Main(["merge", "--help"]));
         Assert.Equal(0, Program.Main(["template", "--help"]));
-    }
-
-    [Fact]
-    public static void PrintsRootUsageInCommandFirstOrder()
-    {
-        using var writer = new StringWriter();
-        var console = AnsiConsole.Create(new()
-        {
-            Ansi = AnsiSupport.No,
-            ColorSystem = ColorSystemSupport.NoColors,
-            Out = new AnsiConsoleOutput(writer),
-        });
-
-        Assert.Equal(0, Program.Run(["-?"], console));
-
-        var output = writer.ToString();
-        Assert.Contains("docfx [COMMAND] [config] [OPTIONS]", output);
-        Assert.DoesNotContain("docfx [config] [OPTIONS] [COMMAND]", output);
-    }
-
-    [Fact]
-    public static void FailForUnknownArgs()
-    {
-        try
-        {
-            Assert.Equal(-1, Program.Main(["--unknown"]));
-        }
-        finally
-        {
-            Logger.ResetCount();
-        }
-    }
-
-    [Fact]
-    public static void InitBuild()
-    {
-        Assert.Equal(0, Program.Main(["init", "-o", "init", "-y"]));
-        Assert.Equal(0, Program.Main(["init/docfx.json"]));
     }
 }

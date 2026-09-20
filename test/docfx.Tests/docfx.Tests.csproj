@@ -4,10 +4,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Assets\**" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Verify.XunitV3" />
   </ItemGroup>
 
