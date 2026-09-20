@@ -18,8 +18,7 @@ public class CommandLineTest
         //Assert.Equal(0, Program.Main(["metadata", "--help"]));
         //Assert.Equal(0, Program.Main(["pdf", "--help"]));
         //Assert.Equal(0, Program.Main(["init", "--help"]));
-        Process.Start("docfx", "download --help").WaitForExit();
-        //Assert.Equal(0, Program.Main(["download", "--help"]));
+        Assert.Equal(0, Program.Main(["download", "--help"]));
         //Assert.Equal(0, Program.Main(["merge", "--help"]));
         //Assert.Equal(0, Program.Main(["template", "--help"]));
     }
