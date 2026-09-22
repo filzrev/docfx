@@ -11,6 +11,7 @@ using Microsoft.Playwright;
 namespace Docfx.Tests;
 
 [Trait("Stage", "Percy")]
+[Collection("docfx STA")]
 public class PercyTest
 {
     private class PercyFactAttribute : FactAttribute
